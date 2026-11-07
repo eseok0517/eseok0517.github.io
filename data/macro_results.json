@@ -1,0 +1,515 @@
+{
+ "generated_utc": "2026-11-07 22:28",
+ "synthetic": false,
+ "source": "FRED (Federal Reserve Bank of St. Louis), public CSV endpoint",
+ "definitions": {
+  "curve": "Inverted when the 10Y-2Y spread is below 0",
+  "inflation": "High when CPI year-over-year is at least 3.0%",
+  "credit": "Stressed when the high-yield spread is at least 5.0%",
+  "forward_return": "S&P 500 price return over the next 12 months, measured from each month-end"
+ },
+ "series": {
+  "SP500": {
+   "description": "S&P 500 index",
+   "first": "2016-11-07",
+   "last": "2026-11-05",
+   "observations": 2513
+  },
+  "T10Y2Y": {
+   "description": "10Y minus 2Y Treasury spread (pct. points)",
+   "first": "2000-01-03",
+   "last": "2026-11-06",
+   "observations": 6716
+  },
+  "CPIAUCSL": {
+   "description": "Consumer Price Index (all urban consumers)",
+   "first": "2000-01-01",
+   "last": "2026-09-01",
+   "observations": 320
+  },
+  "BAMLH0A0HYM2": {
+   "description": "High-yield credit spread (pct.)",
+   "first": "2023-11-07",
+   "last": "2026-11-05",
+   "observations": 786
+  }
+ },
+ "latest": {
+  "month": "2026-09",
+  "sp500": 7651.54,
+  "curve": 0.41,
+  "hy_spread": 3.12,
+  "cpi_yoy": 3.72,
+  "fwd12_return": null,
+  "curve_regime": "Normal",
+  "inflation_regime": "High",
+  "credit_regime": "Calm"
+ },
+ "stats": {
+  "curve_regime": [
+   {
+    "regime": "Inverted",
+    "months": 9,
+    "mean_fwd12": 17.19,
+    "median_fwd12": 14.8,
+    "pct_positive": 100.0,
+    "worst_fwd12": 6.8,
+    "best_fwd12": 32.06
+   },
+   {
+    "regime": "Normal",
+    "months": 16,
+    "mean_fwd12": 17.2,
+    "median_fwd12": 16.2,
+    "pct_positive": 100.0,
+    "worst_fwd12": 7.37,
+    "best_fwd12": 29.45
+   }
+  ],
+  "inflation_regime": [
+   {
+    "regime": "High",
+    "months": 8,
+    "mean_fwd12": 17.59,
+    "median_fwd12": 15.62,
+    "pct_positive": 100.0,
+    "worst_fwd12": 6.8,
+    "best_fwd12": 32.06
+   },
+   {
+    "regime": "Low",
+    "months": 16,
+    "mean_fwd12": 17.4,
+    "median_fwd12": 16.2,
+    "pct_positive": 100.0,
+    "worst_fwd12": 7.37,
+    "best_fwd12": 29.45
+   }
+  ],
+  "credit_regime": [
+   {
+    "regime": "Calm",
+    "months": 25,
+    "mean_fwd12": 17.2,
+    "median_fwd12": 16.07,
+    "pct_positive": 100.0,
+    "worst_fwd12": 6.8,
+    "best_fwd12": 32.06
+   }
+  ]
+ },
+ "monthly": [
+  {
+   "month": "2023-11",
+   "sp500": 4567.8,
+   "curve": -0.36,
+   "hy_spread": 3.84,
+   "cpi_yoy": 3.13,
+   "fwd12_return": 32.06,
+   "curve_regime": "Inverted",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2023-12",
+   "sp500": 4769.83,
+   "curve": -0.35,
+   "hy_spread": 3.39,
+   "cpi_yoy": 3.32,
+   "fwd12_return": 23.31,
+   "curve_regime": "Inverted",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-01",
+   "sp500": 4845.65,
+   "curve": -0.28,
+   "hy_spread": 3.59,
+   "cpi_yoy": 3.09,
+   "fwd12_return": 24.66,
+   "curve_regime": "Inverted",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-02",
+   "sp500": 5096.27,
+   "curve": -0.39,
+   "hy_spread": 3.29,
+   "cpi_yoy": 3.16,
+   "fwd12_return": 16.84,
+   "curve_regime": "Inverted",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-03",
+   "sp500": 5254.35,
+   "curve": -0.39,
+   "hy_spread": 3.15,
+   "cpi_yoy": 3.49,
+   "fwd12_return": 6.8,
+   "curve_regime": "Inverted",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-04",
+   "sp500": 5035.69,
+   "curve": -0.35,
+   "hy_spread": 3.18,
+   "cpi_yoy": 3.36,
+   "fwd12_return": 10.59,
+   "curve_regime": "Inverted",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-05",
+   "sp500": 5277.51,
+   "curve": -0.38,
+   "hy_spread": 3.2,
+   "cpi_yoy": 3.24,
+   "fwd12_return": 12.02,
+   "curve_regime": "Inverted",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-06",
+   "sp500": 5460.48,
+   "curve": -0.35,
+   "hy_spread": 3.21,
+   "cpi_yoy": 2.97,
+   "fwd12_return": 13.63,
+   "curve_regime": "Inverted",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-07",
+   "sp500": 5522.3,
+   "curve": -0.2,
+   "hy_spread": 3.25,
+   "cpi_yoy": 2.94,
+   "fwd12_return": 14.8,
+   "curve_regime": "Inverted",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-08",
+   "sp500": 5648.4,
+   "curve": 0.0,
+   "hy_spread": 3.17,
+   "cpi_yoy": 2.61,
+   "fwd12_return": 14.37,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-09",
+   "sp500": 5762.48,
+   "curve": 0.15,
+   "hy_spread": 3.03,
+   "cpi_yoy": 2.43,
+   "fwd12_return": 16.07,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-10",
+   "sp500": 5705.45,
+   "curve": 0.12,
+   "hy_spread": 2.88,
+   "cpi_yoy": 2.58,
+   "fwd12_return": 19.89,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-11",
+   "sp500": 6032.38,
+   "curve": 0.05,
+   "hy_spread": 2.74,
+   "cpi_yoy": 2.72,
+   "fwd12_return": 13.54,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2024-12",
+   "sp500": 5881.63,
+   "curve": 0.33,
+   "hy_spread": 2.92,
+   "cpi_yoy": 2.87,
+   "fwd12_return": 16.39,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-01",
+   "sp500": 6040.53,
+   "curve": 0.36,
+   "hy_spread": 2.68,
+   "cpi_yoy": 2.99,
+   "fwd12_return": 14.87,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-02",
+   "sp500": 5954.5,
+   "curve": 0.25,
+   "hy_spread": 2.87,
+   "cpi_yoy": 2.8,
+   "fwd12_return": 15.52,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-03",
+   "sp500": 5611.85,
+   "curve": 0.34,
+   "hy_spread": 3.55,
+   "cpi_yoy": 2.38,
+   "fwd12_return": 16.33,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-04",
+   "sp500": 5569.06,
+   "curve": 0.57,
+   "hy_spread": 3.94,
+   "cpi_yoy": 2.33,
+   "fwd12_return": 29.45,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-05",
+   "sp500": 5911.69,
+   "curve": 0.52,
+   "hy_spread": 3.32,
+   "cpi_yoy": 2.38,
+   "fwd12_return": 28.22,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-06",
+   "sp500": 6204.95,
+   "curve": 0.52,
+   "hy_spread": 2.96,
+   "cpi_yoy": 2.68,
+   "fwd12_return": 20.86,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-07",
+   "sp500": 6339.39,
+   "curve": 0.43,
+   "hy_spread": 2.86,
+   "cpi_yoy": 2.74,
+   "fwd12_return": 18.15,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-08",
+   "sp500": 6460.26,
+   "curve": 0.64,
+   "hy_spread": 2.84,
+   "cpi_yoy": 2.94,
+   "fwd12_return": 18.98,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-09",
+   "sp500": 6688.46,
+   "curve": 0.56,
+   "hy_spread": 2.8,
+   "cpi_yoy": 3.02,
+   "fwd12_return": 14.4,
+   "curve_regime": "Normal",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-10",
+   "sp500": 6840.2,
+   "curve": 0.51,
+   "hy_spread": 2.94,
+   "cpi_yoy": null,
+   "fwd12_return": 10.82,
+   "curve_regime": "Normal",
+   "inflation_regime": null,
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-11",
+   "sp500": 6849.09,
+   "curve": 0.55,
+   "hy_spread": 2.92,
+   "cpi_yoy": 2.7,
+   "fwd12_return": 7.37,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2025-12",
+   "sp500": 6845.5,
+   "curve": 0.71,
+   "hy_spread": 2.81,
+   "cpi_yoy": 2.65,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2026-01",
+   "sp500": 6939.03,
+   "curve": 0.74,
+   "hy_spread": 2.88,
+   "cpi_yoy": 2.39,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2026-02",
+   "sp500": 6878.88,
+   "curve": 0.59,
+   "hy_spread": 3.12,
+   "cpi_yoy": 2.43,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": "Low",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2026-03",
+   "sp500": 6528.52,
+   "curve": 0.51,
+   "hy_spread": 3.28,
+   "cpi_yoy": 3.29,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2026-04",
+   "sp500": 7209.01,
+   "curve": 0.52,
+   "hy_spread": 2.83,
+   "cpi_yoy": 3.78,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2026-05",
+   "sp500": 7580.06,
+   "curve": 0.47,
+   "hy_spread": 2.74,
+   "cpi_yoy": 4.17,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2026-06",
+   "sp500": 7499.36,
+   "curve": 0.3,
+   "hy_spread": 2.75,
+   "cpi_yoy": 3.46,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2026-07",
+   "sp500": 7489.72,
+   "curve": 0.47,
+   "hy_spread": 2.85,
+   "cpi_yoy": 3.3,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2026-08",
+   "sp500": 7686.14,
+   "curve": 0.41,
+   "hy_spread": 2.63,
+   "cpi_yoy": 3.35,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2026-09",
+   "sp500": 7651.54,
+   "curve": 0.41,
+   "hy_spread": 3.12,
+   "cpi_yoy": 3.72,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": "High",
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2026-10",
+   "sp500": 7580.07,
+   "curve": 0.38,
+   "hy_spread": 3.44,
+   "cpi_yoy": null,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": null,
+   "credit_regime": "Calm"
+  },
+  {
+   "month": "2026-11",
+   "sp500": 7353.73,
+   "curve": 0.35,
+   "hy_spread": 3.48,
+   "cpi_yoy": null,
+   "fwd12_return": null,
+   "curve_regime": "Normal",
+   "inflation_regime": null,
+   "credit_regime": "Calm"
+  }
+ ],
+ "caveats": [
+  "Forward-return windows overlap, so consecutive months are not independent observations.",
+  "FRED's S&P 500 series covers only about the last ten years, so some regimes have few months.",
+  "Price return only (no dividends). Historical regime differences are descriptive, not a forecast."
+ ]
+}
