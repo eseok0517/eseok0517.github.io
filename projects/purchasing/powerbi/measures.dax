@@ -1,0 +1,14 @@
+// Add these measures to PolicyResults after importing CSVs and configuring relationships.
+Demand Units = SUM(PolicyResults[demand_units])
+Filled Units = SUM(PolicyResults[filled_units])
+Unit Fill Rate = DIVIDE([Filled Units], [Demand Units])
+Average Inventory USD = SUM(PolicyResults[avg_inventory_value])
+Freight USD = SUM(PolicyResults[freight])
+Carrying Cost USD = SUM(PolicyResults[holding_cost])
+Shortage Penalty USD = SUM(PolicyResults[shortage_penalty])
+Discount Benefit USD = SUM(PolicyResults[discount_benefit])
+Net Policy Cost USD = [Freight USD] + [Carrying Cost USD] + [Shortage Penalty USD] - [Discount Benefit USD]
+Current Policy Cost USD = CALCULATE([Net Policy Cost USD], REMOVEFILTERS(PolicyResults[policy]), PolicyResults[policy] = "Current")
+Cost Reduction USD = [Current Policy Cost USD] - [Net Policy Cost USD]
+Current Inventory USD = CALCULATE([Average Inventory USD], REMOVEFILTERS(PolicyResults[policy]), PolicyResults[policy] = "Current")
+Capital Released USD = [Current Inventory USD] - [Average Inventory USD]
