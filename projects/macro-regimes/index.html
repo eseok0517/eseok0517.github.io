@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Regimes and Forward Returns | Ehahn Seok</title>
+<meta name="description" content="How have S&P 500 returns differed across yield-curve, inflation, and credit regimes? Built from public FRED data that refreshes automatically.">
+<style>
+:root{--bg:#fafaf8;--surface:#fff;--text:#1c1f23;--muted:#5d646d;--border:#e3e5e8;--accent:#1f5f4a;--accent-soft:#e4f0eb;--pos:#1f7a4d;--neg:#a12a2a;--shade:rgba(180,59,59,.14);--line:#1f5f4a;--warnbg:#fbefd5;--warn:#7a5300}
+@media (prefers-color-scheme:dark){:root{--bg:#14171a;--surface:#1b1f23;--text:#e8eaed;--muted:#9aa2ab;--border:#2b3036;--accent:#6fcfa9;--accent-soft:#1d332b;--pos:#6fcfa9;--neg:#f09a9a;--shade:rgba(224,120,120,.18);--line:#6fcfa9;--warnbg:#3a2f14;--warn:#f0c36a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px 56px}
+.back{display:inline-block;padding-top:20px;font-size:.9rem;text-decoration:none}
+h1{margin:8px 0 8px;font-size:clamp(1.55rem,4.5vw,2.2rem);line-height:1.2}
+h2{margin:36px 0 12px;font-size:1.15rem;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.lead{color:var(--muted);max-width:700px;margin:0}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}
+.banner{margin:16px 0 0;padding:10px 14px;border-radius:10px;background:var(--warnbg);color:var(--warn);font-size:.9rem}
+.hidden{display:none}
+.finding{font-size:1.15rem;line-height:1.5;margin:0}
+.finding b{color:var(--accent)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px}
+.kpi .l{font-size:.78rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.kpi .v{font-size:1.5rem;font-weight:700;margin-top:2px}
+.kpi .s{font-size:.82rem;color:var(--muted)}
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{padding:9px 12px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-size:.74rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.grp td{background:var(--accent-soft);font-weight:700;text-align:left}
+.pos{color:var(--pos)}.neg{color:var(--neg)}
+svg{width:100%;height:auto;display:block}
+.legend{font-size:.82rem;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:12px;height:12px;vertical-align:-2px;margin-right:5px;border-radius:2px}
+ul.notes{color:var(--muted);font-size:.9rem;padding-left:20px}
+.small{font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../../index.html">&larr; Back to portfolio</a>
+<h1>Do market regimes change what stocks return next?</h1>
+<p class="lead">A look at how the S&amp;P 500's next-12-month return has differed when the yield curve was inverted, inflation was high, or credit spreads were wide. Built from public Federal Reserve (FRED) data that refreshes automatically every week.</p>
+
+<div id="banner" class="banner hidden"></div>
+<div id="empty" class="panel hidden" style="margin-top:20px"></div>
+
+<div id="content" class="hidden">
+
+  <h2>What the data shows</h2>
+  <div class="panel"><p id="finding" class="finding"></p></div>
+
+  <h2>Where things stand now</h2>
+  <div id="kpis" class="kpis"></div>
+
+  <h2>S&amp;P 500 and inverted-curve periods</h2>
+  <div class="panel">
+    <div id="chart"></div>
+    <div class="legend"><i style="background:var(--line)"></i>S&amp;P 500 (month-end) &nbsp; <i style="background:var(--shade)"></i>10Y-2Y curve inverted</div>
+  </div>
+
+  <h2>Next-12-month S&amp;P 500 return by regime</h2>
+  <div class="tablewrap"><table id="stats"></table></div>
+  <p class="small" id="defs"></p>
+
+  <h2>Read this before drawing conclusions</h2>
+  <ul class="notes" id="caveats"></ul>
+
+  <h2>Data and method</h2>
+  <p class="small">Source: <span id="source"></span>. Series: S&amp;P 500, 10Y-2Y Treasury spread, CPI, and high-yield credit spread. Daily series are reduced to month-end values. The pipeline is a short Python script run by a scheduled GitHub Actions workflow, which saves the raw downloads and the computed results in the repository.</p>
+  <p class="small">
+    <a href="../../scripts/fetch_macro.py">Pipeline script</a> &middot;
+    <a href="../../data/macro_results.json">Results (JSON)</a> &middot;
+    <a href="../../data/raw/SP500.csv">Raw S&amp;P 500 CSV</a> &middot;
+    <a href="../../data/raw/T10Y2Y.csv">Raw yield-curve CSV</a>
+    <span id="updated"></span>
+  </p>
+</div>
+</div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pct = (v, d = 1) => v == null ? "n/a" : (v > 0 ? "+" : "") + v.toFixed(d) + "%";
+const cls = v => v == null ? "" : v >= 0 ? "pos" : "neg";
+
+fetch("../../data/macro_results.json", {cache: "no-store"})
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(render)
+  .catch(() => {
+    $("empty").classList.remove("hidden");
+    $("empty").innerHTML = "<strong>No data yet.</strong> The results file hasn't been generated. In the repository, open the <em>Actions</em> tab, choose <em>Update data</em>, and click <em>Run workflow</em>. This page fills in after the run finishes.";
+  });
+
+function render(d){
+  if (d.synthetic){
+    $("banner").classList.remove("hidden");
+    $("banner").textContent = "Test data: these numbers come from a synthetic test file, not FRED. They are for checking the page only.";
+  }
+  const byRegime = (list, name) => list.find(x => x.regime === name);
+  const inv = byRegime(d.stats.curve_regime, "Inverted"), norm = byRegime(d.stats.curve_regime, "Normal");
+  let text = "Not enough data to compare regimes yet.";
+  if (inv && norm){
+    const diff = inv.mean_fwd12 - norm.mean_fwd12;
+    text = `Over the sample, the S&P 500's average next-12-month price return was <b>${pct(inv.mean_fwd12)}</b> after months with an inverted yield curve (${inv.months} months) versus <b>${pct(norm.mean_fwd12)}</b> after normal-curve months (${norm.months} months), a gap of <b>${diff > 0 ? "+" : ""}${diff.toFixed(1)} percentage points</b>. The sample is short and the windows overlap, so treat this as a description of history, not a forecast.`;
+  }
+  $("finding").innerHTML = text;
+
+  const L = d.latest;
+  $("kpis").innerHTML = [
+    ["Latest month", L.month, "all inputs available"],
+    ["10Y-2Y spread", L.curve.toFixed(2) + " pts", L.curve_regime + " curve"],
+    ["Inflation (CPI YoY)", L.cpi_yoy == null ? "n/a" : L.cpi_yoy.toFixed(1) + "%", (L.inflation_regime || "n/a") + " regime"],
+    ["High-yield spread", L.hy_spread.toFixed(2) + "%", L.credit_regime + " credit"]
+  ].map(([l, v, s]) => `<div class="kpi"><div class="l">${l}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join("");
+
+  drawChart(d.monthly);
+
+  const groups = [["Yield curve", d.stats.curve_regime], ["Inflation", d.stats.inflation_regime], ["Credit spreads", d.stats.credit_regime]];
+  let html = "<thead><tr><th>Regime</th><th>Months</th><th>Mean</th><th>Median</th><th>% positive</th><th>Worst</th><th>Best</th></tr></thead><tbody>";
+  groups.forEach(([g, list]) => {
+    html += `<tr class="grp"><td colspan="7">${g}</td></tr>`;
+    list.forEach(r => { html += `<tr><td>${esc(r.regime)}</td><td>${r.months}</td><td class="${cls(r.mean_fwd12)}">${pct(r.mean_fwd12)}</td><td class="${cls(r.median_fwd12)}">${pct(r.median_fwd12)}</td><td>${r.pct_positive.toFixed(0)}%</td><td class="${cls(r.worst_fwd12)}">${pct(r.worst_fwd12)}</td><td class="${cls(r.best_fwd12)}">${pct(r.best_fwd12)}</td></tr>`; });
+  });
+  $("stats").innerHTML = html + "</tbody>";
+  $("defs").innerHTML = Object.values(d.definitions).map(esc).join(". ") + ".";
+  $("caveats").innerHTML = d.caveats.map(c => `<li>${esc(c)}</li>`).join("");
+  $("source").textContent = d.source;
+  $("updated").textContent = " · Last updated " + d.generated_utc + " UTC";
+  $("content").classList.remove("hidden");
+}
+
+function drawChart(rows){
+  const W = 900, H = 320, m = {l: 56, r: 14, t: 12, b: 28};
+  const pts = rows.filter(r => r.sp500 != null);
+  const n = pts.length, xs = i => m.l + (W - m.l - m.r) * i / (n - 1);
+  const lo = Math.min(...pts.map(p => p.sp500)), hi = Math.max(...pts.map(p => p.sp500));
+  const ys = v => H - m.b - (H - m.t - m.b) * (v - lo) / (hi - lo || 1);
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="S&P 500 month-end level with inverted yield-curve periods shaded">`;
+  // inverted-curve shading
+  let start = null;
+  pts.forEach((p, i) => {
+    const inv = p.curve_regime === "Inverted";
+    if (inv && start === null) start = i;
+    if ((!inv || i === n - 1) && start !== null){
+      const end = inv ? i : i - 1;
+      svg += `<rect x="${xs(start) - 2}" y="${m.t}" width="${Math.max(4, xs(end) - xs(start) + 4)}" height="${H - m.t - m.b}" fill="var(--shade)"/>`;
+      start = null;
+    }
+  });
+  // y grid + labels
+  for (let k = 0; k <= 4; k++){
+    const v = lo + (hi - lo) * k / 4, y = ys(v);
+    svg += `<line x1="${m.l}" x2="${W - m.r}" y1="${y}" y2="${y}" stroke="var(--border)"/><text x="${m.l - 8}" y="${y + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${Math.round(v).toLocaleString()}</text>`;
+  }
+  // x labels (every ~2 years)
+  pts.forEach((p, i) => { if (p.month.endsWith("-01") && +p.month.slice(0, 4) % 2 === 0) svg += `<text x="${xs(i)}" y="${H - 8}" text-anchor="middle" font-size="12" fill="var(--muted)">${p.month.slice(0, 4)}</text>`; });
+  svg += `<polyline fill="none" stroke="var(--line)" stroke-width="2" points="${pts.map((p, i) => xs(i).toFixed(1) + "," + ys(p.sp500).toFixed(1)).join(" ")}"/></svg>`;
+  $("chart").innerHTML = svg;
+}
+</script>
+</body>
+</html>
