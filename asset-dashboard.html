@@ -87,6 +87,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 <header class="top">
   <a class="back" href="index.html">&larr; Back to portfolio</a>
   <h1>Asset KPI Dashboard</h1>
+  <p class="notes">Interactive prototype · <a href="projects/asset-analysis/">Read the method and business interpretation</a></p>
   <p class="sub">Upload an asset register (CSV or Excel). The tool maps your columns, cleans the data, estimates book value, measures the portfolio against adjustable targets, and lists the assets that need attention.</p>
 </header>
 
@@ -606,6 +607,7 @@ $("btnApply").addEventListener("click", () => {
 $("filter").addEventListener("change", renderExceptions);
 $("btnExportEx").addEventListener("click", () => download("asset_exceptions.csv", toCSV(cleanRows(currentExceptions()))));
 $("btnExportClean").addEventListener("click", () => { state.clean.forEach(o => o.flags = flagsFor(o)); download("asset_register_cleaned.csv", toCSV(cleanRows(state.clean))); });
+if (new URLSearchParams(location.search).get("demo") === "1") loadTable(sampleTable(), "Sample data (simulated)");
 </script>
 </body>
 </html>

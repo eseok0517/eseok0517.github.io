@@ -52,6 +52,10 @@ ul.notes{color:var(--muted);font-size:.9rem;padding-left:20px}
 
 <div id="content" class="hidden">
 
+  <h2>Research coverage</h2>
+  <p id="coverage" class="small"></p>
+  <div id="research-use" class="panel"><strong>How to use this analysis</strong><p class="small" style="margin-bottom:0">Compare historical market environments and identify questions for further research. Differences between regime averages do not establish causality or a trading rule. Check sample sizes before comparing means.</p></div>
+
   <h2>What the data shows</h2>
   <div class="panel"><p id="finding" class="finding"></p></div>
 
@@ -72,7 +76,7 @@ ul.notes{color:var(--muted);font-size:.9rem;padding-left:20px}
   <ul class="notes" id="caveats"></ul>
 
   <h2>Data and method</h2>
-  <p class="small">Source: <span id="source"></span>. Series: S&amp;P 500, 10Y-2Y Treasury spread, CPI, and high-yield credit spread. Daily series are reduced to month-end values. The pipeline is a short Python script run by a scheduled GitHub Actions workflow, which saves the raw downloads and the computed results in the repository.</p>
+  <p class="small">Source: <span id="source"></span>. Series: S&amp;P 500, 10Y-2Y Treasury spread, CPI, and high-yield credit spread. Daily series use the last valid observation in each completed month. Credit data is optional for the longer yield-curve sample; each regime table uses its own available observations. The pipeline is a short Python script run by a scheduled GitHub Actions workflow, which saves the raw downloads and the computed results in the repository.</p>
   <p class="small">
     <a href="../../scripts/fetch_macro.py">Pipeline script</a> &middot;
     <a href="../../data/macro_results.json">Results (JSON)</a> &middot;
@@ -90,7 +94,13 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 const pct = (v, d = 1) => v == null ? "n/a" : (v > 0 ? "+" : "") + v.toFixed(d) + "%";
 const cls = v => v == null ? "" : v >= 0 ? "pos" : "neg";
 
-fetch("../../data/macro_results.json", {cache: "no-store"})
+async function loadMacro(){
+  const local = "../../data/macro_results.json";
+  const source = location.hostname.endsWith("github.io") ? "https://raw.githubusercontent.com/eseok0517/eseok0517.github.io/main/data/macro_results.json" : local;
+  try { const r = await fetch(source, {cache:"no-store"}); if (!r.ok) throw new Error(r.status); return r; }
+  catch(e) { return fetch(local); }
+}
+loadMacro()
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(render)
   .catch(() => {
@@ -103,6 +113,9 @@ function render(d){
     $("banner").classList.remove("hidden");
     $("banner").textContent = "Test data: these numbers come from a synthetic test file, not FRED. They are for checking the page only.";
   }
+  const rows = d.monthly;
+  const counts = Object.fromEntries(Object.entries(d.stats).map(([k,v]) => [k, v.reduce((n,r) => n+r.months,0)]));
+  $("coverage").textContent = `${rows[0].month} to ${rows[rows.length-1].month}: ${rows.length} completed monthly observations. Eligible forward-return months: yield curve ${counts.curve_regime}, inflation ${counts.inflation_regime}, credit ${counts.credit_regime}. Results rebuilt ${d.generated_utc} UTC from ${d.refresh_mode || "FRED data"}.`;
   const byRegime = (list, name) => list.find(x => x.regime === name);
   const inv = byRegime(d.stats.curve_regime, "Inverted"), norm = byRegime(d.stats.curve_regime, "Normal");
   let text = "Not enough data to compare regimes yet.";

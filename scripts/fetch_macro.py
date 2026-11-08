@@ -71,10 +71,13 @@ def parse_fred(text):
     return out
 
 
-def to_monthly_last(points):
+def to_monthly_last(points, before_month=None):
     """Last valid observation in each calendar month, keyed 'YYYY-MM'."""
+    before_month = before_month or datetime.now(timezone.utc).strftime("%Y-%m")
     m = {}
     for d, v in points:
+        if d[:7] >= before_month:
+            continue
         m[d[:7]] = v
     return m
 
@@ -135,15 +138,18 @@ def regime_stats(rows, field):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="data")
+    ap.add_argument("--saved-source", help="rebuild from previously downloaded real FRED CSVs")
     ap.add_argument("--fixture", help="directory containing <SERIES>.csv files (testing only)")
     args = ap.parse_args()
 
+    if args.fixture and args.saved_source:
+        ap.error("Choose either --fixture or --saved-source")
     os.makedirs(os.path.join(args.out, "raw"), exist_ok=True)
     monthly = {}
     meta = {}
     for sid, desc in SERIES.items():
-        if args.fixture:
-            with open(os.path.join(args.fixture, f"{sid}.csv"), encoding="utf-8") as f:
+        if args.fixture or args.saved_source:
+            with open(os.path.join(args.fixture or args.saved_source, f"{sid}.csv"), encoding="utf-8") as f:
                 text = f.read()
         else:
             text = download(sid)
@@ -159,11 +165,13 @@ def main():
     if len(rows) < 36:
         sys.exit(f"Only {len(rows)} overlapping months; refusing to publish results")
 
-    # CPI is published with a lag, so the snapshot uses the latest month where every input exists
-    latest = next((r for r in reversed(rows) if r["cpi_yoy"] is not None), rows[-1])
+    # A common snapshot requires all inputs; historical comparisons retain optional credit gaps.
+    latest = next((r for r in reversed(rows) if r["cpi_yoy"] is not None and r["hy_spread"] is not None), rows[-1])
     results = {
         "generated_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M"),
         "synthetic": bool(args.fixture),
+        "refresh_mode": "test fixture" if args.fixture else "stored FRED downloads" if args.saved_source else "fresh FRED download",
+        "sample": {"first_month": rows[0]["month"], "last_month": rows[-1]["month"], "monthly_rows": len(rows)},
         "source": "FRED (Federal Reserve Bank of St. Louis), public CSV endpoint",
         "definitions": {
             "curve": "Inverted when the 10Y-2Y spread is below 0",
@@ -184,6 +192,8 @@ def main():
             "FRED's S&P 500 series covers only about the last ten years, so some regimes have few months.",
             "FRED's high-yield spread covers only about the last three years, so credit-regime results rest on far fewer months than the yield-curve results.",
             "Price return only (no dividends). Historical regime differences are descriptive, not a forecast.",
+            "The current partial calendar month is excluded; forward returns require a full 12-month endpoint.",
+            "Regimes use reported macro data and may contain later revisions. Release lags are not modeled; this is not a real-time trading backtest.",
         ],
     }
     with open(os.path.join(args.out, "macro_results.json"), "w", encoding="utf-8") as f:
