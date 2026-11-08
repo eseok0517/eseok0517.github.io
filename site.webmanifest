@@ -1,0 +1,21 @@
+{
+  "name": "Ehahn Seok | Finance & Operations Analytics",
+  "short_name": "ES Portfolio",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png?v=c37b28e74941",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png?v=c37b28e74941",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#225500",
+  "background_color": "#fafaf7",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
