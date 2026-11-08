@@ -87,7 +87,9 @@ def month_add(ym, k):
 
 def build_table(monthly):
     sp, curve, cpi, hy = (monthly[k] for k in ("SP500", "T10Y2Y", "CPIAUCSL", "BAMLH0A0HYM2"))
-    months = sorted(set(sp) & set(curve) & set(hy))
+    # The high-yield spread series on FRED now covers only about three years, so it must not
+    # limit the sample: use S&P 500 and yield-curve months, and treat credit data as optional.
+    months = sorted(set(sp) & set(curve))
     rows = []
     for ym in months:
         prev = cpi.get(month_add(ym, -12))
@@ -99,12 +101,12 @@ def build_table(monthly):
             "month": ym,
             "sp500": round(sp[ym], 2),
             "curve": round(curve[ym], 3),
-            "hy_spread": round(hy[ym], 3),
+            "hy_spread": round(hy[ym], 3) if ym in hy else None,
             "cpi_yoy": None if yoy is None else round(yoy, 2),
             "fwd12_return": None if fwd is None else round(fwd, 2),
             "curve_regime": "Inverted" if curve[ym] < 0 else "Normal",
             "inflation_regime": None if yoy is None else ("High" if yoy >= INFLATION_HIGH else "Low"),
-            "credit_regime": "Stressed" if hy[ym] >= CREDIT_STRESS else "Calm",
+            "credit_regime": None if ym not in hy else ("Stressed" if hy[ym] >= CREDIT_STRESS else "Calm"),
         })
     return rows
 
@@ -180,6 +182,7 @@ def main():
         "caveats": [
             "Forward-return windows overlap, so consecutive months are not independent observations.",
             "FRED's S&P 500 series covers only about the last ten years, so some regimes have few months.",
+            "FRED's high-yield spread covers only about the last three years, so credit-regime results rest on far fewer months than the yield-curve results.",
             "Price return only (no dividends). Historical regime differences are descriptive, not a forecast.",
         ],
     }

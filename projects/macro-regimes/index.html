@@ -117,7 +117,7 @@ function render(d){
     ["Latest month", L.month, "all inputs available"],
     ["10Y-2Y spread", L.curve.toFixed(2) + " pts", L.curve_regime + " curve"],
     ["Inflation (CPI YoY)", L.cpi_yoy == null ? "n/a" : L.cpi_yoy.toFixed(1) + "%", (L.inflation_regime || "n/a") + " regime"],
-    ["High-yield spread", L.hy_spread.toFixed(2) + "%", L.credit_regime + " credit"]
+    ["High-yield spread", L.hy_spread == null ? "n/a" : L.hy_spread.toFixed(2) + "%", (L.credit_regime || "no data") + " credit"]
   ].map(([l, v, s]) => `<div class="kpi"><div class="l">${l}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join("");
 
   drawChart(d.monthly);
