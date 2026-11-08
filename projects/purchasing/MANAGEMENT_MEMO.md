@@ -1,3 +1,5 @@
+> **Original synthetic scenario:** This document describes the separate model at [scenario.html](scenario.html). For the real public procurement case, see [PUBLIC_DATA.md](PUBLIC_DATA.md).
+
 # Management memo: manufacturing purchasing strategy
 
 To: Manufacturing finance and procurement review

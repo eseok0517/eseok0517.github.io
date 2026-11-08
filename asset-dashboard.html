@@ -71,8 +71,8 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
   <a class="breadcrumb" href="projects/asset-analysis/">Selected work / Asset register review / Dashboard</a><p class="eyebrow">Working tool · Asset analysis</p>
   <h1>Asset KPI Dashboard</h1>
   <p class="notes">Interactive prototype · <a href="projects/asset-analysis/">Read the method and business interpretation</a></p>
-  <p class="sub">Upload an asset register (CSV or Excel). The tool maps your columns, cleans the data, estimates book value, measures the portfolio against adjustable targets, and lists the assets that need attention.</p>
-</div><aside class="profile case-summary"><p class="eyebrow">At a glance</p><dl><div><dt>Start here</dt><dd>Try the simulated sample or upload a register</dd></div><div><dt>Required fields</dt><dd>Asset ID and acquisition cost</dd></div><div><dt>Data handling</dt><dd>Files processed locally in your browser</dd></div><div><dt>Outputs</dt><dd>Cleaned data and exception CSVs</dd></div></dl></aside></section>
+  <p class="sub">Upload an asset register (CSV or Excel). The tool maps your columns, cleans the data, estimates book value when supported, measures the portfolio against adjustable targets, and lists the assets that need attention.</p>
+</div><aside class="profile case-summary"><p class="eyebrow">At a glance</p><dl><div><dt>Start here</dt><dd>Load Seattle’s public register or upload your own</dd></div><div><dt>Required fields</dt><dd>Asset ID and acquisition cost</dd></div><div><dt>Data handling</dt><dd>Files processed locally in your browser</dd></div><div><dt>Outputs</dt><dd>Cleaned data and exception CSVs</dd></div></dl></aside></section>
 
 <section>
   <div id="drop" class="drop" tabindex="0">
@@ -81,11 +81,13 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
     <input id="file" type="file" accept=".csv,.xlsx,.xls" class="hidden">
   </div>
   <div class="row">
-    <button id="btnSample" class="primary">Try sample data</button>
-    <button id="btnSampleCsv">Download sample CSV</button>
+    <button id="btnSeattle" class="primary">Load real Seattle equipment</button>
+    <a class="btn" href="projects/asset-analysis/data/seattle_assets.csv" download>Download public CSV</a>
+    <button id="btnSample">Try synthetic demo</button>
+    <button id="btnSampleCsv">Download synthetic demo CSV</button>
   </div>
   <p class="privacy">Files are processed in your browser and are never uploaded anywhere.</p>
-  <div id="msg"></div>
+  <div id="msg" role="status"></div><p id="source-context" class="notes"></p>
 </section>
 
 <div id="app" class="hidden">
@@ -123,7 +125,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
   <h2>Method and assumptions</h2>
   <ul class="notes">
     <li><b>Net book value</b> uses straight-line depreciation with zero salvage value: cost &times; (1 &minus; age / useful life), floored at 0. Rows with no useful life use the default in Settings.</li>
-    <li><b>Age</b> is measured from the acquisition date to today.</li>
+    <li><b>Age</b> uses acquisition date to today for uploads; public Seattle mode uses in-service date to November 8, 2026. Unsupported public-source metrics are unavailable.</li>
     <li><b>Audited in last 12 months</b> counts assets whose last audit date falls within the past 365 days.</li>
     <li><b>Maintenance cost ratio</b> is total annual maintenance cost divided by total acquisition cost.</li>
     <li><b>Data completeness</b> is the share of filled cells across the columns you mapped.</li>
@@ -176,7 +178,7 @@ const SETTING_DEFS = [
   ["tDup","Target: duplicate IDs, max count",0,1000]
 ];
 
-const state = { headers: [], rows: [], map: {}, settings: {...DEFAULTS}, clean: [], filename: "" };
+const state = { headers: [], rows: [], map: {}, settings: {...DEFAULTS}, clean: [], filename: "", publicFleet: false };
 
 /* ---------- parsing ---------- */
 function parseCSV(text){
@@ -258,14 +260,14 @@ function autoMap(headers){
 
 /* ---------- cleaning + calculations ---------- */
 function buildClean(){
-  const now = Date.now(), s = state.settings, m = state.map;
+  const now = state.publicFleet ? Date.parse("2026-11-08T00:00:00Z") : Date.now(), s = state.settings, m = state.map;
   const get = (r, k) => m[k] == null ? undefined : r[m[k]];
   const out = state.rows.map((r, i) => {
     const o = { row: i + 2 };
     o.id = tidy(get(r,"id"));
     o.name = tidy(get(r,"name"));
     o.category = titleCase(tidy(get(r,"category")));
-    o.location = titleCase(tidy(get(r,"location")));
+    o.location = state.publicFleet ? tidy(get(r,"location")) : titleCase(tidy(get(r,"location")));
     o.acquired = parseDate(get(r,"acquired"));
     o.cost = parseNum(get(r,"cost"));
     o.life = parseNum(get(r,"life"));
@@ -274,8 +276,10 @@ function buildClean(){
     o.maint = parseNum(get(r,"maint"));
     o.age = o.acquired ? Math.max(0, (now - o.acquired.getTime()) / MS_YEAR) : null;
     const life = (o.life && o.life > 0) ? o.life : s.defaultLife;
-    o.pastLife = o.age != null ? o.age >= life : null;
-    o.nbv = (o.cost != null && o.age != null) ? Math.max(0, o.cost * (1 - o.age / life)) : null;
+    o.pastLife = !state.publicFleet && o.age != null ? o.age >= life : null;
+    o.nbv = (!state.publicFleet && o.cost != null && o.age != null) ? Math.max(0, o.cost * (1 - o.age / life)) : null;
+    o.publicFlags = state.publicFleet ? String(r[state.headers.indexOf("review_flags")] || "").split("; ").filter(Boolean) : [];
+    o.plannedYear = state.publicFleet ? r[state.headers.indexOf("planned_replacement_year")] : "";
     o.auditedRecent = o.audit ? (now - o.audit.getTime()) <= MS_YEAR : false;
     return o;
   });
@@ -308,8 +312,8 @@ function computeKPIs(){
   return {
     count: n,
     totalCost,
-    nbv: has("acquired") ? nbv : null,
-    nbvPct: has("acquired") && costOfNbvRows ? nbv / costOfNbvRows * 100 : null,
+    nbv: withNbv.length ? nbv : null,
+    nbvPct: withNbv.length && costOfNbvRows ? nbv / costOfNbvRows * 100 : null,
     avgAge: ages.length ? sum(ages) / ages.length : null,
     pastLifePct: pastDen ? d.filter(o => o.pastLife).length / pastDen * 100 : null,
     pastLifeN: d.filter(o => o.pastLife).length,
@@ -340,7 +344,7 @@ const STATUS_TEXT = {ok:"On target", warn:"Near target", bad:"Off target", na:"N
 function renderMapping(){
   const opts = ['<option value="-1">(none)</option>'].concat(state.headers.map((h, i) => `<option value="${i}">${esc(h || "(blank header " + (i+1) + ")")}</option>`)).join("");
   $("mapping").innerHTML = FIELDS.map(f =>
-    `<label class="f">${esc(f.label)}${f.required ? " *" : ""}<select data-key="${f.key}">${opts}</select></label>`).join("");
+    `<label class="f">${esc(state.publicFleet ? ({location:"Department (grouping)",acquired:"In-service date",cost:"In-service cost"}[f.key] || f.label) : f.label)}${f.required ? " *" : ""}<select data-key="${f.key}">${opts}</select></label>`).join("");
   document.querySelectorAll("#mapping select").forEach(sel => {
     const v = state.map[sel.dataset.key];
     sel.value = v == null ? "-1" : String(v);
@@ -348,7 +352,7 @@ function renderMapping(){
   $("fileinfo").textContent = `${state.filename}: ${state.rows.length.toLocaleString()} rows, ${state.headers.length} columns`;
 }
 function renderSettings(){
-  $("settings").innerHTML = SETTING_DEFS.map(([k, label, min, max]) =>
+  $("settings").innerHTML = SETTING_DEFS.filter(([k]) => !state.publicFleet || ["tComplete","tDup"].includes(k)).map(([k, label, min, max]) =>
     `<label class="f">${esc(label)}<input type="number" data-k="${k}" min="${min}" max="${max}" step="any" value="${state.settings[k]}"></label>`).join("");
   document.querySelectorAll("#settings input").forEach(inp => inp.addEventListener("input", () => {
     const v = parseFloat(inp.value);
@@ -361,13 +365,27 @@ function kpiCard(label, value, sub, st, target){
 }
 function renderKPIs(k){
   const s = state.settings;
+  if (state.publicFleet){
+    const replacement = state.clean.filter(o => o.publicFlags.includes("Planned replacement year reached")).length;
+    const costReview = state.clean.filter(o => o.cost == null || o.cost <= 0).length;
+    $("kpis").innerHTML = [
+      kpiCard("Equipment records", k.count.toLocaleString(), "ID-less source summary row excluded", "na"),
+      kpiCard("Recorded in-service cost", fmtMoneyShort(k.totalCost), fmtMoney(k.totalCost), "na"),
+      kpiCard("Average in-service age", k.avgAge == null ? "n/a" : k.avgAge.toFixed(1) + " yrs", "as of November 8, 2026", "na"),
+      kpiCard("Planned replacement year reached", replacement.toLocaleString(), "year ≤ 2026; validate plans before action", "na"),
+      kpiCard("Cost records to review", costReview.toLocaleString(), "missing or nonpositive recorded cost", "na"),
+      kpiCard("Mapped-field completeness", fmtPct(k.completePct), "does not measure all source or audit fields", status(k.completePct,s.tComplete,"min"), "min " + s.tComplete + "%"),
+      kpiCard("Duplicate equipment IDs", k.dups.toLocaleString(), "records sharing an ID", status(k.dups,s.tDup,"max"), "max " + s.tDup)
+    ].join("");
+    return;
+  }
   const cards = [
     kpiCard("Assets", k.count.toLocaleString(), "records in register", "na"),
-    kpiCard("Total acquisition cost", fmtMoneyShort(k.totalCost), fmtMoney(k.totalCost), "na"),
-    kpiCard("Net book value (est.)", k.nbv == null ? "n/a" : fmtMoneyShort(k.nbv), k.nbvPct == null ? "needs acquisition date" : fmtPct(k.nbvPct) + " of cost remaining", "na"),
-    kpiCard("Average age", k.avgAge == null ? "n/a" : k.avgAge.toFixed(1) + " yrs", "from acquisition date", "na"),
-    kpiCard("Past useful life", fmtPct(k.pastLifePct), `${k.pastLifeN.toLocaleString()} assets`, status(k.pastLifePct, s.tPastLife, "max"), "max " + s.tPastLife + "%"),
-    kpiCard("Poor condition", fmtPct(k.poorPct), `${k.poorN.toLocaleString()} assets`, status(k.poorPct, s.tPoor, "max"), "max " + s.tPoor + "%"),
+    kpiCard(state.publicFleet ? "Recorded in-service cost" : "Total acquisition cost", fmtMoneyShort(k.totalCost), fmtMoney(k.totalCost), "na"),
+    kpiCard("Net book value (est.)", k.nbv == null ? "n/a" : fmtMoneyShort(k.nbv), k.nbvPct == null ? (state.publicFleet ? "not supplied by public source" : "needs acquisition date") : fmtPct(k.nbvPct) + " of cost remaining", "na"),
+    kpiCard("Average age", k.avgAge == null ? "n/a" : k.avgAge.toFixed(1) + " yrs", state.publicFleet ? "from in-service date; as of Nov 8, 2026" : "from acquisition date", "na"),
+    kpiCard("Past useful life", fmtPct(k.pastLifePct), k.pastLifePct == null ? "useful life not supplied" : `${k.pastLifeN.toLocaleString()} assets`, status(k.pastLifePct, s.tPastLife, "max"), "max " + s.tPastLife + "%"),
+    kpiCard("Poor condition", fmtPct(k.poorPct), k.poorPct == null ? "condition not supplied" : `${k.poorN.toLocaleString()} assets`, status(k.poorPct, s.tPoor, "max"), "max " + s.tPoor + "%"),
     kpiCard("Audited in last 12 months", fmtPct(k.auditPct), k.auditPct == null ? "needs last audit date" : `${k.auditOverdue.toLocaleString()} overdue or never`, status(k.auditPct, s.tAudit, "min"), "min " + s.tAudit + "%"),
     kpiCard("Maintenance cost ratio", fmtPct(k.maintRatio), k.maintRatio == null ? "needs maintenance cost" : fmtMoney(k.maintSum) + " per year", status(k.maintRatio, s.tMaint, "max"), "max " + s.tMaint + "%"),
     kpiCard("Data completeness", fmtPct(k.completePct), "filled cells, mapped columns", status(k.completePct, s.tComplete, "min"), "min " + s.tComplete + "%"),
@@ -415,7 +433,7 @@ function renderCharts(){
   const m = state.map;
   $("charts").innerHTML = [
     m.category != null ? barChart("Cost by category", groupSum("category")) : "",
-    m.location != null ? barChart("Cost by location", groupSum("location")) : "",
+    m.location != null ? barChart(state.publicFleet ? "Cost by department" : "Cost by location", groupSum("location")) : "",
     m.acquired != null ? ageChart() : "",
     conditionChart()
   ].join("") || '<p class="notes">Map category, location, acquisition date, or condition to see breakdowns.</p>';
@@ -424,6 +442,8 @@ function renderCharts(){
 /* exceptions */
 const FILTERS = [
   ["all","All exceptions", o => o.flags.length > 0],
+  ["planned","Planned replacement year reached (public data)", o => o.flags.includes("Planned replacement year reached")],
+  ["cost","Missing/nonpositive cost (public data)", o => o.flags.includes("Missing/nonpositive in-service cost")],
   ["pastlife","Past useful life", o => o.pastLife === true],
   ["poor","Poor condition", o => o.condition === "Poor"],
   ["audit","Audit overdue or never audited", o => state.map.audit != null && !o.auditedRecent],
@@ -431,6 +451,7 @@ const FILTERS = [
   ["dup","Duplicate ID", o => o.dup]
 ];
 function flagsFor(o){
+  if (state.publicFleet) return [...o.publicFlags, ...(o.dup ? ["Duplicate ID"] : [])];
   const f = [];
   if (o.pastLife) f.push("Past life");
   if (o.condition === "Poor") f.push("Poor condition");
@@ -454,9 +475,9 @@ function renderExceptions(){
   const list = currentExceptions();
   const shown = list.slice(0, 100);
   $("exCount").textContent = `${list.length.toLocaleString()} matching assets` + (list.length > 100 ? " (showing first 100; export for the full list)" : "");
-  const head = ["Row","ID","Name","Category","Location","Cost","Age (yrs)","Condition","Flags"];
+  const head = ["Row","ID","Name","Category",state.publicFleet ? "Department" : "Location","Cost","Age (yrs)",state.publicFleet ? "Planned replacement year" : "Condition","Flags"];
   $("exTable").innerHTML = "<thead><tr>" + head.map(h => `<th>${h}</th>`).join("") + "</tr></thead><tbody>" +
-    shown.map(o => `<tr><td class="num">${o.row}</td><td>${esc(o.id ?? "")}</td><td>${esc(o.name ?? "")}</td><td>${esc(o.category ?? "")}</td><td>${esc(o.location ?? "")}</td><td class="num">${o.cost == null ? "" : fmtMoney(o.cost)}</td><td class="num">${o.age == null ? "" : o.age.toFixed(1)}</td><td>${esc(o.condition ?? "")}</td><td>${o.flags.map(f => `<span class="flag">${esc(f)}</span>`).join("")}</td></tr>`).join("") +
+    shown.map(o => `<tr><td class="num">${o.row}</td><td>${esc(o.id ?? "")}</td><td>${esc(o.name ?? "")}</td><td>${esc(o.category ?? "")}</td><td>${esc(o.location ?? "")}</td><td class="num">${o.cost == null ? "" : fmtMoney(o.cost)}</td><td class="num">${o.age == null ? "" : o.age.toFixed(1)}</td><td>${esc(state.publicFleet ? o.plannedYear : (o.condition ?? ""))}</td><td>${o.flags.map(f => `<span class="flag">${esc(f)}</span>`).join("")}</td></tr>`).join("") +
     "</tbody>";
 }
 
@@ -479,19 +500,24 @@ function download(name, text){
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 function cleanRows(list){
-  const head = ["row","asset_id","name","category","location","acquisition_date","cost","useful_life_years","condition","last_audit_date","annual_maintenance_cost","age_years","net_book_value_est","flags"];
-  return [head].concat(list.map(o => [o.row, o.id, o.name, o.category, o.location, iso(o.acquired), o.cost, o.life, o.condition, iso(o.audit), o.maint, o.age == null ? "" : o.age.toFixed(2), o.nbv == null ? "" : o.nbv.toFixed(2), (o.flags || flagsFor(o)).join("; ")]));
+  const head = ["row","asset_id","name","category","location","acquisition_date","cost","useful_life_years","condition","last_audit_date","annual_maintenance_cost","age_years","net_book_value_est","planned_replacement_year","flags"];
+  if (state.publicFleet){ head[4] = "department"; head[5] = "in_service_date"; head[6] = "in_service_cost"; }
+  return [head].concat(list.map(o => [o.row, o.id, o.name, o.category, o.location, iso(o.acquired), o.cost, o.life, o.condition, iso(o.audit), o.maint, o.age == null ? "" : o.age.toFixed(2), o.nbv == null ? "" : o.nbv.toFixed(2), o.plannedYear || "", (o.flags || flagsFor(o)).join("; ")]));
 }
 
 /* ---------- loading ---------- */
 function setMsg(text, isErr){ const m = $("msg"); m.textContent = text || ""; m.className = isErr ? "err" : ""; }
-function loadTable(table, filename){
+function loadTable(table, filename, publicFleet = false){
+  state.publicFleet = publicFleet;
+  $("filter").value = "all";
+  $("source-context").textContent = publicFleet ? "Source: City of Seattle Active Fleet Complement, retrieved November 8, 2026. One ID-less summary row excluded. Department is mapped to the location grouping; cost and age use in-service fields. Book value, useful life, audit coverage, condition, and maintenance are unavailable. Completeness describes mapped fields only. Replacement-year flags are planning review prompts, not proof of overdue replacement." : "Uploads use your mapped fields and editable assumptions. The synthetic demo is generated sample data, not company records.";
   table = table.filter(r => r.some(c => c != null && String(c).trim() !== ""));
   if (table.length < 2){ setMsg("That file needs a header row and at least one data row.", true); return; }
   state.headers = table[0].map(h => String(h ?? "").trim());
   state.rows = table.slice(1).map(r => state.headers.map((_, i) => r[i] ?? ""));
   state.filename = filename;
   state.map = autoMap(state.headers);
+  if (publicFleet) state.map = {id:0,name:1,category:2,location:3,acquired:4,cost:5};
   $("app").classList.remove("hidden");
   renderMapping(); renderSettings();
   if (state.map.id == null || state.map.cost == null){
@@ -576,6 +602,16 @@ fileInput.addEventListener("change", () => handleFile(fileInput.files[0]));
 ["dragenter","dragover"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("over"); }));
 ["dragleave","drop"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("over"); }));
 drop.addEventListener("drop", e => handleFile(e.dataTransfer.files[0]));
+async function loadSeattle(){
+  $("btnSeattle").disabled = true; setMsg("Loading real public equipment records…");
+  try {
+    const r = await fetch("projects/asset-analysis/data/seattle_assets.csv");
+    if (!r.ok) throw Error("Download failed");
+    loadTable(parseCSV(await r.text()), "Seattle public equipment · Nov 8, 2026", true);
+  } catch(e){setMsg("Public snapshot could not load. Download the public CSV or upload a register.", true);}
+  finally {$("btnSeattle").disabled = false;}
+}
+$("btnSeattle").addEventListener("click", loadSeattle);
 $("btnSample").addEventListener("click", () => loadTable(sampleTable(), "Sample data (simulated)"));
 $("btnSampleCsv").addEventListener("click", () => download("sample_asset_register.csv", toCSV(sampleTable())));
 $("btnApply").addEventListener("click", () => {
@@ -589,7 +625,8 @@ $("btnApply").addEventListener("click", () => {
 $("filter").addEventListener("change", renderExceptions);
 $("btnExportEx").addEventListener("click", () => download("asset_exceptions.csv", toCSV(cleanRows(currentExceptions()))));
 $("btnExportClean").addEventListener("click", () => { state.clean.forEach(o => o.flags = flagsFor(o)); download("asset_register_cleaned.csv", toCSV(cleanRows(state.clean))); });
-if (new URLSearchParams(location.search).get("demo") === "1") loadTable(sampleTable(), "Sample data (simulated)");
+if (new URLSearchParams(location.search).get("source") === "seattle") loadSeattle();
+else if (new URLSearchParams(location.search).get("demo") === "1") loadTable(sampleTable(), "Sample data (simulated)");
 </script>
 </body>
 </html>

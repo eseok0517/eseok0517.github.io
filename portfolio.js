@@ -2,11 +2,11 @@
 const moneyShort=n=>'$'+(n/1e6).toFixed(2)+'M';
 const dollars=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
 async function purchasingPreview(){
- const r=await fetch('projects/purchasing/data/analysis.json');if(!r.ok)throw Error('Purchasing data unavailable');const d=await r.json();
- const summaries=['Current','Frequent','Bulk'].map(policy=>d.policies.filter(r=>r.policy===policy).reduce((a,r)=>({policy,capital:a.capital+r.avg_inventory_value,filled:a.filled+r.filled_units,demand:a.demand+r.demand_units}),{policy,capital:0,filled:0,demand:0}));
- const max=Math.max(...summaries.map(x=>x.capital));
- document.getElementById('purchase-bars').innerHTML=summaries.map(x=>`<div class="preview-bar"><div class="preview-bar-label"><span>${x.policy}</span><strong>${moneyShort(x.capital)}</strong></div><div class="preview-track"><i style="width:${100*x.capital/max}%"></i></div></div>`).join('');
- const [a,b]=summaries;document.getElementById('purchasing-finding').textContent=`Frequent ordering reduces modeled average inventory by ${dollars(a.capital-b.capital)}, while unit fill rate falls from ${(100*a.filled/a.demand).toFixed(2)}% to ${(100*b.filled/b.demand).toFixed(2)}%.`;
+ const r=await fetch('projects/purchasing/data/public/summary.json');if(!r.ok)throw Error('Purchasing data unavailable');const d=await r.json();
+ const labels={'Manufacturing Components and Supplies':'Manufacturing components','Tools and General Machinery':'Tools & machinery','Electrical Systems and Lighting and Components and Accessories and Supplies':'Electrical supplies'};
+ const rows=Object.entries(d.categories).map(([name,v])=>({name:labels[name]||name,value:v.positive_spend}));const max=Math.max(...rows.map(x=>x.value));
+ document.getElementById('purchase-bars').innerHTML=rows.map(x=>`<div class="preview-bar"><div class="preview-bar-label"><span>${x.name}</span><strong>${moneyShort(x.value)}</strong></div><div class="preview-track"><i style="width:${100*x.value/max}%"></i></div></div>`).join('');
+ document.getElementById('purchasing-finding').textContent=`${d.all.flagged.toLocaleString()} of ${d.all.rows.toLocaleString()} selected records trigger review rules. Flags identify follow-up candidates, not confirmed errors or savings.`;
 }
 async function macroPreview(){
  const local='data/macro_results.json';

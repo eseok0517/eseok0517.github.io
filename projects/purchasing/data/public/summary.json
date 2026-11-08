@@ -1,0 +1,4085 @@
+{
+  "source_url": "https://publish.data.ca.gov/dataset/ae343670-f827-4bc8-9d44-2af937d60190/resource/bb82edc5-9c78-44e2-8947-68ece26197c5/download/purchase-order-data-2012-2015-.csv",
+  "retrieved_on": "2026-11-08",
+  "source_sha256": "45aa37a683e308c17c28c2edaadf08692be18ed17131afe8edf2e701abc6c9b5",
+  "source_rows": 344504,
+  "selection": [
+    "Electrical Systems and Lighting and Components and Accessories and Supplies",
+    "Manufacturing Components and Supplies",
+    "Tools and General Machinery"
+  ],
+  "scope": "Selected source line records; no deduplication or demand inference",
+  "all": {
+    "rows": 14823,
+    "positive_spend": 217738525.6,
+    "suppliers": 1843,
+    "pos": 7590,
+    "flagged": 862,
+    "top5_share": 25.739218287422812,
+    "top_suppliers": [
+      {
+        "name": "Power Costs Inc.",
+        "value": 20000000.0
+      },
+      {
+        "name": "General Electric International, Inc",
+        "value": 12000000.0
+      },
+      {
+        "name": "Unico Mechanical",
+        "value": 9005902.92
+      },
+      {
+        "name": "Unknown",
+        "value": 7860156.48
+      },
+      {
+        "name": "Department of Fish and Game",
+        "value": 7178135.0
+      },
+      {
+        "name": "Ennis Traffic Safety Solutions",
+        "value": 7073842.01
+      },
+      {
+        "name": "Reclamation District 830, Jersey Island",
+        "value": 6000000.0
+      },
+      {
+        "name": "Grainger Industrial Supply",
+        "value": 5841613.64
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2010-01",
+        "value": 1249000.0
+      },
+      {
+        "month": "2010-02",
+        "value": 397812.0
+      },
+      {
+        "month": "2010-04",
+        "value": 804825.5
+      },
+      {
+        "month": "2010-06",
+        "value": 709839.96
+      },
+      {
+        "month": "2010-09",
+        "value": 24841.06
+      },
+      {
+        "month": "2010-10",
+        "value": 26448.23
+      },
+      {
+        "month": "2011-02",
+        "value": 5400.0
+      },
+      {
+        "month": "2011-03",
+        "value": 7602.0
+      },
+      {
+        "month": "2011-04",
+        "value": 343942.0
+      },
+      {
+        "month": "2011-05",
+        "value": 7178237.0
+      },
+      {
+        "month": "2011-06",
+        "value": 29149.69
+      },
+      {
+        "month": "2011-08",
+        "value": 51690.65
+      },
+      {
+        "month": "2011-09",
+        "value": 9812.6
+      },
+      {
+        "month": "2011-10",
+        "value": 4690.0
+      },
+      {
+        "month": "2011-11",
+        "value": 21194.97
+      },
+      {
+        "month": "2011-12",
+        "value": 105966.0
+      },
+      {
+        "month": "2012-01",
+        "value": 195180.72
+      },
+      {
+        "month": "2012-02",
+        "value": 94996.21
+      },
+      {
+        "month": "2012-03",
+        "value": 2098.13
+      },
+      {
+        "month": "2012-04",
+        "value": 8629.7
+      },
+      {
+        "month": "2012-05",
+        "value": 733952.82
+      },
+      {
+        "month": "2012-06",
+        "value": 3920815.67
+      },
+      {
+        "month": "2012-07",
+        "value": 1323301.98
+      },
+      {
+        "month": "2012-08",
+        "value": 2290144.65
+      },
+      {
+        "month": "2012-09",
+        "value": 6166021.44
+      },
+      {
+        "month": "2012-10",
+        "value": 4295173.8
+      },
+      {
+        "month": "2012-11",
+        "value": 2507371.0
+      },
+      {
+        "month": "2012-12",
+        "value": 2920364.01
+      },
+      {
+        "month": "2013-01",
+        "value": 14001213.37
+      },
+      {
+        "month": "2013-02",
+        "value": 2979827.8
+      },
+      {
+        "month": "2013-03",
+        "value": 4878435.66
+      },
+      {
+        "month": "2013-04",
+        "value": 3678047.38
+      },
+      {
+        "month": "2013-05",
+        "value": 3483492.71
+      },
+      {
+        "month": "2013-06",
+        "value": 5637491.28
+      },
+      {
+        "month": "2013-07",
+        "value": 4249886.23
+      },
+      {
+        "month": "2013-08",
+        "value": 5758669.48
+      },
+      {
+        "month": "2013-09",
+        "value": 1807614.57
+      },
+      {
+        "month": "2013-10",
+        "value": 22005537.32
+      },
+      {
+        "month": "2013-11",
+        "value": 2297496.95
+      },
+      {
+        "month": "2013-12",
+        "value": 3023156.08
+      },
+      {
+        "month": "2014-01",
+        "value": 3126105.57
+      },
+      {
+        "month": "2014-02",
+        "value": 2656276.05
+      },
+      {
+        "month": "2014-03",
+        "value": 8962567.96
+      },
+      {
+        "month": "2014-04",
+        "value": 4087473.55
+      },
+      {
+        "month": "2014-05",
+        "value": 3001478.31
+      },
+      {
+        "month": "2014-06",
+        "value": 7520280.84
+      },
+      {
+        "month": "2014-07",
+        "value": 3922271.57
+      },
+      {
+        "month": "2014-08",
+        "value": 9232837.31
+      },
+      {
+        "month": "2014-09",
+        "value": 1896113.93
+      },
+      {
+        "month": "2014-10",
+        "value": 2664688.38
+      },
+      {
+        "month": "2014-11",
+        "value": 2089547.89
+      },
+      {
+        "month": "2014-12",
+        "value": 28249804.35
+      },
+      {
+        "month": "2015-01",
+        "value": 6807191.83
+      },
+      {
+        "month": "2015-02",
+        "value": 1939893.91
+      },
+      {
+        "month": "2015-03",
+        "value": 5941400.5
+      },
+      {
+        "month": "2015-04",
+        "value": 5632962.65
+      },
+      {
+        "month": "2015-05",
+        "value": 5492843.22
+      },
+      {
+        "month": "2015-06",
+        "value": 4984581.73
+      },
+      {
+        "month": "2015-07",
+        "value": 280263.97
+      },
+      {
+        "month": "2015-08",
+        "value": 4812.28
+      },
+      {
+        "month": "2015-11",
+        "value": 780.0
+      },
+      {
+        "month": "2016-04",
+        "value": 5018.18
+      },
+      {
+        "month": "2019-09",
+        "value": 9961.0
+      }
+    ],
+    "flags": {
+      "Repeated line candidate": 281,
+      "Missing/invalid purchase date": 370,
+      "Extended amount review": 106,
+      "Implausible purchase date": 6,
+      "Nonpositive/missing unit price": 110,
+      "Nonpositive/missing total": 110,
+      "Missing supplier code": 1
+    }
+  },
+  "categories": {
+    "Electrical Systems and Lighting and Components and Accessories and Supplies": {
+      "rows": 5725,
+      "positive_spend": 138206527.07,
+      "suppliers": 1014,
+      "pos": 3401,
+      "flagged": 332,
+      "top5_share": 35.81482987770152,
+      "top_suppliers": [
+        {
+          "name": "Power Costs Inc.",
+          "value": 20000000.0
+        },
+        {
+          "name": "General Electric International, Inc",
+          "value": 12000000.0
+        },
+        {
+          "name": "Unknown",
+          "value": 7212230.55
+        },
+        {
+          "name": "Reclamation District 830, Jersey Island",
+          "value": 6000000.0
+        },
+        {
+          "name": "ECOLOGY AND ENVIRONMENT INC",
+          "value": 4286202.0
+        },
+        {
+          "name": "Westervelt Ecological Services",
+          "value": 4164000.0
+        },
+        {
+          "name": "Grainger Industrial Supply",
+          "value": 3131015.83
+        },
+        {
+          "name": "Leotek Electronics",
+          "value": 2609280.57
+        }
+      ],
+      "monthly": [
+        {
+          "month": "2010-01",
+          "value": 1249000.0
+        },
+        {
+          "month": "2010-02",
+          "value": 397812.0
+        },
+        {
+          "month": "2010-04",
+          "value": 804825.5
+        },
+        {
+          "month": "2010-06",
+          "value": 709839.96
+        },
+        {
+          "month": "2010-09",
+          "value": 24841.06
+        },
+        {
+          "month": "2011-02",
+          "value": 5400.0
+        },
+        {
+          "month": "2011-03",
+          "value": 6102.0
+        },
+        {
+          "month": "2011-04",
+          "value": 343942.0
+        },
+        {
+          "month": "2011-05",
+          "value": 102.0
+        },
+        {
+          "month": "2011-06",
+          "value": 8385.0
+        },
+        {
+          "month": "2011-09",
+          "value": 9812.6
+        },
+        {
+          "month": "2011-11",
+          "value": 21194.97
+        },
+        {
+          "month": "2011-12",
+          "value": 105966.0
+        },
+        {
+          "month": "2012-01",
+          "value": 195000.0
+        },
+        {
+          "month": "2012-02",
+          "value": 86651.02
+        },
+        {
+          "month": "2012-03",
+          "value": 1824.98
+        },
+        {
+          "month": "2012-04",
+          "value": 8588.42
+        },
+        {
+          "month": "2012-05",
+          "value": 33473.8
+        },
+        {
+          "month": "2012-06",
+          "value": 3660369.47
+        },
+        {
+          "month": "2012-07",
+          "value": 621931.1
+        },
+        {
+          "month": "2012-08",
+          "value": 1546824.59
+        },
+        {
+          "month": "2012-09",
+          "value": 5270847.69
+        },
+        {
+          "month": "2012-10",
+          "value": 2642808.48
+        },
+        {
+          "month": "2012-11",
+          "value": 1505450.76
+        },
+        {
+          "month": "2012-12",
+          "value": 1930942.16
+        },
+        {
+          "month": "2013-01",
+          "value": 1597460.07
+        },
+        {
+          "month": "2013-02",
+          "value": 2367554.22
+        },
+        {
+          "month": "2013-03",
+          "value": 2317645.49
+        },
+        {
+          "month": "2013-04",
+          "value": 1450688.33
+        },
+        {
+          "month": "2013-05",
+          "value": 1665097.2
+        },
+        {
+          "month": "2013-06",
+          "value": 3202192.12
+        },
+        {
+          "month": "2013-07",
+          "value": 3110494.18
+        },
+        {
+          "month": "2013-08",
+          "value": 3661246.48
+        },
+        {
+          "month": "2013-09",
+          "value": 743621.34
+        },
+        {
+          "month": "2013-10",
+          "value": 17161951.72
+        },
+        {
+          "month": "2013-11",
+          "value": 1069527.74
+        },
+        {
+          "month": "2013-12",
+          "value": 1991235.66
+        },
+        {
+          "month": "2014-01",
+          "value": 2019645.38
+        },
+        {
+          "month": "2014-02",
+          "value": 1161237.43
+        },
+        {
+          "month": "2014-03",
+          "value": 7736644.02
+        },
+        {
+          "month": "2014-04",
+          "value": 1455367.48
+        },
+        {
+          "month": "2014-05",
+          "value": 1425653.92
+        },
+        {
+          "month": "2014-06",
+          "value": 4629800.83
+        },
+        {
+          "month": "2014-07",
+          "value": 2860150.42
+        },
+        {
+          "month": "2014-08",
+          "value": 5322797.64
+        },
+        {
+          "month": "2014-09",
+          "value": 705154.73
+        },
+        {
+          "month": "2014-10",
+          "value": 1121121.75
+        },
+        {
+          "month": "2014-11",
+          "value": 1383913.33
+        },
+        {
+          "month": "2014-12",
+          "value": 27496403.75
+        },
+        {
+          "month": "2015-01",
+          "value": 6069348.42
+        },
+        {
+          "month": "2015-02",
+          "value": 625153.62
+        },
+        {
+          "month": "2015-03",
+          "value": 3985559.47
+        },
+        {
+          "month": "2015-04",
+          "value": 3226191.87
+        },
+        {
+          "month": "2015-05",
+          "value": 2993929.0
+        },
+        {
+          "month": "2015-06",
+          "value": 2328153.85
+        },
+        {
+          "month": "2015-07",
+          "value": 114516.77
+        },
+        {
+          "month": "2015-08",
+          "value": 4812.28
+        },
+        {
+          "month": "2015-11",
+          "value": 360.0
+        },
+        {
+          "month": "2019-09",
+          "value": 9961.0
+        }
+      ],
+      "flags": {
+        "Missing/invalid purchase date": 109,
+        "Nonpositive/missing unit price": 70,
+        "Nonpositive/missing total": 70,
+        "Repeated line candidate": 126,
+        "Extended amount review": 30,
+        "Implausible purchase date": 3
+      }
+    },
+    "Manufacturing Components and Supplies": {
+      "rows": 5459,
+      "positive_spend": 42883852.07,
+      "suppliers": 872,
+      "pos": 2964,
+      "flagged": 321,
+      "top5_share": 35.96373778368926,
+      "top_suppliers": [
+        {
+          "name": "Ennis Traffic Safety Solutions",
+          "value": 7073842.01
+        },
+        {
+          "name": "Sturgeon Services International",
+          "value": 3250000.0
+        },
+        {
+          "name": "KINGSBURY INC",
+          "value": 2000000.0
+        },
+        {
+          "name": "Prison Industry Authority",
+          "value": 1911750.48
+        },
+        {
+          "name": "Grainger Industrial Supply",
+          "value": 1187043.62
+        },
+        {
+          "name": "Petrochem Manufacturing, Inc.",
+          "value": 735047.72
+        },
+        {
+          "name": "Secure Detention Products",
+          "value": 621674.03
+        },
+        {
+          "name": "ACE CONSTRUCTION & MAINTENANCE INC.",
+          "value": 618518.25
+        }
+      ],
+      "monthly": [
+        {
+          "month": "2011-03",
+          "value": 1500.0
+        },
+        {
+          "month": "2011-08",
+          "value": 51690.65
+        },
+        {
+          "month": "2011-10",
+          "value": 4690.0
+        },
+        {
+          "month": "2012-02",
+          "value": 943.5
+        },
+        {
+          "month": "2012-03",
+          "value": 273.15
+        },
+        {
+          "month": "2012-04",
+          "value": 11.64
+        },
+        {
+          "month": "2012-05",
+          "value": 148000.17
+        },
+        {
+          "month": "2012-06",
+          "value": 176451.2
+        },
+        {
+          "month": "2012-07",
+          "value": 352871.32
+        },
+        {
+          "month": "2012-08",
+          "value": 549834.94
+        },
+        {
+          "month": "2012-09",
+          "value": 431659.58
+        },
+        {
+          "month": "2012-10",
+          "value": 1203203.74
+        },
+        {
+          "month": "2012-11",
+          "value": 668673.81
+        },
+        {
+          "month": "2012-12",
+          "value": 744804.45
+        },
+        {
+          "month": "2013-01",
+          "value": 3041797.58
+        },
+        {
+          "month": "2013-02",
+          "value": 471905.64
+        },
+        {
+          "month": "2013-03",
+          "value": 1436115.03
+        },
+        {
+          "month": "2013-04",
+          "value": 1624347.31
+        },
+        {
+          "month": "2013-05",
+          "value": 1104635.62
+        },
+        {
+          "month": "2013-06",
+          "value": 1641012.24
+        },
+        {
+          "month": "2013-07",
+          "value": 765135.93
+        },
+        {
+          "month": "2013-08",
+          "value": 1917038.63
+        },
+        {
+          "month": "2013-09",
+          "value": 850758.35
+        },
+        {
+          "month": "2013-10",
+          "value": 4336774.65
+        },
+        {
+          "month": "2013-11",
+          "value": 917713.91
+        },
+        {
+          "month": "2013-12",
+          "value": 767589.56
+        },
+        {
+          "month": "2014-01",
+          "value": 808904.2
+        },
+        {
+          "month": "2014-02",
+          "value": 893196.9
+        },
+        {
+          "month": "2014-03",
+          "value": 946257.74
+        },
+        {
+          "month": "2014-04",
+          "value": 2076011.66
+        },
+        {
+          "month": "2014-05",
+          "value": 1012839.16
+        },
+        {
+          "month": "2014-06",
+          "value": 1099474.16
+        },
+        {
+          "month": "2014-07",
+          "value": 828277.62
+        },
+        {
+          "month": "2014-08",
+          "value": 753103.07
+        },
+        {
+          "month": "2014-09",
+          "value": 855694.55
+        },
+        {
+          "month": "2014-10",
+          "value": 1266212.78
+        },
+        {
+          "month": "2014-11",
+          "value": 432432.05
+        },
+        {
+          "month": "2014-12",
+          "value": 479678.86
+        },
+        {
+          "month": "2015-01",
+          "value": 547374.84
+        },
+        {
+          "month": "2015-02",
+          "value": 734731.95
+        },
+        {
+          "month": "2015-03",
+          "value": 1685183.1
+        },
+        {
+          "month": "2015-04",
+          "value": 2036490.61
+        },
+        {
+          "month": "2015-05",
+          "value": 1500788.73
+        },
+        {
+          "month": "2015-06",
+          "value": 1639084.55
+        },
+        {
+          "month": "2015-07",
+          "value": 73454.76
+        },
+        {
+          "month": "2015-11",
+          "value": 210.0
+        },
+        {
+          "month": "2016-04",
+          "value": 5018.18
+        }
+      ],
+      "flags": {
+        "Missing/invalid purchase date": 153,
+        "Extended amount review": 53,
+        "Implausible purchase date": 3,
+        "Nonpositive/missing unit price": 29,
+        "Nonpositive/missing total": 29,
+        "Repeated line candidate": 87,
+        "Missing supplier code": 1
+      }
+    },
+    "Tools and General Machinery": {
+      "rows": 3639,
+      "positive_spend": 36648146.46,
+      "suppliers": 572,
+      "pos": 1743,
+      "flagged": 209,
+      "top5_share": 56.75783494999709,
+      "top_suppliers": [
+        {
+          "name": "Unico Mechanical",
+          "value": 9000000.0
+        },
+        {
+          "name": "Department of Fish and Game",
+          "value": 7178135.0
+        },
+        {
+          "name": "Professional Tree Care Company",
+          "value": 2491350.0
+        },
+        {
+          "name": "Grainger Industrial Supply",
+          "value": 1523554.19
+        },
+        {
+          "name": "MSC Industrial Supply Co",
+          "value": 607655.29
+        },
+        {
+          "name": "Regents of the University of California, Davis",
+          "value": 499136.0
+        },
+        {
+          "name": "Aramark Uniform & Career Apparel LLC",
+          "value": 460400.64
+        },
+        {
+          "name": "ELITE SUPPLY SOURCE INC",
+          "value": 441736.47
+        }
+      ],
+      "monthly": [
+        {
+          "month": "2010-10",
+          "value": 26448.23
+        },
+        {
+          "month": "2011-05",
+          "value": 7178135.0
+        },
+        {
+          "month": "2011-06",
+          "value": 20764.69
+        },
+        {
+          "month": "2012-01",
+          "value": 180.72
+        },
+        {
+          "month": "2012-02",
+          "value": 7401.69
+        },
+        {
+          "month": "2012-04",
+          "value": 29.64
+        },
+        {
+          "month": "2012-05",
+          "value": 552478.85
+        },
+        {
+          "month": "2012-06",
+          "value": 83995.0
+        },
+        {
+          "month": "2012-07",
+          "value": 348499.56
+        },
+        {
+          "month": "2012-08",
+          "value": 193485.12
+        },
+        {
+          "month": "2012-09",
+          "value": 463514.17
+        },
+        {
+          "month": "2012-10",
+          "value": 449161.58
+        },
+        {
+          "month": "2012-11",
+          "value": 333246.43
+        },
+        {
+          "month": "2012-12",
+          "value": 244617.4
+        },
+        {
+          "month": "2013-01",
+          "value": 9361955.72
+        },
+        {
+          "month": "2013-02",
+          "value": 140367.94
+        },
+        {
+          "month": "2013-03",
+          "value": 1124675.14
+        },
+        {
+          "month": "2013-04",
+          "value": 603011.74
+        },
+        {
+          "month": "2013-05",
+          "value": 713759.89
+        },
+        {
+          "month": "2013-06",
+          "value": 794286.92
+        },
+        {
+          "month": "2013-07",
+          "value": 374256.12
+        },
+        {
+          "month": "2013-08",
+          "value": 180384.37
+        },
+        {
+          "month": "2013-09",
+          "value": 213234.88
+        },
+        {
+          "month": "2013-10",
+          "value": 506810.95
+        },
+        {
+          "month": "2013-11",
+          "value": 310255.3
+        },
+        {
+          "month": "2013-12",
+          "value": 264330.86
+        },
+        {
+          "month": "2014-01",
+          "value": 297555.99
+        },
+        {
+          "month": "2014-02",
+          "value": 601841.72
+        },
+        {
+          "month": "2014-03",
+          "value": 279666.2
+        },
+        {
+          "month": "2014-04",
+          "value": 556094.41
+        },
+        {
+          "month": "2014-05",
+          "value": 562985.23
+        },
+        {
+          "month": "2014-06",
+          "value": 1791005.85
+        },
+        {
+          "month": "2014-07",
+          "value": 233843.53
+        },
+        {
+          "month": "2014-08",
+          "value": 3156936.6
+        },
+        {
+          "month": "2014-09",
+          "value": 335264.65
+        },
+        {
+          "month": "2014-10",
+          "value": 277353.85
+        },
+        {
+          "month": "2014-11",
+          "value": 273202.51
+        },
+        {
+          "month": "2014-12",
+          "value": 273721.74
+        },
+        {
+          "month": "2015-01",
+          "value": 190468.57
+        },
+        {
+          "month": "2015-02",
+          "value": 580008.34
+        },
+        {
+          "month": "2015-03",
+          "value": 270657.93
+        },
+        {
+          "month": "2015-04",
+          "value": 370280.17
+        },
+        {
+          "month": "2015-05",
+          "value": 998125.49
+        },
+        {
+          "month": "2015-06",
+          "value": 1017343.33
+        },
+        {
+          "month": "2015-07",
+          "value": 92292.44
+        },
+        {
+          "month": "2015-11",
+          "value": 210.0
+        }
+      ],
+      "flags": {
+        "Repeated line candidate": 68,
+        "Nonpositive/missing unit price": 11,
+        "Nonpositive/missing total": 11,
+        "Missing/invalid purchase date": 108,
+        "Extended amount review": 23
+      }
+    }
+  },
+  "preview": [
+    {
+      "source_row": 64,
+      "po_number": "4500182023",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "GEORGES AUTO DIESEL ELECTRIC",
+      "category": "Tools and General Machinery",
+      "item": "socket rails",
+      "quantity": "4",
+      "unit_price": "2.50",
+      "total_price": "10.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 209,
+      "po_number": "REQ0015386",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Uline",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Blue and Red Safety Tape 16/CT",
+      "quantity": "1",
+      "unit_price": "651.20",
+      "total_price": "651.20",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 210,
+      "po_number": "S4869001",
+      "department": "Parks & Recreation, Department of",
+      "supplier": "Carpinteria Valley Lumber",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Hex Bolts",
+      "quantity": "60",
+      "unit_price": "1.20",
+      "total_price": "71.82",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 738,
+      "po_number": "S2869003",
+      "department": "Parks & Recreation, Department of",
+      "supplier": "Hayward Lumber & Home Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Nails",
+      "quantity": "1",
+      "unit_price": "64.98",
+      "total_price": "64.98",
+      "flags": "Implausible purchase date; Missing/invalid purchase date"
+    },
+    {
+      "source_row": 908,
+      "po_number": "S2869003",
+      "department": "Parks & Recreation, Department of",
+      "supplier": "Hayward Lumber & Home Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "brackets",
+      "quantity": "150",
+      "unit_price": "0.38",
+      "total_price": "57.00",
+      "flags": "Implausible purchase date; Missing/invalid purchase date"
+    },
+    {
+      "source_row": 1198,
+      "po_number": "CC12-047",
+      "department": "Student Aid Commission",
+      "supplier": "Amazon.com",
+      "category": "Manufacturing Components and Supplies",
+      "item": "CC12-047",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 1271,
+      "po_number": "REQ0010203",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "advance computer service, inc.",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "SP-Lamp-070 - Infocus: Replacement Lamp used with IN122,IN124",
+      "quantity": "2",
+      "unit_price": "178.46",
+      "total_price": "356.92",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 1286,
+      "po_number": "CF120695",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "AT & T Datacomm",
+      "category": "Tools and General Machinery",
+      "item": "Cisco insert Packout Pi MSE Included",
+      "quantity": "46",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 1434,
+      "po_number": "13560045",
+      "department": "State Hospitals, Department of",
+      "supplier": "Fastenal",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Lobe",
+      "quantity": "6000",
+      "unit_price": "0.05",
+      "total_price": "298.80",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 1565,
+      "po_number": "93091",
+      "department": "Social Services, Department of",
+      "supplier": "Ablegov, Inc.",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Power Strip",
+      "quantity": "8",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 2784,
+      "po_number": "4500222892",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "IMPACT WRENCH",
+      "quantity": "1",
+      "unit_price": "575.96",
+      "total_price": "575.96",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 3282,
+      "po_number": "909",
+      "department": "State Hospitals, Department of",
+      "supplier": "Kar Wing Trading Co., Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "boots",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 3617,
+      "po_number": "REQ0011659",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Bagley Enterprises, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "Adapters",
+      "quantity": "1",
+      "unit_price": "425.00",
+      "total_price": "425.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 3962,
+      "po_number": "974",
+      "department": "High Speed Rail Authority, California",
+      "supplier": "Burkett's Office Supplies",
+      "category": "Manufacturing Components and Supplies",
+      "item": "All Purpose Tying Twine",
+      "quantity": "10",
+      "unit_price": "3.97",
+      "total_price": "39.70",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 3975,
+      "po_number": "4500223824",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "SOCKET SET,IMPACT,3/4\" DR",
+      "quantity": "1",
+      "unit_price": "212.63",
+      "total_price": "212.63",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 4110,
+      "po_number": "4500204640",
+      "department": "Water Resources, Department of",
+      "supplier": "CABLE CISCO",
+      "category": "Manufacturing Components and Supplies",
+      "item": "1 1/2\" X 92', S.S.,CABLE,4 1/2 T.P.I.",
+      "quantity": "1",
+      "unit_price": "4800.00",
+      "total_price": "4800.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 4847,
+      "po_number": "SN253174",
+      "department": "Developmental Services, Department of",
+      "supplier": "KANAYA CONSTRUCTION INC",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Casters",
+      "quantity": "2",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 4937,
+      "po_number": "REQ0009378",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "River City Office Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Caution Tape 1000 YL",
+      "quantity": "1",
+      "unit_price": "13.65",
+      "total_price": "13.65",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 5409,
+      "po_number": "13FO1106",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "All Business Machines, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "Test Set 5VYE2",
+      "quantity": "1",
+      "unit_price": "120.53",
+      "total_price": "120.53",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 5568,
+      "po_number": "12-G0492",
+      "department": "Pesticide Regulation, Department of",
+      "supplier": "Horizon Business Solutions, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Flags",
+      "quantity": "4",
+      "unit_price": "3.67",
+      "total_price": "14.68",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 5609,
+      "po_number": "12-G0492",
+      "department": "Pesticide Regulation, Department of",
+      "supplier": "Horizon Business Solutions, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Pens",
+      "quantity": "3",
+      "unit_price": "18.21",
+      "total_price": "54.63",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 5676,
+      "po_number": "AF55164",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "Standard Aero Business Services LLC",
+      "category": "Manufacturing Components and Supplies",
+      "item": "GASKET",
+      "quantity": "144",
+      "unit_price": "40.00",
+      "total_price": "5759.28",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 5872,
+      "po_number": "REQ0008785",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "River City Office Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Tape. 2\"x55YD, 6/PK, CR",
+      "quantity": "9",
+      "unit_price": "5.69",
+      "total_price": "51.21",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 6563,
+      "po_number": "REQ0008651",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "BEAR Data Systems, Inc.",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Hardware, RM Kit for 200E/300/41/5K51/49/53/75/VA/78/8K",
+      "quantity": "2",
+      "unit_price": "81.37",
+      "total_price": "162.74",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 7279,
+      "po_number": "REQ0009432",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "PCG Equipment",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Row Spacers",
+      "quantity": "10",
+      "unit_price": "3.92",
+      "total_price": "39.20",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 11645,
+      "po_number": "4500146821",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "MRO WAREHOUSE INC",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Door Closer",
+      "quantity": "5",
+      "unit_price": "285.90",
+      "total_price": "1429.50",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 11901,
+      "po_number": "4500146821",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "MRO WAREHOUSE INC",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Door Closer",
+      "quantity": "5",
+      "unit_price": "285.90",
+      "total_price": "1429.50",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 12014,
+      "po_number": "4500146821",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "MRO WAREHOUSE INC",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Nut Self Locking",
+      "quantity": "5",
+      "unit_price": "3.76",
+      "total_price": "18.80",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 12066,
+      "po_number": "4500146821",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "MRO WAREHOUSE INC",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Nut Self Locking",
+      "quantity": "5",
+      "unit_price": "3.76",
+      "total_price": "18.80",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 14038,
+      "po_number": "REQ0009214",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Aurora Enterprises",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Adhesive Polypropylene film",
+      "quantity": "2",
+      "unit_price": "100.00",
+      "total_price": "200.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 14224,
+      "po_number": "865",
+      "department": "Transportation, Department of",
+      "supplier": "Capitol Barricade Inc",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Sign, CMS, 84\", LED, Solar, Trailer Mounted",
+      "quantity": "12",
+      "unit_price": "18690.00",
+      "total_price": "224280.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 14964,
+      "po_number": "699",
+      "department": "Transportation, Department of",
+      "supplier": "Leotek Electronics",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "POC #1 - LED Roadway Luminaire, 240 V",
+      "quantity": "3563",
+      "unit_price": "231.35",
+      "total_price": "824300.05",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 14965,
+      "po_number": "699",
+      "department": "Transportation, Department of",
+      "supplier": "Leotek Electronics",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "POC #1 - LED Roadway Luminaire, 480 V",
+      "quantity": "1437",
+      "unit_price": "241.40",
+      "total_price": "346891.80",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 14966,
+      "po_number": "699",
+      "department": "Transportation, Department of",
+      "supplier": "Leotek Electronics",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "POC #1 - LED Roadway Luminaire, 240 V",
+      "quantity": "3492",
+      "unit_price": "277.11",
+      "total_price": "967668.12",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 14968,
+      "po_number": "699",
+      "department": "Transportation, Department of",
+      "supplier": "Leotek Electronics",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "POC #1 - LED Roadway Luminaire, 480 V",
+      "quantity": "1508",
+      "unit_price": "311.95",
+      "total_price": "470420.60",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 15056,
+      "po_number": "REQ0009191",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Frank T. Marchello",
+      "category": "Tools and General Machinery",
+      "item": "Sports Knife",
+      "quantity": "1",
+      "unit_price": "53.06",
+      "total_price": "53.06",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 15344,
+      "po_number": "REQ0009194",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Frank T. Marchello",
+      "category": "Tools and General Machinery",
+      "item": "Sport Knife - Service Award",
+      "quantity": "1",
+      "unit_price": "53.06",
+      "total_price": "53.06",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 16176,
+      "po_number": "3165487",
+      "department": "General Services, Department of",
+      "supplier": "Forbo Adhesives LLC",
+      "category": "Manufacturing Components and Supplies",
+      "item": "SWIFT THERM HOT MELT GLUE#: 2H740 FLYER; FOR PERFECT BINDER.",
+      "quantity": "1400",
+      "unit_price": "3.06",
+      "total_price": "4289.60",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 16960,
+      "po_number": "REQ0009018",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "National Office Solutions",
+      "category": "Tools and General Machinery",
+      "item": "Swingline Heavy-Duty Staple Remover",
+      "quantity": "4",
+      "unit_price": "6.45",
+      "total_price": "25.80",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 17804,
+      "po_number": "4500156715",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "W.W. Grainger",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "cover",
+      "quantity": "10",
+      "unit_price": "4.74",
+      "total_price": "47.40",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 18836,
+      "po_number": "REQ0009143",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "National Office Solutions",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Tape, MLNG, 2\"x800\" 6/Pk CR",
+      "quantity": "1",
+      "unit_price": "13.56",
+      "total_price": "13.56",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 19265,
+      "po_number": "REQ0009357",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "3B INDUSTRIES INC",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Panel Hinge - Trim Dark Gray",
+      "quantity": "1",
+      "unit_price": "4094.60",
+      "total_price": "4094.60",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 19269,
+      "po_number": "REQ0008950",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "EZ Promotions",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Projector Short Throw Arm",
+      "quantity": "3",
+      "unit_price": "1687.00",
+      "total_price": "5061.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 19273,
+      "po_number": "REQ0008950",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "EZ Promotions",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Electronic Pen",
+      "quantity": "3",
+      "unit_price": "159.00",
+      "total_price": "477.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 19280,
+      "po_number": "REQ0008950",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "EZ Promotions",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Wireless Kit Connection for PC",
+      "quantity": "3",
+      "unit_price": "499.00",
+      "total_price": "1497.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 19355,
+      "po_number": "4500154843",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "A and B Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "hrs flat bar",
+      "quantity": "12",
+      "unit_price": "78.63",
+      "total_price": "943.50",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 20275,
+      "po_number": "4500155223",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "Stanley Convergent Security Solutions Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "LOCKSMITH PRODUCTS",
+      "quantity": "20",
+      "unit_price": "2.06",
+      "total_price": "41.20",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 20279,
+      "po_number": "4500155223",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "Stanley Convergent Security Solutions Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "LOCKSMITH PRODUCTS",
+      "quantity": "20",
+      "unit_price": "2.06",
+      "total_price": "41.20",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 20283,
+      "po_number": "4500155223",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "Stanley Convergent Security Solutions Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "LOCKSMITH PRODUCTS",
+      "quantity": "20",
+      "unit_price": "2.06",
+      "total_price": "41.20",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 20332,
+      "po_number": "4500155223",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "Stanley Convergent Security Solutions Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "LOCKSMITH PRODUCTS",
+      "quantity": "20",
+      "unit_price": "2.06",
+      "total_price": "41.20",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 21308,
+      "po_number": "REQ0008105",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "EXPRESS Office Products, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Coat Hook, BK U669",
+      "quantity": "7",
+      "unit_price": "5.49",
+      "total_price": "38.43",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 21439,
+      "po_number": "P1200302",
+      "department": "Franchise Tax Board",
+      "supplier": "B&J Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Blue Ring terminal #10",
+      "quantity": "25",
+      "unit_price": "0.27",
+      "total_price": "6.65",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 22111,
+      "po_number": "REQ0009546",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Burkett's Office Supplies",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Maglight Flashlight",
+      "quantity": "250",
+      "unit_price": "21.99",
+      "total_price": "5497.50",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23113,
+      "po_number": "V0795",
+      "department": "Justice, Department of",
+      "supplier": "MILLIPORE CORPORATION",
+      "category": "Manufacturing Components and Supplies",
+      "item": "lab supplies",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 23332,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "FreelinWade 3/4#Od x 0.467# ID Clear 100Ft. Reel",
+      "quantity": "1",
+      "unit_price": "440.28",
+      "total_price": "440.28",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23335,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "FreelinWade 3/8#Odx 0.245# ID Clear 100Ft. Bag",
+      "quantity": "1",
+      "unit_price": "320.00",
+      "total_price": "320.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23400,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "Plier, Tongue/Groove, 12In",
+      "quantity": "13",
+      "unit_price": "10.93",
+      "total_price": "142.09",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23419,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "Open End Wrench, 1-1/4x15/16ubm 14-1/2L",
+      "quantity": "13",
+      "unit_price": "41.92",
+      "total_price": "544.96",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23460,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "Open End Wrench, 1/26x1/2in, 15/75 Deg",
+      "quantity": "13",
+      "unit_price": "8.09",
+      "total_price": "105.17",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23493,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "Open End Wrench, 1-1/16, 1-1/8in, 12-5/8L",
+      "quantity": "13",
+      "unit_price": "30.34",
+      "total_price": "394.42",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23497,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "Tool Box w/Tray, 19-3/4Wx8-1/2Dx8-3/4",
+      "quantity": "13",
+      "unit_price": "16.61",
+      "total_price": "215.93",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23499,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Reducing Coupling 1/2x1/4in, Nylong, PK10",
+      "quantity": "70",
+      "unit_price": "3.58",
+      "total_price": "250.60",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23500,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Male Adapter, 1/4 x 1/4in, 303SS",
+      "quantity": "18",
+      "unit_price": "3.66",
+      "total_price": "65.88",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23501,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "Screwdriver Slotted, 1/4x4in",
+      "quantity": "13",
+      "unit_price": "4.55",
+      "total_price": "59.15",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23502,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Griftan Cylinder Safety Cap GT-7",
+      "quantity": "24",
+      "unit_price": "60.00",
+      "total_price": "1440.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 23503,
+      "po_number": "REQ0009340",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "Open End Wrench, 9/16X9/16in, 15/75 Deg",
+      "quantity": "13",
+      "unit_price": "9.50",
+      "total_price": "123.50",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 25089,
+      "po_number": "4500192243",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "gasket, quick coupler",
+      "quantity": "50",
+      "unit_price": "0.36",
+      "total_price": "17.75",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 26269,
+      "po_number": "4500150475",
+      "department": "Correctional Health Care Services",
+      "supplier": "RADA OFFICE PRODUCTS, INC.",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Lamp Replacement",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 27297,
+      "po_number": "12560080",
+      "department": "State Hospitals, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BREAKER",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 28947,
+      "po_number": "12-G0252",
+      "department": "Pesticide Regulation, Department of",
+      "supplier": "Allsteel Inc",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Cantilever bracket",
+      "quantity": "1",
+      "unit_price": "10.50",
+      "total_price": "10.50",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 29318,
+      "po_number": "12-G0252",
+      "department": "Pesticide Regulation, Department of",
+      "supplier": "Allsteel Inc",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Cantilever bracket",
+      "quantity": "1",
+      "unit_price": "10.50",
+      "total_price": "10.50",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 30280,
+      "po_number": "CF110470",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "MODULAR COMMUNICATIONS SYSTEMS",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "MODUCOM FOOTSWITCH",
+      "quantity": "7",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 31765,
+      "po_number": "CC12-038",
+      "department": "Student Aid Commission",
+      "supplier": "The Office BOSS, INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "CC12-038",
+      "quantity": "10",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 32928,
+      "po_number": "REQ0009812",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Horizon Business Solutions, Inc.",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Cobra 800 Watt Power Inverter 12V DC - 120V AC - Continous Power: 800W",
+      "quantity": "21",
+      "unit_price": "48.95",
+      "total_price": "1027.95",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 33116,
+      "po_number": "REQ0009736",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "OFFICE SUPPLIES CO",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "KEY TAG RACK",
+      "quantity": "2",
+      "unit_price": "7.75",
+      "total_price": "15.50",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 33120,
+      "po_number": "REQ0009736",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "OFFICE SUPPLIES CO",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "CD MAILERS",
+      "quantity": "2",
+      "unit_price": "26.76",
+      "total_price": "53.52",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 33241,
+      "po_number": "4500170815",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "US Control Group Inc",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "elect terminals",
+      "quantity": "1",
+      "unit_price": "12.00",
+      "total_price": "12.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 33300,
+      "po_number": "4500193067",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "CONNECTOR,WIRE NUT, ORANGE",
+      "quantity": "500",
+      "unit_price": "0.08",
+      "total_price": "38.85",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 33924,
+      "po_number": "REQ0009824",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "River City Office Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Tape",
+      "quantity": "1",
+      "unit_price": "6.35",
+      "total_price": "6.35",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 34063,
+      "po_number": "REQ0009824",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "River City Office Supply",
+      "category": "Tools and General Machinery",
+      "item": "Punch, 1-Hole",
+      "quantity": "1",
+      "unit_price": "1.25",
+      "total_price": "1.25",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 34673,
+      "po_number": "REQ0009718",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Prison Industry Authority",
+      "category": "Tools and General Machinery",
+      "item": "V-File, 6 Hi, Ltr, no doors, Stone",
+      "quantity": "2",
+      "unit_price": "569.00",
+      "total_price": "1138.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 35441,
+      "po_number": "REQ0009597",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "3B INDUSTRIES INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Key Core \"M105\"",
+      "quantity": "10",
+      "unit_price": "2.38",
+      "total_price": "23.80",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 35443,
+      "po_number": "REQ0009597",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "3B INDUSTRIES INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Key Core",
+      "quantity": "10",
+      "unit_price": "2.38",
+      "total_price": "23.80",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 35444,
+      "po_number": "REQ0009597",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "3B INDUSTRIES INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Key Core \"M102\"",
+      "quantity": "10",
+      "unit_price": "2.38",
+      "total_price": "23.80",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 35452,
+      "po_number": "REQ0009597",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "3B INDUSTRIES INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Key Core \"M108\"",
+      "quantity": "10",
+      "unit_price": "2.38",
+      "total_price": "23.80",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 35924,
+      "po_number": "12560",
+      "department": "State Hospitals, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Featheredge, High strength",
+      "quantity": "15",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 36187,
+      "po_number": "041H2019",
+      "department": "Highway Patrol, California",
+      "supplier": "Western Blue/Insight/Hewlett Packard",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "MEMORY",
+      "quantity": "985",
+      "unit_price": "-17.60",
+      "total_price": "-17336.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 38710,
+      "po_number": "S2683123",
+      "department": "Parks & Recreation, Department of",
+      "supplier": "Western Nevada Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "clamp",
+      "quantity": "1476",
+      "unit_price": "6.57",
+      "total_price": "9703.52",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 38782,
+      "po_number": "S2683123",
+      "department": "Parks & Recreation, Department of",
+      "supplier": "Western Nevada Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "copper tubing",
+      "quantity": "1512",
+      "unit_price": "5.05",
+      "total_price": "7635.30",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 40306,
+      "po_number": "12-I0096",
+      "department": "Pesticide Regulation, Department of",
+      "supplier": "Cisco Systems Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "mounting bracket",
+      "quantity": "3",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 40310,
+      "po_number": "12-I0096",
+      "department": "Pesticide Regulation, Department of",
+      "supplier": "Cisco Systems Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "wireless lan",
+      "quantity": "3",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 42362,
+      "po_number": "4500175699",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "WEST COAST INDUSTRIAL SUPPLY",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Paint",
+      "quantity": "52",
+      "unit_price": "123.19",
+      "total_price": "6405.72",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 43315,
+      "po_number": "REQ0010127",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Prison Industry Authority",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Vertical file: Letter-6 Shelf - Sand",
+      "quantity": "2",
+      "unit_price": "569.00",
+      "total_price": "1138.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 44902,
+      "po_number": "12-G0399",
+      "department": "Pesticide Regulation, Department of",
+      "supplier": "Horizon Business Solutions, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Pens",
+      "quantity": "2",
+      "unit_price": "8.23",
+      "total_price": "16.46",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 44904,
+      "po_number": "12-G0399",
+      "department": "Pesticide Regulation, Department of",
+      "supplier": "Horizon Business Solutions, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Pens",
+      "quantity": "2",
+      "unit_price": "8.23",
+      "total_price": "16.46",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 45048,
+      "po_number": "CF120695",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "AT & T Datacomm",
+      "category": "Tools and General Machinery",
+      "item": "Cisco 1900 IOS Unversal Included",
+      "quantity": "46",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 45074,
+      "po_number": "CF120695",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "AT & T Datacomm",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Cisco Power Retainer Clip for Compact Switches Included",
+      "quantity": "6",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 45079,
+      "po_number": "CF120695",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "AT & T Datacomm",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Cisco AC Power Cord 16AWG",
+      "quantity": "46",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 45081,
+      "po_number": "CF120695",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "AT & T Datacomm",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Cisco AC Power Cord C13 NEMA 5-15-ISP 2, 1M included",
+      "quantity": "46",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 45083,
+      "po_number": "CF120695",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "AT & T Datacomm",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Cisco Power Retainer Clip for Comact Switches Included",
+      "quantity": "46",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 45092,
+      "po_number": "4500196191",
+      "department": "Water Resources, Department of",
+      "supplier": "SCHWEITZER ENGINEERING LABORATORIES",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "035171335B42X1 SEL-351,FEEDER RELAY",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 45110,
+      "po_number": "4500176646",
+      "department": "Correctional Health Care Services",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "LANTERNS",
+      "quantity": "25",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 45142,
+      "po_number": "21758-12-8110",
+      "department": "Public Health, Department of",
+      "supplier": "VISTA UNIVERSAL, INC.",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Installation",
+      "quantity": "1",
+      "unit_price": "-22245.00",
+      "total_price": "-22245.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 45506,
+      "po_number": "320H2010",
+      "department": "Highway Patrol, California",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "3U594 - Trigger Sprayer, 24 or 32 oz Red/White",
+      "quantity": "25",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 46646,
+      "po_number": "1PA2A135",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "Eaton Corporation",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "UPS Breaker",
+      "quantity": "1",
+      "unit_price": "4146.80",
+      "total_price": "4146.80",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 47352,
+      "po_number": "REQ0010388",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Global Blue DVBE",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Accessories, AC Power Cord for Catalyst 3K-X (North America)",
+      "quantity": "6",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Missing/invalid purchase date; Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 47370,
+      "po_number": "1PA2A135",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "Eaton Corporation",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "UPS 208V IN/OUT",
+      "quantity": "1",
+      "unit_price": "13214.88",
+      "total_price": "13214.88",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 47388,
+      "po_number": "1PA2A135",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "Eaton Corporation",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "UPS Battery",
+      "quantity": "1",
+      "unit_price": "7142.24",
+      "total_price": "7142.24",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 48523,
+      "po_number": "4500182023",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "GEORGES AUTO DIESEL ELECTRIC",
+      "category": "Tools and General Machinery",
+      "item": "extension set",
+      "quantity": "1",
+      "unit_price": "80.98",
+      "total_price": "80.98",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 48539,
+      "po_number": "4500182023",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "GEORGES AUTO DIESEL ELECTRIC",
+      "category": "Tools and General Machinery",
+      "item": "socket rails",
+      "quantity": "4",
+      "unit_price": "2.50",
+      "total_price": "10.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 48825,
+      "po_number": "4500179698",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "PLUMBING SUPPLIES",
+      "quantity": "56",
+      "unit_price": "175.52",
+      "total_price": "9829.30",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 48866,
+      "po_number": "4500179450",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "Fastenal",
+      "category": "Tools and General Machinery",
+      "item": "maintenance tools",
+      "quantity": "196",
+      "unit_price": "109.04",
+      "total_price": "21371.78",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 50490,
+      "po_number": "W1580",
+      "department": "Justice, Department of",
+      "supplier": "Applied Power Technologies",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "fuse",
+      "quantity": "5",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 51463,
+      "po_number": "4500198226",
+      "department": "Water Resources, Department of",
+      "supplier": "ALL INDUSTRIAL ELECTRIC SUPPLY, INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "litghing accessories",
+      "quantity": "198",
+      "unit_price": "529.65",
+      "total_price": "104871.35",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 51788,
+      "po_number": "CC12-062",
+      "department": "Student Aid Commission",
+      "supplier": "AMAZON.COM, INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "CC12-062",
+      "quantity": "5",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 52655,
+      "po_number": "REQ0010653",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Smile Business Products, Inc",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "AR-D5133NT Surge Protector (120V, 15AMP)",
+      "quantity": "1",
+      "unit_price": "105.00",
+      "total_price": "105.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 52720,
+      "po_number": "REQ0010655",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "EXPRESS Office Products, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "TAPE, SUPER STRENGTH, SCOTCS1288",
+      "quantity": "15",
+      "unit_price": "30.99",
+      "total_price": "464.85",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 52726,
+      "po_number": "REQ0010655",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "EXPRESS Office Products, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "TAPE, INVISIBLE, 3/4\"X10 S1285",
+      "quantity": "4",
+      "unit_price": "6.20",
+      "total_price": "24.80",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 53422,
+      "po_number": "4500204510",
+      "department": "Water Resources, Department of",
+      "supplier": "TDM Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "BOLT,EYE,RING,HOIST,SWIVEL,7/8\"-9",
+      "quantity": "4",
+      "unit_price": "279.00",
+      "total_price": "1116.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 53962,
+      "po_number": "CC12-064",
+      "department": "Student Aid Commission",
+      "supplier": "AMAZON.COM, INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "CC12-064",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 54249,
+      "po_number": "13F01104",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "10-32 Screw #62464001",
+      "quantity": "30",
+      "unit_price": "0.31",
+      "total_price": "9.30",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 54280,
+      "po_number": "REQ0010271",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "PATRIOT DVBE",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Field Upgrade: Single 400W AC Power (4200v Platform)",
+      "quantity": "1",
+      "unit_price": "1475.70",
+      "total_price": "1475.70",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 54777,
+      "po_number": "450",
+      "department": "High Speed Rail Authority, California",
+      "supplier": "Smile Business Products, Inc",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Installation (not taxable)",
+      "quantity": "1",
+      "unit_price": "150.00",
+      "total_price": "150.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 54961,
+      "po_number": "4500181519",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "Prison Industry Authority",
+      "category": "Manufacturing Components and Supplies",
+      "item": "glass cleaner, breakout, stripper floor was",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 55013,
+      "po_number": "CF120973",
+      "department": "Forestry and Fire Protection, Department of",
+      "supplier": "Smile Business Products, Inc",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Surge Protector",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 55540,
+      "po_number": "2660- 071300000519",
+      "department": "Transportation, Department of",
+      "supplier": "KFIVEUSA",
+      "category": "Manufacturing Components and Supplies",
+      "item": "PASS QB SEALANT",
+      "quantity": "29674",
+      "unit_price": "3.71",
+      "total_price": "109945.14",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 55875,
+      "po_number": "S2953016",
+      "department": "Parks & Recreation, Department of",
+      "supplier": "SOUTHERN CALIFORNIA TANK AND FABRICATING",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Installation",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 55920,
+      "po_number": "30991-13-8110-0",
+      "department": "Public Health, Department of",
+      "supplier": "Hi-Line Electric Co.",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Helen Lamp",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 56041,
+      "po_number": "12560237",
+      "department": "State Hospitals, Department of",
+      "supplier": "Fastenal",
+      "category": "Manufacturing Components and Supplies",
+      "item": "PVC Primer, Clear",
+      "quantity": "24",
+      "unit_price": "6.04",
+      "total_price": "144.88",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 56433,
+      "po_number": "4500199179",
+      "department": "Water Resources, Department of",
+      "supplier": "Fastenal",
+      "category": "Manufacturing Components and Supplies",
+      "item": "COVER,VANDALPROOF,ROTORK ACTUATOR",
+      "quantity": "1",
+      "unit_price": "951.25",
+      "total_price": "951.25",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 56436,
+      "po_number": "4500199179",
+      "department": "Water Resources, Department of",
+      "supplier": "Fastenal",
+      "category": "Manufacturing Components and Supplies",
+      "item": "ACTUATOR,ROTORK IQ35 Type Z W/ SIDE HAND",
+      "quantity": "1",
+      "unit_price": "10123.30",
+      "total_price": "10123.30",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 56516,
+      "po_number": "REQ0010843",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "CT INTERNATIONAL",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Power Supply for iP Phone 11XX-12XX-200XX",
+      "quantity": "40",
+      "unit_price": "22.50",
+      "total_price": "900.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 56700,
+      "po_number": "SM12-724",
+      "department": "Student Aid Commission",
+      "supplier": "AMAZON.COM, INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "CC12-062",
+      "quantity": "5",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 56899,
+      "po_number": "REQ0010673",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "IBHP INCORPORATED",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "PSS 198973, Pads, defib, Phillips HeartStarts electroded FRx Samrt Pads II",
+      "quantity": "31",
+      "unit_price": "49.92",
+      "total_price": "1547.52",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 57643,
+      "po_number": "REQ0010585",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Hoffman Technologies, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Scotch Magic 810 Tape Value Pack, 3/4\" x 1000\"",
+      "quantity": "1",
+      "unit_price": "36.39",
+      "total_price": "36.39",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 58185,
+      "po_number": "ARB125223",
+      "department": "Air Resources Board",
+      "supplier": "MET ONE INSTRUMENTS",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "POWER SUPPLY",
+      "quantity": "2",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 59017,
+      "po_number": "13560045",
+      "department": "State Hospitals, Department of",
+      "supplier": "Fastenal",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Flat Deck Screw",
+      "quantity": "10000",
+      "unit_price": "0.08",
+      "total_price": "769.00",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 61020,
+      "po_number": "CC12-089",
+      "department": "Student Aid Commission",
+      "supplier": "GORILLA STATIONERS LLC",
+      "category": "Manufacturing Components and Supplies",
+      "item": "CC12-089",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 62416,
+      "po_number": "4500201261",
+      "department": "Water Resources, Department of",
+      "supplier": "Best Source Distributing",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Knox Switch for Fire Department",
+      "quantity": "1",
+      "unit_price": "420.00",
+      "total_price": "420.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 62425,
+      "po_number": "4500201261",
+      "department": "Water Resources, Department of",
+      "supplier": "Best Source Distributing",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Knox Switch for Fire Department",
+      "quantity": "1",
+      "unit_price": "420.00",
+      "total_price": "420.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 62549,
+      "po_number": "REQ0011094",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Hoffman Technologies, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "ColorLife 3-1/2\" Expansion Pocket, Straight Tab, Maila, Letter, Red 25/box",
+      "quantity": "1",
+      "unit_price": "47.53",
+      "total_price": "47.53",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 62550,
+      "po_number": "REQ0011094",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Hoffman Technologies, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Brother TZe-141 Black-On-Clear Tape",
+      "quantity": "96",
+      "unit_price": "14.56",
+      "total_price": "1397.76",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 62558,
+      "po_number": "REQ0011094",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Hoffman Technologies, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Fellowes Perf-ect Partition Triple File Pocket, Black",
+      "quantity": "1",
+      "unit_price": "28.06",
+      "total_price": "28.06",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 62559,
+      "po_number": "REQ0011094",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Hoffman Technologies, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Soft Feel Ballpoint Retractable Pen, Blue Med.",
+      "quantity": "2",
+      "unit_price": "6.50",
+      "total_price": "13.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 62560,
+      "po_number": "REQ0011094",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Hoffman Technologies, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "ClearTex Advantagemat Phthalate Free PVC Chair Mat 45x53",
+      "quantity": "1",
+      "unit_price": "54.40",
+      "total_price": "54.40",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 62566,
+      "po_number": "REQ0011094",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Hoffman Technologies, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Z-HL Three-Chamber Liquid Highlighter, Chisel Tip, Asst Colors 10/set",
+      "quantity": "3",
+      "unit_price": "11.63",
+      "total_price": "34.89",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 62567,
+      "po_number": "REQ0011094",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Hoffman Technologies, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Reinforced Hanging Folders, 1/5 tab, letter, red, 25/box",
+      "quantity": "1",
+      "unit_price": "19.15",
+      "total_price": "19.15",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 63392,
+      "po_number": "4500200823",
+      "department": "Water Resources, Department of",
+      "supplier": "BAKERSFIELD PIPE & SUPPLY INC",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Coupling,Insulating,Baker 216",
+      "quantity": "1",
+      "unit_price": "15100.00",
+      "total_price": "15100.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 63651,
+      "po_number": "4500201527",
+      "department": "Water Resources, Department of",
+      "supplier": "WESCO Distribution Inc",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BREAKER, 3P, 60A, WH, # FB3060L",
+      "quantity": "1",
+      "unit_price": "405.88",
+      "total_price": "405.88",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 65640,
+      "po_number": "4500201060",
+      "department": "Water Resources, Department of",
+      "supplier": "FRED C. GILBERT COMPANY",
+      "category": "Tools and General Machinery",
+      "item": "COUPLING,HOSE,BLAST",
+      "quantity": "36",
+      "unit_price": "18.75",
+      "total_price": "675.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 65647,
+      "po_number": "4500201060",
+      "department": "Water Resources, Department of",
+      "supplier": "FRED C. GILBERT COMPANY",
+      "category": "Tools and General Machinery",
+      "item": "COUPLING,HOSE,BLAST",
+      "quantity": "36",
+      "unit_price": "18.75",
+      "total_price": "675.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 69152,
+      "po_number": "3172174",
+      "department": "General Services, Department of",
+      "supplier": "HB FULLER",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Swift Tak48221-Fohl55; HB Fuller Glue; 480-ilbs/Drum.",
+      "quantity": "2400",
+      "unit_price": "1.43",
+      "total_price": "3432.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 69171,
+      "po_number": "3172174",
+      "department": "General Services, Department of",
+      "supplier": "HB FULLER",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Swift Tak48221-Fohl55; HB Fuller Glue; 480-ilbs/Drum.",
+      "quantity": "2400",
+      "unit_price": "1.43",
+      "total_price": "3432.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 69271,
+      "po_number": "13560045",
+      "department": "State Hospitals, Department of",
+      "supplier": "Fastenal",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Wood Screw",
+      "quantity": "5000",
+      "unit_price": "0.16",
+      "total_price": "795.50",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 71464,
+      "po_number": "REQ0011091",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Western Blue, an NWN Company",
+      "category": "Tools and General Machinery",
+      "item": "E-Waste Fee",
+      "quantity": "1",
+      "unit_price": "3.00",
+      "total_price": "3.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 72257,
+      "po_number": "3001-239",
+      "department": "Food and Agriculture, Department of",
+      "supplier": "Acquire Industries",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Trap Hangers",
+      "quantity": "75000",
+      "unit_price": "0.20",
+      "total_price": "14775.00",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 72828,
+      "po_number": "ARB135040",
+      "department": "Air Resources Board",
+      "supplier": "MET ONE INSTRUMENTS",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "POWER SUPPLY",
+      "quantity": "2",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 72867,
+      "po_number": "ARB135040",
+      "department": "Air Resources Board",
+      "supplier": "MET ONE INSTRUMENTS",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "MANUALS & CALIBRATION CERTIFICATES",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 73034,
+      "po_number": "8MIL0117",
+      "department": "General Services, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "Dewalt 1/4 Sheet Sander",
+      "quantity": "1",
+      "unit_price": "55.12",
+      "total_price": "55.12",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 73467,
+      "po_number": "4500218402",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "Chickasaw Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "LITHONIA RE-STRIKE RELAYS",
+      "quantity": "40",
+      "unit_price": "59.98",
+      "total_price": "2399.20",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 74079,
+      "po_number": "REQ0011090",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Prison Industry Authority",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Set in place - Hutch",
+      "quantity": "1",
+      "unit_price": "30.00",
+      "total_price": "30.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74131,
+      "po_number": "4500203679",
+      "department": "Water Resources, Department of",
+      "supplier": "Traut Line Ind",
+      "category": "Tools and General Machinery",
+      "item": "NUT RUNNER,PNEUMATIC,REVERSIBLE",
+      "quantity": "2",
+      "unit_price": "2288.00",
+      "total_price": "4576.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 74155,
+      "po_number": "REQ0011090",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Prison Industry Authority",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Bookcase w/Half Doors, cherry",
+      "quantity": "2",
+      "unit_price": "605.00",
+      "total_price": "1210.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74314,
+      "po_number": "REQ0011212",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "CAPITAL DATACORP",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "HP Power Supply 110 to 240 Volts Refurbished",
+      "quantity": "1",
+      "unit_price": "225.00",
+      "total_price": "225.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74717,
+      "po_number": "13F01104",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "Screwdriver Int Shop Assembly #G60527",
+      "quantity": "10",
+      "unit_price": "3.35",
+      "total_price": "33.50",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74726,
+      "po_number": "13FO1115",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "20W994 AMERICAN METALCRAFT Chalk Marker, Green/Yellow/Blue/Red",
+      "quantity": "2",
+      "unit_price": "15.44",
+      "total_price": "30.88",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74730,
+      "po_number": "13FO1115",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "41G553 CRESTWARE Food Pan, Polycarbonate, Third, 12-3/4 In",
+      "quantity": "6",
+      "unit_price": "21.46",
+      "total_price": "128.76",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74731,
+      "po_number": "13FO1115",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "13F267 CARLISLE Universal Food Pan Lid, Third Size, PK 6",
+      "quantity": "1",
+      "unit_price": "42.03",
+      "total_price": "42.03",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74733,
+      "po_number": "13FO1115",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "4UJL5 CAMBRO Beverage Container, 16-1/2x9x18, Black",
+      "quantity": "2",
+      "unit_price": "176.52",
+      "total_price": "353.04",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74734,
+      "po_number": "13FO1115",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "36N022 Bloomfield Tea Dispenser, 5 gal, SS",
+      "quantity": "2",
+      "unit_price": "93.08",
+      "total_price": "186.16",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74735,
+      "po_number": "13FO1115",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "4NCW5 VOLLRATH Beverage Server, 20 Oz, White",
+      "quantity": "6",
+      "unit_price": "18.46",
+      "total_price": "110.76",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74737,
+      "po_number": "13FO1115",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "6CAG5 SAN JAMAR Condiment & Straw Organizer",
+      "quantity": "2",
+      "unit_price": "225.68",
+      "total_price": "451.36",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74738,
+      "po_number": "13FO1115",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "14D216 CARLISLE Poly-Tuf Crock w/Lid, 1.5 qt, Black, PK 6",
+      "quantity": "2",
+      "unit_price": "54.41",
+      "total_price": "108.82",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74739,
+      "po_number": "13FO1115",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "14D239 CARLISLE Imprinted Salad Bar Ladle Set",
+      "quantity": "1",
+      "unit_price": "36.69",
+      "total_price": "36.69",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74742,
+      "po_number": "13FO1115",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "4UJZ7 CAMBRO Seal Covers, 7 9/16, PK 6",
+      "quantity": "2",
+      "unit_price": "20.03",
+      "total_price": "40.06",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74743,
+      "po_number": "13FO1115",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Tools and General Machinery",
+      "item": "6DVN3 TABLECRAFT PRODUCTS CO Beverage Dispenser, 5 Gal, Black",
+      "quantity": "2",
+      "unit_price": "108.14",
+      "total_price": "216.28",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74806,
+      "po_number": "REQ0011264",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "EXPRESS Office Products, Inc.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "HOOK,COAT,DOUBLE, RCYCLSNEW",
+      "quantity": "3",
+      "unit_price": "7.44",
+      "total_price": "22.32",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74965,
+      "po_number": "4500202936",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "SOCKET,IMPACT,STD,1-3/8\",3/4\" DRIVE",
+      "quantity": "1",
+      "unit_price": "21.56",
+      "total_price": "21.56",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 74966,
+      "po_number": "4500202936",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "SOCKET,IMPACT,STD,1-3/8\",3/4\" DRIVE",
+      "quantity": "1",
+      "unit_price": "21.56",
+      "total_price": "21.56",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 74985,
+      "po_number": "4500202938",
+      "department": "Water Resources, Department of",
+      "supplier": "MARK LEE & YONG KAY INC DBA BAY CONSTRUCTION CO",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BREAKER,3P,30A,GE TYPE TE",
+      "quantity": "1",
+      "unit_price": "121.10",
+      "total_price": "121.10",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 74989,
+      "po_number": "13FO1113",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "LAWN RAKE STEEL",
+      "quantity": "8",
+      "unit_price": "15.51",
+      "total_price": "124.08",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 74991,
+      "po_number": "4500202938",
+      "department": "Water Resources, Department of",
+      "supplier": "MARK LEE & YONG KAY INC DBA BAY CONSTRUCTION CO",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BREAKER,3P,30A,GE TYPE TE",
+      "quantity": "1",
+      "unit_price": "121.10",
+      "total_price": "121.10",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 75361,
+      "po_number": "13F01104",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "Skil Cir Saw 7-1/4Blade",
+      "quantity": "1",
+      "unit_price": "169.00",
+      "total_price": "169.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 75391,
+      "po_number": "13F01104",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "MK Diamond Saw Blade 4 In",
+      "quantity": "1",
+      "unit_price": "19.87",
+      "total_price": "19.87",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 75397,
+      "po_number": "13F01104",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "O-Ring #58155018",
+      "quantity": "20",
+      "unit_price": "0.55",
+      "total_price": "11.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76360,
+      "po_number": "4500202993",
+      "department": "Water Resources, Department of",
+      "supplier": "TDM Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "turnbuckle,jaw&eye, 2\"",
+      "quantity": "2",
+      "unit_price": "1190.00",
+      "total_price": "2380.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 76423,
+      "po_number": "4500202993",
+      "department": "Water Resources, Department of",
+      "supplier": "TDM Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "turnbuckle,jaw&eye, 2\"",
+      "quantity": "2",
+      "unit_price": "1190.00",
+      "total_price": "2380.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 76613,
+      "po_number": "13FO1116",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Wood Screws Flat 8 X 3 PK 100 #1KY21",
+      "quantity": "1",
+      "unit_price": "13.00",
+      "total_price": "13.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76633,
+      "po_number": "13FO1116",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Wood Screws Flat 8 X 2-1/2 PK 100 #1KY20",
+      "quantity": "1",
+      "unit_price": "6.11",
+      "total_price": "6.11",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76644,
+      "po_number": "13FO1116",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Wood Screws Flat 12 X 1-1/4 PK 100 #1KY41",
+      "quantity": "1",
+      "unit_price": "5.62",
+      "total_price": "5.62",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76676,
+      "po_number": "13FO1116",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Wood Screws Flat 14 X 3 PK 100 #1KY53",
+      "quantity": "1",
+      "unit_price": "19.91",
+      "total_price": "19.91",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76680,
+      "po_number": "13FO1116",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Wood Screws Flat 4 X 3/4 PK 100 #1KU56",
+      "quantity": "1",
+      "unit_price": "3.22",
+      "total_price": "3.22",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76682,
+      "po_number": "13FO1116",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Lath Screws 8 X 9/16 PK 274 #5JUV5",
+      "quantity": "1",
+      "unit_price": "5.27",
+      "total_price": "5.27",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76683,
+      "po_number": "13FO1116",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Wood Screws Flat 4 X 1 PK 100 #1KU59",
+      "quantity": "1",
+      "unit_price": "4.20",
+      "total_price": "4.20",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76684,
+      "po_number": "13FO1116",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Wood Screws Flat 14 X 2 PK 100 #1KY51",
+      "quantity": "1",
+      "unit_price": "10.50",
+      "total_price": "10.50",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76685,
+      "po_number": "13FO1116",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Wood Screws Flat 14 X 1-1/2 PK 100 #1KY50",
+      "quantity": "1",
+      "unit_price": "8.79",
+      "total_price": "8.79",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76686,
+      "po_number": "13FO1116",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Wood Screws Flat 14 X 2-1/2 PK 100 #1KY52",
+      "quantity": "1",
+      "unit_price": "15.35",
+      "total_price": "15.35",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76688,
+      "po_number": "13FO1116",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Wood Screws 14 X 1-1/4 PK 100 #1KY49",
+      "quantity": "1",
+      "unit_price": "10.92",
+      "total_price": "10.92",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 76844,
+      "po_number": "4500203248",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BALLAST KIT,METAL HALIDE,HID,400W",
+      "quantity": "6",
+      "unit_price": "120.45",
+      "total_price": "722.70",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 76845,
+      "po_number": "4500203248",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "LAMP,METAL HALIDE,400W,RETO",
+      "quantity": "12",
+      "unit_price": "39.68",
+      "total_price": "476.16",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 76846,
+      "po_number": "4500203248",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BALLAST KIT,METAL HALIDE,HID,400W",
+      "quantity": "6",
+      "unit_price": "120.45",
+      "total_price": "722.70",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 76847,
+      "po_number": "4500203248",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "LAMP,METAL HALIDE,400W,RETO",
+      "quantity": "12",
+      "unit_price": "39.68",
+      "total_price": "476.16",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 76848,
+      "po_number": "4500203248",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BALLAST KIT,METAL HALIDE,HID,400W",
+      "quantity": "6",
+      "unit_price": "120.45",
+      "total_price": "722.70",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 76849,
+      "po_number": "4500203248",
+      "department": "Water Resources, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BALLAST KIT,METAL HALIDE,HID,400W",
+      "quantity": "6",
+      "unit_price": "120.45",
+      "total_price": "722.70",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 76902,
+      "po_number": "4500203639",
+      "department": "Water Resources, Department of",
+      "supplier": "PACIFIC INDUSTRIAL",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BEACON,FLASHER,BLUE,INTERPLEX SOLAR,IS80",
+      "quantity": "2",
+      "unit_price": "690.00",
+      "total_price": "1380.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 76904,
+      "po_number": "4500203639",
+      "department": "Water Resources, Department of",
+      "supplier": "PACIFIC INDUSTRIAL",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BEACON,FLASHER,BLUE,INTERPLEX SOLAR,IS80",
+      "quantity": "2",
+      "unit_price": "690.00",
+      "total_price": "1380.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 77105,
+      "po_number": "13FO1106",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "All Business Machines, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "Data Com Tool Kit 3AEX4",
+      "quantity": "1",
+      "unit_price": "255.56",
+      "total_price": "255.56",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77253,
+      "po_number": "13FO1106",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "All Business Machines, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "Brother Label Tape/Item#13C490",
+      "quantity": "3",
+      "unit_price": "18.55",
+      "total_price": "55.65",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77301,
+      "po_number": "13FO1106",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "All Business Machines, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "Brother Label Maker/Item#22KD89",
+      "quantity": "1",
+      "unit_price": "72.29",
+      "total_price": "72.29",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77318,
+      "po_number": "PO-100317",
+      "department": "General Services, Department of",
+      "supplier": "Gordon Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "Air Compressor",
+      "quantity": "1",
+      "unit_price": "215.60",
+      "total_price": "215.60",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77320,
+      "po_number": "13FO1106",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "All Business Machines, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "Tweezer, Straight 1OUO76",
+      "quantity": "1",
+      "unit_price": "4.75",
+      "total_price": "4.75",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77321,
+      "po_number": "13FO1106",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "All Business Machines, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "Tweezer Curved 3G971",
+      "quantity": "1",
+      "unit_price": "4.84",
+      "total_price": "4.84",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77326,
+      "po_number": "13FO1106",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "All Business Machines, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "Patch Cord 3ft/Item#5PZU3",
+      "quantity": "75",
+      "unit_price": "3.04",
+      "total_price": "228.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77333,
+      "po_number": "13FO1106",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "All Business Machines, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "Patch Cord 10ft/Item#5PZX2",
+      "quantity": "75",
+      "unit_price": "6.53",
+      "total_price": "489.75",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77334,
+      "po_number": "13FO1106",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "All Business Machines, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "RJ-45 25 pack/4JY50",
+      "quantity": "8",
+      "unit_price": "12.09",
+      "total_price": "96.72",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77337,
+      "po_number": "13FO1106",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "All Business Machines, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "Cat5e 1000' Spindle",
+      "quantity": "1",
+      "unit_price": "364.44",
+      "total_price": "364.44",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77397,
+      "po_number": "13FO1120",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Manufacturing Components and Supplies",
+      "item": "15R510 Carton Sealing Tape, Clear, 48mm x 50m",
+      "quantity": "2",
+      "unit_price": "2.30",
+      "total_price": "4.60",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77398,
+      "po_number": "13FO120",
+      "department": "Veterans Affairs, Department of",
+      "supplier": "THE PRIMARY SOURCE",
+      "category": "Manufacturing Components and Supplies",
+      "item": "BNB208 CD/DVD Binder, 208, Black",
+      "quantity": "1",
+      "unit_price": "35.64",
+      "total_price": "35.64",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 77569,
+      "po_number": "CD13-112",
+      "department": "Student Aid Commission",
+      "supplier": "Granite Data Solutions",
+      "category": "Manufacturing Components and Supplies",
+      "item": "CD13-112",
+      "quantity": "6",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 78750,
+      "po_number": "REQ0011474",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Merritt Business Supplies",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Magic  Tape",
+      "quantity": "1",
+      "unit_price": "45.00",
+      "total_price": "45.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 78770,
+      "po_number": "REQ0011474",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Merritt Business Supplies",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Packaging Tape",
+      "quantity": "5",
+      "unit_price": "2.45",
+      "total_price": "12.25",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 79138,
+      "po_number": "4500204510",
+      "department": "Water Resources, Department of",
+      "supplier": "TDM Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "BOLT,EYE,RING,HOIST,SWIVEL,7/8\"-9",
+      "quantity": "4",
+      "unit_price": "279.00",
+      "total_price": "1116.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 79146,
+      "po_number": "4500203791",
+      "department": "Water Resources, Department of",
+      "supplier": "All Business Machines, Inc.",
+      "category": "Tools and General Machinery",
+      "item": "TOOL SET,JOURNEYMAN,41/PC,KLIEN #80141",
+      "quantity": "1",
+      "unit_price": "861.00",
+      "total_price": "861.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 79388,
+      "po_number": "4500208229",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "Grainger Industrial Supply",
+      "category": "Tools and General Machinery",
+      "item": "LOCKSMITH TOOLS",
+      "quantity": "24",
+      "unit_price": "238.37",
+      "total_price": "5720.80",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 79947,
+      "po_number": "4500204665",
+      "department": "Water Resources, Department of",
+      "supplier": "TDM Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "BLAST,MEDIA,GARNET #36,2-TON BAG",
+      "quantity": "3",
+      "unit_price": "1450.00",
+      "total_price": "4350.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 79948,
+      "po_number": "4500204665",
+      "department": "Water Resources, Department of",
+      "supplier": "TDM Supply",
+      "category": "Manufacturing Components and Supplies",
+      "item": "BLAST,MEDIA,GARNET #36,2-TON BAG",
+      "quantity": "3",
+      "unit_price": "1450.00",
+      "total_price": "4350.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 80594,
+      "po_number": "S3554030",
+      "department": "Parks & Recreation, Department of",
+      "supplier": "Lehr Auto Electric",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Police light bars",
+      "quantity": "30",
+      "unit_price": "444.91",
+      "total_price": "13347.15",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 80733,
+      "po_number": "4500204640",
+      "department": "Water Resources, Department of",
+      "supplier": "CABLE CISCO",
+      "category": "Manufacturing Components and Supplies",
+      "item": "1 1/2\" X 92', S.S.,CABLE,4 1/2 T.P.I.",
+      "quantity": "1",
+      "unit_price": "4800.00",
+      "total_price": "4800.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 80734,
+      "po_number": "4500204640",
+      "department": "Water Resources, Department of",
+      "supplier": "CABLE CISCO",
+      "category": "Manufacturing Components and Supplies",
+      "item": "1 1/2\" X 92', S.S.,CABLE,4 1/2 T.P.I.",
+      "quantity": "1",
+      "unit_price": "4800.00",
+      "total_price": "4800.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 80743,
+      "po_number": "4500203821",
+      "department": "Water Resources, Department of",
+      "supplier": "CONSOLIDATED ELECTRICAL DIST",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BREAKER,3P,15A,GE TYPE TE",
+      "quantity": "2",
+      "unit_price": "166.67",
+      "total_price": "333.34",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 80756,
+      "po_number": "4500203821",
+      "department": "Water Resources, Department of",
+      "supplier": "CONSOLIDATED ELECTRICAL DIST",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BREAKER,3P,50A,GE TYPE TE",
+      "quantity": "7",
+      "unit_price": "166.67",
+      "total_price": "1166.69",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 80759,
+      "po_number": "4500203821",
+      "department": "Water Resources, Department of",
+      "supplier": "CONSOLIDATED ELECTRICAL DIST",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BREAKER,3P,20A,GE TYPE TE",
+      "quantity": "1",
+      "unit_price": "166.67",
+      "total_price": "166.67",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 82811,
+      "po_number": "P1300520",
+      "department": "Franchise Tax Board",
+      "supplier": "Hi-Line Electric Co.",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "0.5\" EMT Conduit",
+      "quantity": "100",
+      "unit_price": "0.21",
+      "total_price": "21.36",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 83004,
+      "po_number": "CC13-032",
+      "department": "Student Aid Commission",
+      "supplier": "A P Engineering Corporation",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "CC13-032",
+      "quantity": "5",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 83804,
+      "po_number": "4500210425",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "Prestige Golf Cars, Prestige Motorsports",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "#622285 Headlights",
+      "quantity": "2",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 86210,
+      "po_number": "REQ0011543",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "ACCUGOV, INC.",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Side Plate",
+      "quantity": "1",
+      "unit_price": "76.00",
+      "total_price": "76.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 86351,
+      "po_number": "REQ0011465",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "WALKERS OFFICE SUPPLIES, INC.",
+      "category": "Tools and General Machinery",
+      "item": "Safety Scraper",
+      "quantity": "2",
+      "unit_price": "2.65",
+      "total_price": "5.30",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 87585,
+      "po_number": "REQ0011405",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "3B INDUSTRIES INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Credenza, Empire Mahogany",
+      "quantity": "1",
+      "unit_price": "983.00",
+      "total_price": "983.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 87591,
+      "po_number": "REQ0011405",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "3B INDUSTRIES INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Set in place for 638100-1021",
+      "quantity": "1",
+      "unit_price": "50.00",
+      "total_price": "50.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 87843,
+      "po_number": "REQ0011405",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "3B INDUSTRIES INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Lateral File Cabinet - 2 Drawer, Empire Mahagony",
+      "quantity": "1",
+      "unit_price": "796.00",
+      "total_price": "796.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 87844,
+      "po_number": "REQ0011405",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "3B INDUSTRIES INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Set In Place for 682700.0210",
+      "quantity": "1",
+      "unit_price": "30.00",
+      "total_price": "30.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 88143,
+      "po_number": "4500206012",
+      "department": "Water Resources, Department of",
+      "supplier": "electric lighting co",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "SEL-2411, PAC",
+      "quantity": "1",
+      "unit_price": "2317.00",
+      "total_price": "2317.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 88145,
+      "po_number": "4500206012",
+      "department": "Water Resources, Department of",
+      "supplier": "electric lighting co",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "SEL-2411, PAC",
+      "quantity": "1",
+      "unit_price": "2317.00",
+      "total_price": "2317.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 88630,
+      "po_number": "4500206636",
+      "department": "Water Resources, Department of",
+      "supplier": "ALL INDUSTRIAL ELECTRIC SUPPLY, INC",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "BULB,LED-8027M42K",
+      "quantity": "10",
+      "unit_price": "423.00",
+      "total_price": "4230.00",
+      "flags": "Repeated line candidate"
+    },
+    {
+      "source_row": 89287,
+      "po_number": "REQ0011836",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Granite Data Solutions",
+      "category": "Tools and General Machinery",
+      "item": "Grip Permanent Marker, Fine Point, Black, Dozen",
+      "quantity": "4",
+      "unit_price": "16.80",
+      "total_price": "67.20",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 90786,
+      "po_number": "REQ0011747",
+      "department": "Consumer Affairs, Department of",
+      "supplier": "Merritt Business Supplies",
+      "category": "Manufacturing Components and Supplies",
+      "item": "Sure Start Packaging Tape",
+      "quantity": "2",
+      "unit_price": "29.00",
+      "total_price": "58.00",
+      "flags": "Missing/invalid purchase date"
+    },
+    {
+      "source_row": 91310,
+      "po_number": "14=CCO=1063",
+      "department": "Employment Development Department",
+      "supplier": "VERIZON",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Telecommunication",
+      "quantity": "1",
+      "unit_price": "433402.17",
+      "total_price": "433402.17",
+      "flags": "Implausible purchase date; Missing/invalid purchase date"
+    },
+    {
+      "source_row": 91436,
+      "po_number": "4500218503",
+      "department": "Corrections and Rehabilitation, Department of",
+      "supplier": "Commercial Appliance Service Inc.",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Maintenace Mechanic Supplies",
+      "quantity": "61",
+      "unit_price": "668.42",
+      "total_price": "40773.34",
+      "flags": "Extended amount review"
+    },
+    {
+      "source_row": 93231,
+      "po_number": "93091",
+      "department": "Social Services, Department of",
+      "supplier": "Ablegov, Inc.",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Host",
+      "quantity": "1",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    },
+    {
+      "source_row": 93233,
+      "po_number": "93091",
+      "department": "Social Services, Department of",
+      "supplier": "Ablegov, Inc.",
+      "category": "Electrical Systems and Lighting and Components and Accessories and Supplies",
+      "item": "Temp Sensor",
+      "quantity": "5",
+      "unit_price": "0.00",
+      "total_price": "0.00",
+      "flags": "Nonpositive/missing unit price; Nonpositive/missing total"
+    }
+  ]
+}

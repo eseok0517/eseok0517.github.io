@@ -1,3 +1,5 @@
+> **Original synthetic scenario:** This document describes the separate model at [scenario.html](scenario.html). For the real public procurement case, see [PUBLIC_DATA.md](PUBLIC_DATA.md).
+
 # Manufacturing purchasing strategy
 
 **Question:** when does a supplier discount compensate for the extra inventory capital and replenishment risk of a purchasing policy?
