@@ -18,7 +18,9 @@ async function macroPreview(){
  document.getElementById('macro-chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="S and P 500 month-end level from ${rows[0].month} to ${rows.at(-1).month}"><path d="M${pad} ${H-pad}H${W-pad}" fill="none" stroke="#b7c6bd"/><polyline points="${points}" fill="none" stroke="#235f4c" stroke-width="2.2"/></svg>`;
  document.getElementById('macro-period').textContent=`${rows[0].month}–${rows.at(-1).month} · ${rows.length} completed monthly observations · price index`;
  const inv=d.stats.curve_regime.find(x=>x.regime==='Inverted'),normal=d.stats.curve_regime.find(x=>x.regime==='Normal');
- if(inv&&normal)document.getElementById('macro-finding').textContent=`Average next-12-month price return: ${inv.mean_fwd12.toFixed(1)}% after inverted-curve months (n=${inv.months}) versus ${normal.mean_fwd12.toFixed(1)}% after normal-curve months (n=${normal.months}). These are overlapping historical observations, not independent forecasts.`;
+ const mi=m=>+m.slice(0,4)*12+ +m.slice(5,7);let eps=0,prev=null;
+ d.monthly.forEach(r=>{if(r.curve_regime!=='Inverted'||r.fwd12_return==null)return;if(prev===null||mi(r.month)!==prev+1)eps++;prev=mi(r.month)});
+ if(inv&&normal)document.getElementById('macro-finding').textContent=`Average next-12-month price return: ${inv.mean_fwd12.toFixed(1)}% after inverted-curve months (n=${inv.months}) versus ${normal.mean_fwd12.toFixed(1)}% after normal-curve months (n=${normal.months}). The inverted-curve months come from ${eps} separate episode${eps===1?'':'s'}, so treat this as context rather than a forecast.`;
 }
 // Preserve meaningful text fallbacks if a source cannot load.
 purchasingPreview().catch(()=>{});macroPreview().catch(()=>{});
