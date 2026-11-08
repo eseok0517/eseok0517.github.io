@@ -10,7 +10,7 @@ Portfolio: https://eseok0517.github.io/
 | [Asset Register Review](https://eseok0517.github.io/projects/asset-analysis/) | Which assets or records need follow-up? | Real Seattle equipment register, browser tool, source mapping, exception exports |
 | [Market Regimes](https://eseok0517.github.io/projects/macro-regimes/) | How do forward returns differ across economic regimes? | FRED downloads, monthly results, pipeline, sample counts and limitations |
 
-Company records from the LG internship are confidential. The main purchasing case uses real California public purchase orders; the original synthetic policy model is retained separately at `projects/purchasing/scenario.html`. The asset case uses real Seattle public equipment records, with a separately labeled synthetic demo. Neither public dataset is TSMC or LG data. Market research uses public FRED records and is descriptive, not a trading backtest.
+Company records from the LG internship are confidential. The main purchasing case uses real California public purchase orders; the original synthetic policy model is retained separately at `projects/purchasing/scenario.html`. The asset case uses real Seattle public equipment records, with a separately labeled synthetic demo. Neither public dataset contains company data. Market research uses public FRED records and is descriptive, not a trading backtest.
 
 ## Run and maintain
 

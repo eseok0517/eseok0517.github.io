@@ -109,7 +109,21 @@ function render(d){
   });
   $("stats").innerHTML = html + "</tbody>";
   $("defs").innerHTML = Object.values(d.definitions).map(esc).join(". ") + ".";
-  $("caveats").innerHTML = d.caveats.map(c => `<li>${esc(c)}</li>`).join("");
+  // Count separate inverted-curve episodes among months with a forward return
+  const mi = ym => +ym.slice(0, 4) * 12 + +ym.slice(5, 7);
+  const episodes = [];
+  rows.forEach(r => {
+    if (r.curve_regime !== "Inverted" || r.fwd12_return == null) return;
+    const last = episodes[episodes.length - 1];
+    if (last && mi(r.month) === mi(last.end) + 1) { last.end = r.month; last.n++; }
+    else episodes.push({start: r.month, end: r.month, n: 1});
+  });
+  const extra = [];
+  if (episodes.length){
+    const list = episodes.map(e => `${e.start} to ${e.end} (${e.n} months)`).join("; ");
+    extra.push(`The inverted-curve result rests on ${episodes.length} separate episode${episodes.length === 1 ? "" : "s"}: ${list}. Months within one episode move together, so the effective sample is far smaller than the month count suggests.`);
+  }
+  $("caveats").innerHTML = extra.concat(d.caveats).map(c => `<li>${esc(c)}</li>`).join("");
   $("source").textContent = d.source;
   $("updated").textContent = " · Last updated " + d.generated_utc + " UTC";
   $("content").classList.remove("hidden");

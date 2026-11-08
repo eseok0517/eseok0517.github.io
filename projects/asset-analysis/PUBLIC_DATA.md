@@ -28,7 +28,7 @@ The public source does not provide audit dates, condition, annual maintenance ex
 
 ## Recommended follow-up
 
-Validate cost exceptions and replacement plans with each department. Obtain physical verification, accounting policy and maintenance histories before proposing adjustments or capital spending. Public fleet equipment is an asset-control analogue, not TSMC or LG equipment.
+Validate cost exceptions and replacement plans with each department. Obtain physical verification, accounting policy and maintenance histories before proposing adjustments or capital spending. Public fleet equipment is an asset-control analogue, not company equipment.
 
 ## Reproduce
 
