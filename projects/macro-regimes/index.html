@@ -5,49 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Market Regimes and Forward Returns | Ehahn Seok</title>
 <meta name="description" content="How have S&P 500 returns differed across yield-curve, inflation, and credit regimes? Built from public FRED data that refreshes automatically.">
-<style>
-:root{--bg:#fafaf8;--surface:#fff;--text:#1c1f23;--muted:#5d646d;--border:#e3e5e8;--accent:#1f5f4a;--accent-soft:#e4f0eb;--pos:#1f7a4d;--neg:#a12a2a;--shade:rgba(180,59,59,.14);--line:#1f5f4a;--warnbg:#fbefd5;--warn:#7a5300}
-@media (prefers-color-scheme:dark){:root{--bg:#14171a;--surface:#1b1f23;--text:#e8eaed;--muted:#9aa2ab;--border:#2b3036;--accent:#6fcfa9;--accent-soft:#1d332b;--pos:#6fcfa9;--neg:#f09a9a;--shade:rgba(224,120,120,.18);--line:#6fcfa9;--warnbg:#3a2f14;--warn:#f0c36a}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-a{color:var(--accent)}
-.wrap{max-width:960px;margin:0 auto;padding:0 16px 56px}
-.back{display:inline-block;padding-top:20px;font-size:.9rem;text-decoration:none}
-h1{margin:8px 0 8px;font-size:clamp(1.55rem,4.5vw,2.2rem);line-height:1.2}
-h2{margin:36px 0 12px;font-size:1.15rem;padding-bottom:6px;border-bottom:1px solid var(--border)}
-.lead{color:var(--muted);max-width:700px;margin:0}
-.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}
-.banner{margin:16px 0 0;padding:10px 14px;border-radius:10px;background:var(--warnbg);color:var(--warn);font-size:.9rem}
-.hidden{display:none}
-.finding{font-size:1.15rem;line-height:1.5;margin:0}
-.finding b{color:var(--accent)}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
-.kpi{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px}
-.kpi .l{font-size:.78rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-.kpi .v{font-size:1.5rem;font-weight:700;margin-top:2px}
-.kpi .s{font-size:.82rem;color:var(--muted)}
-.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
-table{border-collapse:collapse;width:100%;font-size:.9rem}
-th,td{padding:9px 12px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
-th:first-child,td:first-child{text-align:left}
-th{font-size:.74rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-tr:last-child td{border-bottom:0}
-.grp td{background:var(--accent-soft);font-weight:700;text-align:left}
-.pos{color:var(--pos)}.neg{color:var(--neg)}
-svg{width:100%;height:auto;display:block}
-.legend{font-size:.82rem;color:var(--muted);margin-top:6px}
-.legend i{display:inline-block;width:12px;height:12px;vertical-align:-2px;margin-right:5px;border-radius:2px}
-ul.notes{color:var(--muted);font-size:.9rem;padding-left:20px}
-.small{font-size:.85rem;color:var(--muted)}
-</style>
+<link rel="stylesheet" href="../../style.css"><link rel="stylesheet" href="../../case-studies.css">
 </head>
-<body>
-<div class="wrap">
-<a class="back" href="../../index.html">&larr; Back to portfolio</a>
-<h1>Do market regimes change what stocks return next?</h1>
-<p class="lead">A look at how the S&amp;P 500's next-12-month return has differed when the yield curve was inverted, inflation was high, or credit spreads were wide. Built from public Federal Reserve (FRED) data that refreshes automatically every week.</p>
-
-<div id="banner" class="banner hidden"></div>
+<body class="case-page macro-case">
+<a class="skip-link" href="#case-main">Skip to content</a><header class="site-header"><a class="brand" href="../../index.html">Ehahn Seok<span>Finance & operations analytics</span></a><nav aria-label="Main navigation"><a href="../../index.html#projects">Selected work</a><a href="../../index.html#experience">Experience</a><a href="../../index.html#contact">Contact</a></nav></header><main id="case-main"><section class="case-hero"><div><a class="breadcrumb" href="../../index.html#projects">Selected work / Market regimes</a><p class="eyebrow">Economic research · Public FRED data</p><h1>Do market regimes change what stocks return next?</h1><p class="lead">A look at how the S&amp;P 500's next-12-month return has differed when the yield curve was inverted, inflation was high, or credit spreads were wide. Built from public Federal Reserve (FRED) data that refreshes automatically every week.</p><div class="cta"><a class="btn primary" href="#research-results">Explore the results</a><a href="../../scripts/fetch_macro.py">View the pipeline</a></div></div><aside class="profile case-summary"><p class="eyebrow">At a glance</p><dl><div><dt>Question</dt><dd>How do forward returns differ by regime?</dd></div><div><dt>Coverage</dt><dd>Completed month-end observations</dd></div><div><dt>Inputs</dt><dd>Yield curve, CPI, credit, S&amp;P 500</dd></div><div><dt>Tools</dt><dd>Python, GitHub Actions</dd></div><div><dt>Interpretation</dt><dd>Historical comparison; no trading signal</dd></div></dl></aside></section><section id="research-results" class="case-body"><div id="banner" class="banner hidden"></div>
 <div id="empty" class="panel hidden" style="margin-top:20px"></div>
 
 <div id="content" class="hidden">
@@ -85,8 +46,7 @@ ul.notes{color:var(--muted);font-size:.9rem;padding-left:20px}
     <span id="updated"></span>
   </p>
 </div>
-</div>
-
+</section></main><footer><span>© 2026 Ehahn Seok</span><a href="../../index.html#projects">Back to selected work</a></footer>
 <script>
 "use strict";
 const $ = id => document.getElementById(id);
