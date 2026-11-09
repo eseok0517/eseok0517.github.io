@@ -15,7 +15,7 @@ async function macroPreview(){
  if(!r.ok)throw Error('Macro data unavailable');const d=await r.json(),rows=d.monthly.filter(r=>r.sp500!=null);if(rows.length<2)return;
  const W=460,H=170,pad=12,low=Math.min(...rows.map(r=>r.sp500)),hi=Math.max(...rows.map(r=>r.sp500));
  const points=rows.map((r,i)=>`${pad+(W-2*pad)*i/(rows.length-1)},${H-pad-(H-2*pad)*(r.sp500-low)/(hi-low||1)}`).join(' ');
- document.getElementById('macro-chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="S and P 500 month-end level from ${rows[0].month} to ${rows.at(-1).month}"><path d="M${pad} ${H-pad}H${W-pad}" fill="none" stroke="#b7c6bd"/><polyline points="${points}" fill="none" stroke="#235f4c" stroke-width="2.2"/></svg>`;
+ document.getElementById('macro-chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="S and P 500 month-end level from ${rows[0].month} to ${rows.at(-1).month}"><path d="M${pad} ${H-pad}H${W-pad}" fill="none" stroke="#d6b9bd"/><polyline points="${points}" fill="none" stroke="#c8102e" stroke-width="2.2"/></svg>`;
  document.getElementById('macro-period').textContent=`${rows[0].month}–${rows.at(-1).month} · ${rows.length} completed monthly observations · price index`;
  const inv=d.stats.curve_regime.find(x=>x.regime==='Inverted'),normal=d.stats.curve_regime.find(x=>x.regime==='Normal');
  const mi=m=>+m.slice(0,4)*12+ +m.slice(5,7);let eps=0,prev=null;
