@@ -1,7 +1,7 @@
 {
- "generated_utc": "2026-11-08 01:30",
+ "generated_utc": "2026-11-09 12:53",
  "synthetic": false,
- "refresh_mode": "stored FRED downloads",
+ "refresh_mode": "fresh FRED download",
  "sample": {
   "first_month": "2016-11",
   "last_month": "2026-10",
