@@ -19,9 +19,8 @@
 
 <div id="content" class="hidden">
 
-  <h2>Research coverage</h2>
-  <p id="coverage" class="small"></p>
-  <div id="research-use" class="panel"><strong>How to use this analysis</strong><p class="small" style="margin-bottom:0">Compare historical market environments and identify questions for further research. Differences between regime averages do not establish causality or a trading rule. Check sample sizes before comparing means.</p></div>
+  
+  
 
   <h2>What the data shows</h2>
   <div class="panel"><p id="finding" class="finding"></p></div>
@@ -80,8 +79,6 @@ function render(d){
     $("banner").textContent = "Test data: these numbers come from a synthetic test file, not FRED. They are for checking the page only.";
   }
   const rows = d.monthly;
-  const counts = Object.fromEntries(Object.entries(d.stats).map(([k,v]) => [k, v.reduce((n,r) => n+r.months,0)]));
-  $("coverage").textContent = `${rows[0].month} to ${rows[rows.length-1].month}: ${rows.length} completed monthly observations. Eligible forward-return months: yield curve ${counts.curve_regime}, inflation ${counts.inflation_regime}, credit ${counts.credit_regime}. Results rebuilt ${d.generated_utc} UTC from ${d.refresh_mode || "FRED data"}.`;
   const byRegime = (list, name) => list.find(x => x.regime === name);
   const inv = byRegime(d.stats.curve_regime, "Inverted"), norm = byRegime(d.stats.curve_regime, "Normal");
   let text = "Not enough data to compare regimes yet.";
