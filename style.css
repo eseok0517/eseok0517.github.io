@@ -60,3 +60,16 @@ table.summary{width:100%;border-collapse:collapse;font-size:13px;min-width:760px
 
 .flow{min-width:0;max-width:100%}.swim-wrap{max-width:100%}
 .flow-hint{display:none;margin:-8px 0 12px;font-size:12px;color:var(--accent);font-weight:600}@media(max-width:760px){.flow-hint{display:block}}
+
+.fc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.fc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.fc.after{border-color:var(--accent);background:var(--soft)}
+.fc h4{margin:0 0 16px;font-size:17px}.fc.after .flow-tag{color:var(--accent)}
+.fc-box{display:flex;flex-direction:column;gap:2px;background:#fff;border:1.4px solid #cdbfc1;border-radius:8px;padding:10px 14px;font-size:14px;line-height:1.4;text-align:left}
+.fc-box.good{border-color:var(--accent)}
+.fc-box.decision{border-style:dashed;border-color:#9a5b00}.fc-box small{font-size:12px;color:var(--muted)}
+.fc-role{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.fc.after .fc-role{color:var(--accent)}
+.fc-arrow{align-self:center;color:#8a7b7e;font-size:18px;line-height:1.5}.fc.after .fc-arrow{color:var(--accent)}
+.fc .flow-end{margin-top:auto;padding-top:12px}
+@media(max-width:760px){.fc-grid{grid-template-columns:1fr}}
+.fc>div:last-of-type{margin-bottom:16px}
