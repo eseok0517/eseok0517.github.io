@@ -1,4 +1,4 @@
-/* All case pages inherit the exact homepage palette, type and navigation. */
+
 .case-page{--accent-soft:var(--soft);--line:var(--accent);--pos:#c8102e;--neg:#9a5b00;--shade:rgba(155,82,46,.13);--warnbg:#f2ecde;--warn:#74511c}
 .case-page .case-hero{display:grid;grid-template-columns:1.5fr 1fr;gap:65px;align-items:center;padding:65px 0}
 .case-page .case-hero h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(36px,4.6vw,56px);font-weight:400;line-height:1.1;letter-spacing:-.035em;margin:0 0 24px;max-width:760px}

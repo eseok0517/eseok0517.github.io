@@ -22,5 +22,4 @@ async function macroPreview(){
  d.monthly.forEach(r=>{if(r.curve_regime!=='Inverted'||r.fwd12_return==null)return;if(prev===null||mi(r.month)!==prev+1)eps++;prev=mi(r.month)});
  if(inv&&normal)document.getElementById('macro-finding').textContent=`Average next-12-month price return: ${inv.mean_fwd12.toFixed(1)}% after inverted-curve months (n=${inv.months}) versus ${normal.mean_fwd12.toFixed(1)}% after normal-curve months (n=${normal.months}). The inverted-curve months come from ${eps} separate episode${eps===1?'':'s'}, so treat this as context rather than a forecast.`;
 }
-// Preserve meaningful text fallbacks if a source cannot load.
 purchasingPreview().catch(()=>{});macroPreview().catch(()=>{});

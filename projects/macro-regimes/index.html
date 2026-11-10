@@ -109,7 +109,6 @@ function render(d){
   });
   $("stats").innerHTML = html + "</tbody>";
   $("defs").innerHTML = Object.values(d.definitions).map(esc).join(". ") + ".";
-  // Count separate inverted-curve episodes among months with a forward return
   const mi = ym => +ym.slice(0, 4) * 12 + +ym.slice(5, 7);
   const episodes = [];
   rows.forEach(r => {
@@ -136,7 +135,6 @@ function drawChart(rows){
   const lo = Math.min(...pts.map(p => p.sp500)), hi = Math.max(...pts.map(p => p.sp500));
   const ys = v => H - m.b - (H - m.t - m.b) * (v - lo) / (hi - lo || 1);
   let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="S&P 500 month-end level with inverted yield-curve periods shaded">`;
-  // inverted-curve shading
   let start = null;
   pts.forEach((p, i) => {
     const inv = p.curve_regime === "Inverted";
@@ -147,12 +145,10 @@ function drawChart(rows){
       start = null;
     }
   });
-  // y grid + labels
   for (let k = 0; k <= 4; k++){
     const v = lo + (hi - lo) * k / 4, y = ys(v);
     svg += `<line x1="${m.l}" x2="${W - m.r}" y1="${y}" y2="${y}" stroke="var(--border)"/><text x="${m.l - 8}" y="${y + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${Math.round(v).toLocaleString()}</text>`;
   }
-  // x labels (every ~2 years)
   pts.forEach((p, i) => { if (p.month.endsWith("-01") && +p.month.slice(0, 4) % 2 === 0) svg += `<text x="${xs(i)}" y="${H - 8}" text-anchor="middle" font-size="12" fill="var(--muted)">${p.month.slice(0, 4)}</text>`; });
   svg += `<polyline fill="none" stroke="var(--line)" stroke-width="2" points="${pts.map((p, i) => xs(i).toFixed(1) + "," + ys(p.sp500).toFixed(1)).join(" ")}"/></svg>`;
   $("chart").innerHTML = svg;
