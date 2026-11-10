@@ -14,7 +14,7 @@
 <meta name="theme-color" content="#c8102e">
 </head>
 <body class="case-page macro-case">
-<a class="skip-link" href="#case-main">Skip to content</a><header class="site-header"><a class="brand" href="../../index.html">Ehahn Seok<span>Finance & operations analytics</span></a><nav aria-label="Main navigation"><a href="../../index.html#projects">Selected work</a><a href="../../index.html#experience">Experience</a><a href="../../index.html#contact">Contact</a></nav></header><main id="case-main"><section class="case-hero"><div><a class="breadcrumb" href="../../index.html#projects">Selected work / Market regimes</a><p class="eyebrow">Economic research · Public FRED data</p><h1>Do market regimes change what stocks return next?</h1><p class="lead">A look at how the S&amp;P 500's next-12-month return has differed when the yield curve was inverted, inflation was high, or credit spreads were wide. Built from public Federal Reserve (FRED) data that refreshes automatically every week.</p><div class="cta"><a class="btn primary" href="#research-results">Explore the results</a><a href="../../scripts/fetch_macro.py">View the pipeline</a></div></div><aside class="profile case-summary"><p class="eyebrow">At a glance</p><dl><div><dt>Question</dt><dd>How do forward returns differ by regime?</dd></div><div><dt>Coverage</dt><dd>Completed month-end observations</dd></div><div><dt>Inputs</dt><dd>Yield curve, CPI, credit, S&amp;P 500</dd></div><div><dt>Tools</dt><dd>Python, GitHub Actions</dd></div><div><dt>Interpretation</dt><dd>Historical comparison; no trading signal</dd></div></dl></aside></section><section id="research-results" class="case-body"><div id="banner" class="banner hidden"></div>
+<a class="skip-link" href="#case-main">Skip to content</a><header class="site-header"><a class="brand" href="../../index.html">Ehahn Seok<span>Finance & operations analytics</span></a><nav aria-label="Main navigation"><a href="../../index.html#projects">Selected work</a><a href="../../index.html#experience">Experience</a><a href="../../index.html#contact">Contact</a></nav></header><main id="case-main"><section class="case-hero"><div><a class="breadcrumb" href="../../index.html#projects">Selected work / Market regimes</a><p class="eyebrow">Economic research · Public FRED data</p><h1>Do market regimes affect the next 12 months of S&P 500 returns?</h1><p class="lead">Compares the S&amp;P 500’s next-12-month return across yield-curve, inflation, and credit regimes, using public FRED data refreshed weekly by an automated workflow.</p><div class="cta"><a class="btn primary" href="#research-results">View the results</a><a href="../../scripts/fetch_macro.py">View the pipeline</a></div></div><aside class="profile case-summary"><p class="eyebrow">At a glance</p><dl><div><dt>Question</dt><dd>How do forward returns differ by regime?</dd></div><div><dt>Coverage</dt><dd>Completed month-end observations</dd></div><div><dt>Inputs</dt><dd>Yield curve, CPI, credit, S&amp;P 500</dd></div><div><dt>Tools</dt><dd>Python, GitHub Actions</dd></div><div><dt>Interpretation</dt><dd>Historical comparison; no trading signal</dd></div></dl></aside></section><section id="research-results" class="case-body"><div id="banner" class="banner hidden"></div>
 <div id="empty" class="panel hidden" style="margin-top:20px"></div>
 
 <div id="content" class="hidden">
@@ -26,7 +26,7 @@
   <h2>What the data shows</h2>
   <div class="panel"><p id="finding" class="finding"></p></div>
 
-  <h2>Where things stand now</h2>
+  <h2>Current regime</h2>
   <div id="kpis" class="kpis"></div>
 
   <h2>S&amp;P 500 and inverted-curve periods</h2>
@@ -39,7 +39,7 @@
   <div class="tablewrap"><table id="stats"></table></div>
   <p class="small" id="defs"></p>
 
-  <h2>Read this before drawing conclusions</h2>
+  <h2>Limitations</h2>
   <ul class="notes" id="caveats"></ul>
 
   <h2>Data and method</h2>
