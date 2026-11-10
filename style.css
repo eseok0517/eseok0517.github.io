@@ -30,3 +30,20 @@ table.summary{width:100%;border-collapse:collapse;font-size:13px;min-width:760px
 @media(max-width:560px){.result-grid{grid-template-columns:1fr}}
 
 .rc-stats{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:0 0 16px;padding:12px 0 0;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}.rc-stats b{color:var(--text);font-size:14px}
+
+.flow{grid-column:1/-1;margin-top:10px;padding-top:34px;border-top:1px solid var(--border)}.flow-head h3{font-size:24px;margin:0 0 20px}
+.flow-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch}
+.flow-lane{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.flow-lane.after{border-color:var(--accent);background:var(--soft)}
+.flow-tag{margin:0 0 4px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.flow-lane.after .flow-tag{color:var(--accent)}
+.flow-lane h4{margin:0 0 16px;font-size:17px}
+.flow-lane ol{list-style:none;margin:0;padding:0;display:grid;gap:10px;flex:1}
+.flow-lane li{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.45;position:relative}
+.flow-lane li:not(:last-child)::after{content:"";position:absolute;left:11px;top:26px;bottom:-12px;border-left:2px dotted var(--border)}
+.flow-lane.after li:not(:last-child)::after{border-color:#e7a9b1}
+.fs-n{flex:none;width:24px;height:24px;border-radius:50%;background:var(--border);color:var(--text);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.flow-lane.after .fs-n{background:var(--accent);color:#fff}
+.flow-end{margin:16px 0 0;padding-top:12px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted)}
+.flow-arrow{align-self:center;font-size:28px;color:var(--accent);font-weight:700}
+@media(max-width:850px){.flow-grid{grid-template-columns:1fr}.flow-arrow{transform:rotate(90deg);justify-self:center}}
+.flow>.note{margin:18px 0 0;font-size:12px;color:var(--muted)}
