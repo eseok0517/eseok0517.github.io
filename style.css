@@ -114,3 +114,8 @@ table.summary{width:100%;border-collapse:collapse;font-size:13px;min-width:760px
 .pf-cell p{margin:0}
 
 .portrait{display:block;width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:1px solid var(--border);margin:0 0 16px}
+
+.portrait-fig{margin:0 0 20px}
+.portrait-fig .portrait{width:100%;max-width:210px;height:auto;aspect-ratio:4/5;border-radius:8px;object-fit:cover;object-position:50% 15%;margin:0}
+.portrait-fig figcaption{display:flex;flex-direction:column;margin-top:10px;font-size:13px;color:var(--muted);line-height:1.4}
+.portrait-fig figcaption strong{color:var(--text);font-size:14px}
