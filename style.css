@@ -112,3 +112,5 @@ table.summary{width:100%;border-collapse:collapse;font-size:13px;min-width:760px
 .pf-risk{color:#9a5b00}.pf-good{color:var(--accent)}
 .pf-risk::before,.pf-good::before{content:"";position:absolute;left:0;top:.45em;width:7px;height:7px;border-radius:50%;background:currentColor}
 .pf-cell p{margin:0}
+
+.portrait{display:block;width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:1px solid var(--border);margin:0 0 16px}
