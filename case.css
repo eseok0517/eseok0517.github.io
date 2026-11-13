@@ -1,0 +1,32 @@
+.cs main{padding-bottom:30px}.cs section{padding:28px 0;border-bottom:0}.cs h1{font-size:clamp(30px,4vw,46px);max-width:880px}.cs h2{font-size:22px;margin:0 0 10px}
+.cs .intro{padding:48px 0 12px}.cs .lead{max-width:820px}.cs .crumb{font-size:12px;margin:0 0 18px}.cs .crumb a{color:var(--muted)}
+.cs .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:6px 0 0}
+.cs .kpi{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:8px;padding:14px 16px}
+.cs .kpi .l{font-size:10px;font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.cs .kpi .v{font:400 28px/1.15 Georgia,serif;margin:5px 0 2px}.cs .kpi .s{font-size:12px;color:var(--muted)}
+.cs .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:34px}
+.cs .two>h2{margin:0;font-size:20px}.cs .two p{margin:0 0 12px;color:var(--muted);font-size:15.5px;line-height:1.65}
+.cs .steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}.cs .steps li{counter-increment:s;position:relative;padding-left:44px;font-size:15px;color:var(--muted);line-height:1.6}
+.cs .steps li:before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--accent);background:#fff}
+.cs .steps b{display:block;color:var(--text);font-size:15px}
+.cs .kf{list-style:none;margin:0;padding:0;display:grid;gap:12px}.cs .kf li{border-left:3px solid var(--accent);padding:2px 0 2px 14px;font-size:14.5px;line-height:1.55;color:var(--muted)}.cs .kf li b{display:block;color:var(--text);font-size:15px;margin-bottom:2px}
+.cs .fg{margin:0 0 20px}.cs .fg h3{font-family:inherit;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.cs .btns{display:flex;gap:12px;flex-wrap:wrap}.cs .btns a{display:inline-block;font-weight:700;font-size:13px;padding:10px 16px;border-radius:5px;border:1px solid #cac2c3;color:var(--accent);text-decoration:none;background:#fff}.cs .btns a.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.cs .nextp{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:18px;font-size:14px}
+@media(max-width:800px){.cs .two{grid-template-columns:minmax(0,1fr);gap:10px}}
+.cs .kf{background:none;border:0;box-shadow:none;padding:0;border-radius:0}
+
+.cs .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+.cs .panel{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:26px 28px;box-shadow:var(--shadow)}
+.cs .panel .num{font-size:11px;font-weight:750;letter-spacing:.14em;color:var(--accent);margin:0 0 6px}
+.cs .panel h2{font-size:22px;margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.cs .panel p{margin:0 0 12px;color:var(--muted);font-size:15.5px;line-height:1.65}
+.cs .panel p.num{font-size:11px;margin:0 0 6px}
+.cs .panel p:last-child{margin-bottom:0}
+.cs .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.cs .steps li{background:#f8f7f7;border:1px solid var(--border);border-radius:8px;padding:16px 18px 16px 58px}
+.cs .steps li:before{left:16px;top:16px}
+.cs .panel .kf li{background:#f8f7f7;border-radius:0 6px 6px 0;padding:10px 14px}
+.cs .panel .fg{margin:0 0 22px}.cs .panel .fg:last-child{margin-bottom:0}
+.cs .tryit{background:#f5f2f2;border-color:#ddd2d4;display:flex;flex-direction:column}
+.cs .tryit .btns{margin-top:4px;flex-direction:column;align-items:stretch}.cs .tryit .btns a{text-align:center}
+@media(max-width:800px){.cs .grid2,.cs .steps{grid-template-columns:minmax(0,1fr)}.cs .panel{padding:22px 20px}}

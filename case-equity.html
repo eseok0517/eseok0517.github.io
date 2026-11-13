@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equity Risk and Regimes | Ehahn Seok</title>
+<meta name="description" content="Case study: risk, return and macro-regime analysis of ten well-known stocks and ETFs, with a portfolio builder.">
+<link rel="stylesheet" href="style.css?v=pf10"><link rel="stylesheet" href="case.css?v=3">
+<link rel="icon" href="favicon.ico?v=g9c7u4w3" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=g9c7u4w3">
+<meta name="theme-color" content="#ce142d">
+
+</head>
+<body class="cs" data-case="equity">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="index.html">Ehahn Seok<span>Data & business analytics</span></a><nav aria-label="Main navigation"><a href="index.html#projects">Selected work</a><a href="index.html#experience">Experience</a><a href="index.html#contact">Contact</a></nav></header>
+<main id="main">
+<section class="intro"><p class="crumb"><a href="index.html#projects">← All projects</a></p><p class="eyebrow">Case study · Independent project · Markets</p><h1>How well-known stocks and ETFs performed across market regimes</h1><p class="lead" id="cs-lead">Analyzed ten widely held stocks and ETFs against yield-curve and inflation data. Reported risk-adjusted return, drawdowns and correlations, showed performance under different macro conditions, and included a portfolio builder.</p><div class="kpis" id="cs-tiles"><div class="kpi"><div class="l">Securities</div><div class="v">10</div><div class="s">stocks and ETFs, including two banks</div></div><div class="kpi"><div class="l">History</div><div class="v">2007+</div><div class="s">month-end prices</div></div><div class="kpi"><div class="l">Macro series</div><div class="v">3</div><div class="s">yield curve, inflation, T-bill rate</div></div><div class="kpi"><div class="l">Refresh</div><div class="v">Weekly</div><div class="s">automatic, via GitHub Actions</div></div></div></section>
+<section class="grid2"><div class="panel"><p class="num">01</p><h2>The problem</h2><p>Investors compare stocks by return, but return alone hides risk. The question was how ten well-known holdings differ once risk and drawdowns are counted, and whether the macro environment, specifically an inverted yield curve or high inflation, changes which holdings do well.</p></div><div class="panel"><p class="num">02</p><h2>The data</h2><p>Month-end adjusted prices for SPY, QQQ, AAPL, MSFT, NVDA, JPM, GS, XOM, JNJ and TLT, from a public price source with a second source as a fallback. The 10-year minus 2-year Treasury spread, CPI and the 3-month Treasury bill rate come from FRED. A GitHub Action refreshes both every week.</p></div></section>
+<section><div class="panel"><p class="num">03</p><h2>What I built</h2><ol class="steps"><li><b>Measure risk and return.</b> Annualized return, volatility, Sharpe ratio, beta and correlation against SPY, and worst drawdown for each holding.</li><li><b>Label each month by regime.</b> The yield curve is inverted when the 10-year spread is below zero; inflation is high when CPI is up 3% or more from a year earlier.</li><li><b>Average what came next.</b> For each regime, the average return over the following 12 months, with the number of independent episodes stated.</li><li><b>Build portfolios.</b> Pick holdings and weights, rebalance monthly, and compare with SPY.</li></ol></div></section>
+<section><div class="panel"><p class="num">04</p><h2>What I found</h2><div id="cs-found"><p>Loading findings…</p></div></div></section>
+<section class="grid2"><div class="panel"><p class="num">05</p><h2>What I would do next</h2><p>Test one simple rule, such as reducing stock exposure when the curve inverts, on one period and check it on another, as I did with the bank screens. Add trading costs, and widen the list beyond securities that are well known today.</p></div><div class="panel tryit"><p class="num">06</p><h2>Try it</h2><div class="btns"><a class="primary" href="equity-risk.html">Open the dashboard</a><a class="" href="projects/macro-regimes/">Index-level regime study</a><a class="" href="https://github.com/eseok0517/Portfolio">Code on GitHub</a></div></div></section>
+<section><div class="nextp"><a href="case-inventory.html">← Supply room inventory system</a><a href="case-bank.html">Next: Arizona bank health monitor →</a></div></section>
+</main>
+<footer><span>Ehahn Seok · Michigan State University</span><span><a href="index.html">Back to portfolio</a></span></footer>
+<script src="findings.js?v=16"></script>
+<script src="case.js?v=1"></script>
+</body></html>

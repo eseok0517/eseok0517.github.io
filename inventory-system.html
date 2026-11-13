@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supply Room Inventory System | Ehahn Seok</title>
+<meta name="description" content="A working supply-room inventory system: scan items in and out, keep running counts, get reorder alerts, and track KPIs. An improved web version of an Excel/VBA tool I built during an internship.">
+<link rel="stylesheet" href="style.css?v=pf10">
+<link rel="icon" href="favicon.ico?v=g9c7u4w3" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=g9c7u4w3">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=g9c7u4w3">
+<meta name="theme-color" content="#ce142d">
+<style>
+.is{--ok:#ce142d;--warn:#9b6a12;--bad:#a2442a;--okbg:#eee6e7;--warnbg:#f6edd6;--badbg:#f6e3dc;--grey:#948d8e}
+.is h1{font-size:clamp(30px,4vw,46px)}
+.is section{padding:26px 0;border-bottom:0}
+.intro{padding:46px 0 14px!important}
+.fine{font-size:12px;color:var(--muted)}
+.bar-top{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;border:1px solid var(--border);border-radius:8px;background:var(--surface);padding:12px 16px;box-shadow:var(--shadow)}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs button{border:0;background:transparent;font-weight:700;font-size:13px;color:var(--muted);padding:8px 14px;border-radius:5px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--accent);color:#fff}
+.ctl{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--muted);font-weight:600}
+.is select,.is input,.is button.b{font:inherit;font-size:13px}
+.is select,.is input[type=text],.is input[type=search],.is input[type=number]{padding:7px 9px;border:1px solid var(--border);border-radius:5px;background:#fff;color:var(--text);min-width:0}
+.is button.b{font-weight:700;padding:8px 14px;border-radius:5px;border:1px solid #cac2c3;background:var(--surface);color:var(--accent);cursor:pointer}
+.is button.b.p{background:var(--accent);border-color:var(--accent);color:#fff}
+.is button.b.d{color:var(--bad)}
+.is button.b:hover{filter:brightness(.95)}
+.hidden{display:none!important}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px;box-shadow:var(--shadow)}
+.panel h2{font-size:20px;margin:0 0 12px}
+.panel h3{font-size:14px;margin:0 0 10px;font-family:inherit;letter-spacing:0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:8px;padding:14px 16px}
+.kpi.w{border-top-color:var(--warn)}.kpi.r{border-top-color:var(--bad)}
+.kpi .l{font-size:10px;font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kpi .v{font:400 28px/1.15 Georgia,serif;margin:5px 0 2px}
+.kpi .s{font-size:12px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;margin-top:14px}
+.bars .b{display:grid;grid-template-columns:130px 1fr 74px;gap:10px;align-items:center;font-size:12px;margin:6px 0}
+.bars .t{background:#ede8e9;border-radius:3px;height:13px;overflow:hidden}.bars .t i{display:block;height:100%;background:var(--accent)}
+.bars .x{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.stack{display:flex;height:24px;border-radius:4px;overflow:hidden;margin:4px 0 10px}.stack i{display:block}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted)}.legend u{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;text-decoration:none}
+svg.ch{width:100%;height:auto;display:block}
+.station{display:grid;grid-template-columns:1fr 1.4fr;gap:16px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);font-weight:600}
+.form .full{grid-column:1/-1}
+.scanbox{font-size:18px!important;padding:11px 12px!important;border:2px solid var(--accent)!important}
+.msg{font-size:13px;min-height:20px;margin-top:10px}.msg.err{color:var(--bad);font-weight:600}.msg.ok{color:var(--ok);font-weight:600}
+.tw{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--surface)}
+table.data{border-collapse:collapse;width:100%;font-size:13px}
+.data th,.data td{padding:8px 11px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap}
+.data th{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:#f6f4f4;position:sticky;top:0}
+.data .n{text-align:right;font-variant-numeric:tabular-nums}
+.data input[type=number]{width:74px;text-align:right;padding:4px 6px}
+.data tr.low td{background:#fcefea}.data tr.out td{background:#f7ddd4}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:11px;font-weight:700}
+.pill.ok{background:var(--okbg);color:var(--ok)}.pill.warn{background:var(--warnbg);color:var(--warn)}.pill.bad{background:var(--badbg);color:var(--bad)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.total{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-weight:700}
+.guide li{font-size:14px;color:var(--muted);margin:0 0 7px}
+.guide code{font-size:12px;background:var(--soft);padding:1px 5px;border-radius:3px}
+.map{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.map div{border-top:1px solid var(--border);padding:9px 0;font-size:13px;color:var(--muted)}.map b{color:var(--text);display:block;font-size:13px}
+.grid2>*,.station>*,.map>*{min-width:0}
+@media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}.grid2,.station,.map{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.form{grid-template-columns:1fr}.bars .b{grid-template-columns:90px 1fr 60px}.kpi .v{font-size:23px}}
+</style>
+</head>
+<body class="is">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="index.html">Ehahn Seok<span>Data & business analytics</span></a><nav aria-label="Main navigation"><a href="index.html#projects">Selected work</a><a href="index.html#experience">Experience</a><a href="index.html#contact">Contact</a></nav></header>
+<main id="main">
+<section class="intro">
+<p class="eyebrow">Inventory systems · Built on my internship tool</p>
+<h1>Supply Room Inventory System</h1>
+<p class="lead">A supply-room inventory system that runs in the browser. Operators scan items in and out, counts and reorder points update from the log, and a dashboard reports value, usage and low-stock items across rooms. It started as an Excel/VBA tool I built during an internship; this version removes that tool’s main limits and adds usage-based reordering.</p>
+<p class="fine">All items, prices and names are synthetic and created for this demo. Changes you make are stored only in this browser.</p>
+</section>
+
+<section>
+<div class="bar-top">
+<div class="tabs" role="tablist" id="tabs">
+<button role="tab" data-t="dash" aria-selected="true">Dashboard</button>
+<button role="tab" data-t="out" aria-selected="false">Check out</button>
+<button role="tab" data-t="in" aria-selected="false">Scan in</button>
+<button role="tab" data-t="inv" aria-selected="false">Inventory</button>
+<button role="tab" data-t="log" aria-selected="false">Data log</button>
+<button role="tab" data-t="how" aria-selected="false">What improved</button>
+</div>
+<div class="ctl"><label>Supply room <select id="room"></select></label><button class="b" id="resetDemo">Reset demo data</button></div>
+</div>
+</section>
+
+<section id="p-dash">
+<div class="kpis" id="kpis"></div>
+<div class="grid2">
+<div class="panel"><h3>Checkout cost, last 30 days</h3><div id="daily"></div></div>
+<div class="panel"><h3>Stock status</h3><div id="status"></div><h3 style="margin-top:18px">Checkout cost this month by room</h3><div id="byRoom" class="bars"></div></div>
+</div>
+<div class="grid2">
+<div class="panel"><h3>Most-used items this month (pieces out)</h3><div id="top" class="bars"></div></div>
+<div class="panel"><h3>Reorder list</h3><div class="tw" style="max-height:330px;overflow:auto"><table class="data"><thead><tr><th>Room</th><th>Item</th><th class="n">On hand</th><th class="n">Reorder point</th><th class="n">Days of supply</th><th class="n">Suggested order</th></tr></thead><tbody id="reo"></tbody></table></div><div class="tools" style="margin-top:12px"><button class="b" id="expReo">Export reorder list (CSV)</button></div></div>
+</div>
+</section>
+
+<section id="p-out" class="hidden"><div class="station" id="st-out"></div></section>
+<section id="p-in" class="hidden"><div class="station" id="st-in"></div></section>
+
+<section id="p-inv" class="hidden">
+<div class="tools"><input type="search" id="q" placeholder="Search item, barcode or code" aria-label="Search items"><select id="flt" aria-label="Filter status"><option value="">All statuses</option><option>REORDER</option><option>OUT</option><option>OK</option></select><span class="fine" id="invCnt"></span></div>
+<div class="tw" style="max-height:640px;overflow:auto"><table class="data"><thead><tr><th>Room</th><th>Item</th><th>Barcode</th><th class="n">Price</th><th class="n">Physical count</th><th class="n">Scanned in</th><th class="n">Checked out</th><th class="n">Current</th><th class="n">Value</th><th class="n">Lead time (mo)</th><th class="n">Monthly usage</th><th class="n">Reorder point</th><th class="n">Days of supply</th><th>Status</th></tr></thead><tbody id="invTb"></tbody></table></div>
+<p class="fine" style="margin-top:10px">Edit physical count, lead time and monthly usage directly. Leave monthly usage blank to use the average of the last 90 days of checkouts.</p>
+<details class="panel" style="margin-top:14px"><summary style="cursor:pointer;font-weight:700">Add an item</summary>
+<div class="form" style="margin-top:14px" id="addForm">
+<label>Barcode<input type="text" id="a_bc"></label><label>Item name<input type="text" id="a_nm"></label>
+<label>Price per piece ($)<input type="number" id="a_pr" step="0.01" min="0"></label><label>Opening physical count (pieces)<input type="number" id="a_pc" min="0" value="0"></label>
+<label>Pieces per box (0 = not used)<input type="number" id="a_box" min="0" value="0"></label><label>Pieces per pack (0 = not used)<input type="number" id="a_pack" min="0" value="0"></label>
+<label>Pieces per roll (0 = not used)<input type="number" id="a_roll" min="0" value="0"></label><label>Lead time (months)<input type="number" id="a_lt" min="0" step="0.5" value="1"></label>
+<div class="full"><button class="b p" id="addItem">Add item to selected room</button><span class="msg" id="addMsg" style="margin-left:12px"></span></div></div></details>
+</section>
+
+<section id="p-log" class="hidden">
+<div class="tools"><select id="ldir" aria-label="Direction"><option value="">In and out</option><option value="OUT">Out only</option><option value="IN">In only</option></select><input type="search" id="lq" placeholder="Search item, barcode or person" aria-label="Search log"><button class="b" id="expLog">Export log (CSV)</button><button class="b" id="impBtn">Import CSV logs…</button><input type="file" id="impFile" accept=".csv" multiple class="hidden"><span class="fine" id="logCnt"></span></div>
+<div class="msg" id="impMsg"></div>
+<div class="tw" style="max-height:600px;overflow:auto"><table class="data"><thead><tr><th>Log ID</th><th>Timestamp</th><th>Room</th><th>Scan</th><th>Item</th><th class="n">Qty</th><th>Unit</th><th class="n">Pieces</th><th class="n">Unit price</th><th class="n">Total</th><th>By</th></tr></thead><tbody id="logTb"></tbody></table></div>
+<p class="fine" style="margin-top:10px">Export gives the same columns the workbook logs used. Importing merges files from any room into the master counts and skips rows already imported.</p>
+</section>
+
+<section id="p-how"><div class="panel guide">
+<h2>What improved over the Excel version</h2>
+<div class="tw"><table class="data"><thead><tr><th>Area</th><th>Excel/VBA version</th><th>This version</th></tr></thead><tbody>
+<tr><td><b>Reorder point</b></td><td>Lead time and monthly usage typed in by hand for each item</td><td>Usage is calculated from the last 90 days of checkouts. A manual value is still allowed as an override.</td></tr>
+<tr><td><b>What to order</b></td><td>Status flag only</td><td>Suggested order quantity and days of supply for every flagged item, with a CSV export</td></tr>
+<tr><td><b>Setup</b></td><td>Separate workbook per room, macros enabled, counts pulled through links to other files</td><td>One app, all rooms in one place, filter by room. No macros, install or file links to break.</td></tr>
+<tr><td><b>Consolidation</b></td><td>Run a refresh macro against a shared folder of CSV logs</td><td>Counts update the moment an order is completed. CSV import is still there for outside logs and skips duplicates.</td></tr>
+<tr><td><b>Visibility</b></td><td>Counts and KPI tiles</td><td>Daily checkout cost trend, most-used items, stock status mix and cost by room, all live</td></tr>
+<tr><td><b>Demonstration</b></td><td>Needs Excel and the real data</td><td>Opens in any browser, with a simulate-a-scan button for demos without a scanner</td></tr>
+</tbody></table></div>
+<h2 style="margin-top:22px">Rules the system applies</h2>
+<ul>
+<li>A line needs a name, a known barcode, a unit type that item supports, and a whole-number quantity above zero. Blank quantity counts as 1.</li>
+<li>Pieces = quantity × the item’s pieces per unit (box, pack, roll or individual). Prices are per piece, so line total = pieces × price.</li>
+<li><b>Current inventory</b> = physical count + pieces scanned in − pieces checked out.</li>
+<li><b>Reorder point</b> = lead time (months) × monthly usage. Status is <code>REORDER</code> at or below it and <code>OUT</code> at zero or less. The suggested order restores lead time plus one month of usage.</li>
+<li><b>Days of supply</b> = current pieces ÷ (monthly usage ÷ 30).</li>
+<li>Check out is blocked when it would take more pieces than are on hand, so counts never go negative from scanning.</li>
+<li>Importing identifies a log row by room and checkout ID, or by room, order, barcode and direction, so the same file can be imported twice safely.</li>
+</ul>
+
+</div></section>
+</main>
+<footer><span>Ehahn Seok · Michigan State University</span><span><a href="inventory-kpi.html">Analyze any movement CSV</a> · <a href="index.html">Back to portfolio</a></span></footer>
+<script src="inventory-system.js?v=1"></script>
+</body></html>

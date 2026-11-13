@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inventory KPI Builder | Ehahn Seok</title>
+<meta name="description" content="Upload stock movement records (CSV) and get on-hand balances, days of supply, a reorder list, stockout history, ABC classes and data-quality checks. Runs in your browser.">
+<link rel="stylesheet" href="style.css?v=pf10">
+<link rel="icon" href="favicon.ico?v=g9c7u4w3" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=g9c7u4w3">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=g9c7u4w3">
+<meta name="theme-color" content="#ce142d">
+<style>
+.ik{--ok:#ce142d;--warn:#9b6a12;--bad:#a2442a;--okbg:#eee6e7;--warnbg:#f6edd6;--badbg:#f6e3dc;--grey:#948d8e}
+.ik h1{font-size:clamp(32px,4.2vw,50px)}
+.ik .intro{padding:52px 0 30px;border-bottom:0}
+.ik .intro .lead{max-width:760px}
+.ik section{padding:34px 0;border-bottom:0}
+.ik h2{font-size:24px;margin:0 0 14px}
+.ik .panel{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px;box-shadow:var(--shadow)}
+.drop{border:2px dashed #cac2c3;border-radius:8px;padding:26px 16px;text-align:center;background:var(--surface);cursor:pointer}
+.drop:hover,.drop.over{border-color:var(--accent);background:var(--soft)}
+.drop strong{display:block;font-size:15px}.drop span{font-size:13px;color:var(--muted)}
+.ik button{font-weight:700;font-size:13px;padding:9px 15px;border-radius:5px;border:1px solid #cac2c3;background:var(--surface);color:var(--accent);cursor:pointer}
+.ik button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.ik button:hover{filter:brightness(.95)}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.params{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:16px}
+.params label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);font-weight:600}
+.params select,.params input{font:inherit;font-size:14px;color:var(--text);background:#fff;border:1px solid var(--border);border-radius:5px;padding:7px 9px}
+#msg{font-size:13px;margin-top:12px;color:var(--muted)}#msg.err{color:var(--bad);font-weight:600}
+.hidden{display:none!important}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 18px;border-top:3px solid var(--accent)}
+.kpi.w{border-top-color:var(--warn)}.kpi.b{border-top-color:var(--bad)}
+.kpi .l{font-size:10px;font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kpi .v{font:400 32px/1.15 Georgia,serif;margin:6px 0 2px;letter-spacing:-.02em}
+.kpi .s{font-size:12px;color:var(--muted);line-height:1.45}
+.two{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+.chart h3{font-size:15px;margin:0 0 12px;font-family:inherit;font-weight:700;letter-spacing:0}
+.chart .note{font-size:12px;color:var(--muted);margin:8px 0 0}
+.bars .b{display:grid;grid-template-columns:110px 1fr 70px;gap:10px;align-items:center;font-size:12px;margin:7px 0}
+.bars .t{background:#ede8e9;border-radius:3px;height:14px;overflow:hidden}.bars .t i{display:block;height:100%;background:var(--accent)}
+.bars .x{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.stack{display:flex;height:26px;border-radius:4px;overflow:hidden;margin:6px 0 12px}.stack i{display:block;height:100%}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted)}.legend u{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;text-decoration:none;vertical-align:-1px}
+svg.trend{width:100%;height:auto;display:block}
+.tw{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--surface)}
+table.data{border-collapse:collapse;width:100%;font-size:13px}
+.data th,.data td{padding:9px 12px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap}
+.data th{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:#f6f4f4;position:sticky;top:0}
+.data td.n,.data th.n{text-align:right;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:11px;font-weight:700}
+.pill.ok{background:var(--okbg);color:var(--ok)}.pill.warn{background:var(--warnbg);color:var(--warn)}.pill.bad{background:var(--badbg);color:var(--bad)}.pill.na{background:#edeaea;color:var(--muted)}
+.tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.tools input,.tools select{font:inherit;font-size:13px;padding:7px 9px;border:1px solid var(--border);border-radius:5px;background:#fff}
+.dq{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.dq div{border-left:2px solid var(--accent);padding-left:12px;font-size:13px;color:var(--muted)}.dq b{display:block;font:400 24px Georgia,serif;color:var(--text)}
+.method li{font-size:14px;color:var(--muted);margin:0 0 8px}.method code{font-size:12px;background:var(--soft);padding:1px 5px;border-radius:3px}
+.fine{font-size:12px;color:var(--muted)}
+@media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+@media(max-width:560px){.kpi .v{font-size:26px}.bars .b{grid-template-columns:84px 1fr 56px}}
+</style>
+</head>
+<body class="ik">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="index.html">Ehahn Seok<span>Data & business analytics</span></a><nav aria-label="Main navigation"><a href="index.html#projects">Selected work</a><a href="index.html#experience">Experience</a><a href="index.html#contact">Contact</a></nav></header>
+<main id="main">
+<section class="intro">
+<p class="eyebrow">Inventory analytics · Builds on my LG work</p>
+<h1>Inventory KPI Builder: from stock movements to a reorder list.</h1>
+<p class="lead">At LG, the barcode system recorded every item taken from or returned to a supply room. This tool takes that kind of log and turns it into what a coordinator needs: current balances, how many days each item will last, what to reorder, what has run out before, and which records look wrong.</p>
+<p class="fine">The demo uses synthetic data I generated to resemble a supply-room scan log (39 consumable items, 3 rooms, about four months). It is not LG data. Uploaded files stay in your browser.</p>
+</section>
+
+<section>
+<div class="panel">
+<div id="drop" class="drop" tabindex="0" role="button" aria-label="Choose a CSV file"><strong>Drop a CSV here, or click to choose one</strong><span>One row per stock movement. Columns are matched by name, so exact headers are not required.</span><input id="file" type="file" accept=".csv,text/csv" class="hidden"></div>
+<div class="row"><button class="primary" id="demo">Load the demo data</button><button id="tmpl">Download CSV template</button></div>
+<div id="msg" role="status"></div>
+<div class="params">
+<label>Usage window<select id="win"><option value="14">Last 14 days</option><option value="30" selected>Last 30 days</option><option value="60">Last 60 days</option><option value="90">Last 90 days</option></select></label>
+<label>Supplier lead time (days)<input id="lead" type="number" min="1" max="90" value="7"></label>
+<label>Target cover after reorder (days)<input id="cover" type="number" min="7" max="180" value="30"></label>
+</div>
+<details style="margin-top:14px"><summary class="fine" style="cursor:pointer;font-weight:700">Expected columns</summary>
+<p class="fine" style="margin-top:8px"><b>Required:</b> date or timestamp, item ID, action, quantity. <b>Optional:</b> item name, supply room, unit cost, minimum level.<br>Actions: <code>ISSUE</code> (checkout), <code>RECEIVE</code> (check-in or delivery), <code>OPENING</code> (starting balance), <code>ADJUST</code> (signed count correction). Common synonyms such as OUT, IN, CHECKOUT and RESTOCK are recognized.</p></details>
+</div>
+</section>
+
+<div id="out" class="hidden">
+<section><h2>Key indicators</h2><div class="kpis" id="kpis"></div></section>
+<section class="two">
+<div class="panel chart"><h3>Units issued per week</h3><div id="trend"></div><p class="note" id="trendNote"></p></div>
+<div class="panel chart"><h3>Stock status</h3><div id="status"></div><h3 style="margin-top:22px">Issued units by supply room</h3><div id="rooms" class="bars"></div></div>
+</section>
+<section class="two">
+<div class="panel chart"><h3>Lowest days of supply</h3><div id="lowdos" class="bars"></div><p class="note">Days of supply = on-hand units ÷ average daily issues in the usage window.</p></div>
+<div class="panel chart"><h3>ABC classes by issued value</h3><div id="abc"></div><p class="note" id="abcNote"></p></div>
+</section>
+<section><h2>Item detail</h2>
+<div class="tools"><input id="q" type="search" placeholder="Search item or room" aria-label="Search items"><select id="flt" aria-label="Filter by status"><option value="">All statuses</option><option>Out of stock</option><option>Reorder now</option><option>Watch</option><option>OK</option><option>No movement</option></select><button id="exp">Export reorder list (CSV)</button><span class="fine" id="cnt"></span></div>
+<div class="tw"><table class="data"><thead><tr><th data-k="id">Item</th><th data-k="room">Room</th><th class="n" data-k="onhand">On hand</th><th class="n" data-k="rate">Issued / day</th><th class="n" data-k="dos">Days of supply</th><th class="n" data-k="min">Minimum</th><th data-k="status">Status</th><th class="n" data-k="reorder">Suggested order</th><th class="n" data-k="value">Value</th><th data-k="abc">ABC</th></tr></thead><tbody id="tb"></tbody></table></div>
+</section>
+<section><h2>Data checks</h2><div class="dq" id="dq"></div></section>
+</div>
+
+<section><h2>How the numbers are calculated</h2>
+<ul class="method">
+<li><b>On hand</b> is <code>OPENING + RECEIVE + ADJUST − ISSUE</code> for every record up to the last date in the file. Records with an unreadable date, item, action or quantity are excluded and counted under Data checks.</li>
+<li><b>Days of supply</b> is on hand divided by average daily issues over the chosen window. Items with no issues in the window are shown as No movement.</li>
+<li><b>Status.</b> Out of stock: on hand at or below zero. Reorder now: at or below the minimum, or less than one lead time of supply. Watch: less than two lead times of supply.</li>
+<li><b>Suggested order</b> brings stock up to the larger of the minimum and the target cover days at the current usage rate.</li>
+<li><b>Stockout episodes</b> count the times an item’s running balance reached zero or below during the whole file.</li>
+<li><b>Annualized turnover</b> is issued value in the window, scaled to 365 days, divided by current inventory value. It is shown only when unit costs are present.</li>
+<li><b>ABC classes</b> rank items by issued value in the window (issued units if no costs): A is the top 80% of value, B the next 15%, C the rest.</li>
+<li>Usage rates come from past issues only. They do not forecast demand changes, and a short window can overstate a one-off spike.</li>
+</ul></section>
+</main>
+<footer><span>Ehahn Seok · Michigan State University</span><span><a href="index.html">Back to portfolio</a></span></footer>
+<script src="inventory-kpi.js"></script>
+</body></html>

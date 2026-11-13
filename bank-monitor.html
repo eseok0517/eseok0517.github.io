@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arizona Bank Health Monitor | Ehahn Seok</title>
+<meta name="description" content="Quarterly health scorecard for Arizona-headquartered banks, compared with the ten largest U.S. banks: profitability, margins, capital, liquidity and deposit trends from FDIC call reports.">
+<link rel="stylesheet" href="style.css?v=pf10">
+<link rel="icon" href="favicon.ico?v=g9c7u4w3" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=g9c7u4w3">
+<meta name="theme-color" content="#ce142d">
+<style>
+.bm section{padding:26px 0;border-bottom:0}.bm h1{font-size:clamp(30px,4vw,46px)}.bm h2{font-size:22px;margin:0 0 6px}
+.intro{padding:46px 0 12px!important}.fine{font-size:12px;color:var(--muted)}.sub{font-size:14px;color:var(--muted);margin:0 0 14px;max-width:800px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px;box-shadow:var(--shadow)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:8px;padding:14px 16px}
+.kpi .l{font-size:10px;font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.kpi .v{font:400 26px/1.15 Georgia,serif;margin:5px 0 2px}.kpi .s{font-size:12px;color:var(--muted)}
+.tw{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--surface)}
+table.data{border-collapse:collapse;width:100%;font-size:13px}.data th,.data td{padding:8px 11px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap}
+.data th{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:#f6f4f4}.data .n{text-align:right;font-variant-numeric:tabular-nums}
+.data tr.med td{background:#f2efef;font-weight:700}
+.flag{display:inline-block;margin:1px 3px 1px 0;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:700;background:#f6e3dc;color:#a2442a}.ok{color:#ce142d;font-weight:700}
+.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{border:1px solid #cac2c3;background:#fff;color:var(--muted);font:700 12px inherit;padding:6px 11px;border-radius:99px;cursor:pointer}.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+.bar-top{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.bm select{font:inherit;font-size:13px;padding:6px 8px;border:1px solid var(--border);border-radius:5px;background:#fff}
+svg.ch{width:100%;height:auto;display:block}.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:8px}.legend u{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;text-decoration:none}
+.status{font-size:13px;margin-top:6px}.status.err{color:#a2442a;font-weight:600}.method li{font-size:14px;color:var(--muted);margin:0 0 7px}.hidden{display:none!important}
+@media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}}
+.leadS{font-size:17px;line-height:1.6;max-width:860px;margin:0 0 18px}.fg{margin:26px 0 0}.fg h3{font-family:inherit;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border)}.fg .kf{border:0;background:none;box-shadow:none;padding:0;margin:0}.fg .kf li{font-size:14.5px;color:var(--muted)}.fg .kf li b{display:block;color:var(--text);font-size:15px;margin-bottom:2px}.cmp{margin:0 0 16px}.cmp td:first-child,.cmp th:first-child{font-weight:600}.cmp th.n,.cmp td.n{text-align:right;font-variant-numeric:tabular-nums}</style>
+</head>
+<body class="bm">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="index.html">Ehahn Seok<span>Data & business analytics</span></a><nav aria-label="Main navigation"><a href="index.html#projects">Selected work</a><a href="index.html#experience">Experience</a><a href="index.html#contact">Contact</a></nav></header>
+<main id="main">
+<section class="intro">
+<p class="eyebrow">Banking · Arizona · Call-report analysis</p>
+<h1>Arizona bank health monitor</h1>
+<p class="lead">A quarterly scorecard for banks headquartered in Arizona, measured against the ten largest U.S. banks. It tracks profitability, net interest margin, capital, liquidity and deposit trends from FDIC call reports, and flags banks that cross simple warning thresholds, the way a credit or bank analyst would screen a peer group.</p>
+<p class="fine" id="asof">Loading data…</p><div class="status" id="status" role="status"></div>
+</section>
+<section id="fnd"><h2 id="kfH">Summary of findings</h2><p class="leadS" id="kLead"></p><div class="kpis" id="kTiles"></div><div id="kGroups"></div></section>
+<div id="out" class="hidden">
+<section><div class="kpis" id="kpis"></div></section>
+<section><h2>Scorecard</h2><p class="sub" id="scSub"></p><div class="tw"><table class="data"><thead><tr><th>Bank</th><th class="n">Assets</th><th class="n">Deposits YoY</th><th class="n">ROA</th><th class="n">Net interest margin</th><th class="n">Equity / assets</th><th class="n">Loans / deposits</th><th class="n">Efficiency</th><th>Warnings</th></tr></thead><tbody id="sc"></tbody></table></div>
+</section>
+<section><h2>Trends</h2><p class="sub">Last 12 quarters. The dashed lines are the medians of the ten largest U.S. banks and of the similar-sized peer group.</p>
+<div class="bar-top"><label class="fine">Measure <select id="met"></select></label><div class="chips" id="chips" role="group" aria-label="Choose banks"></div></div>
+<div class="panel"><div id="tr"></div><div class="legend" id="lg"></div></div></section>
+</div>
+<section id="bt" class="hidden"><h2>Did the warning screens work?</h2><p class="sub">The six screens were applied to banks about a year before they failed, and to banks that survived, using the same rules and the same dates.</p><p id="btText" style="max-width:820px"></p><div id="btTables"></div></section>
+<section><h2>Method and limits</h2><ul class="method">
+<li><b>Source.</b> FDIC BankFind API, quarterly call reports. Arizona banks are active institutions with an Arizona headquarters. Two comparison groups are used: the ten largest active U.S. banks by assets, and about 40 banks of similar size ($70 million to $1.5 billion) from other states, sampled evenly by size. A weekly GitHub Action updates the file.</li>
+<li><b>Measures.</b> Return on assets, net interest margin and efficiency ratio are as reported by the FDIC. Equity / assets and loans / deposits are computed from reported balances. Deposit growth compares each quarter with the same quarter a year earlier.</li>
+<li><b>Limits.</b> Many Arizona-headquartered institutions are small, so single-quarter figures can swing. Bank holding companies and bank subsidiaries can differ, and this analysis uses the bank-level filing. National banks that operate heavily in Arizona but are headquartered elsewhere appear only if they are among the ten largest. Regulatory capital ratios are not shown because not every institution reports every field.</li>
+</ul></section>
+</main>
+<footer><span>Ehahn Seok · Michigan State University</span><span><a href="sql-analysis.html">SQL version of this analysis</a> · <a href="equity-risk.html">Equity risk and regimes</a> · <a href="index.html">Back to portfolio</a></span></footer>
+<script src="findings.js?v=16"></script>
+<script src="bank-monitor.js?v=7"></script>
+</body></html>

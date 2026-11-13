@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bank Analysis in SQL | Ehahn Seok</title>
+<meta name="description" content="The Arizona bank health analysis written as SQL: window functions, CTEs and conditional aggregation over FDIC call reports, with live results.">
+<link rel="stylesheet" href="style.css?v=pf10">
+<link rel="icon" href="favicon.ico?v=g9c7u4w3" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=g9c7u4w3">
+<meta name="theme-color" content="#ce142d">
+<style>.sq section{padding:26px 0;border-bottom:0}.sq h1{font-size:clamp(30px,4vw,46px)}.sq h2{font-size:22px;margin:0 0 6px}.intro{padding:46px 0 12px!important}.fine{font-size:12px;color:var(--muted)}.sub{font-size:14px;color:var(--muted);margin:0 0 12px;max-width:820px}pre{background:#8b0e1e;color:#e6dcdd;border-radius:8px;padding:16px 18px;overflow:auto;font:12.5px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;margin:0 0 14px;max-height:340px}.tw{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--surface)}table.data{border-collapse:collapse;width:100%;font-size:13px}.data th,.data td{padding:8px 11px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap}.data th{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:#f6f4f4}.data td.n{text-align:right;font-variant-numeric:tabular-nums}.skills{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0}.skills span{border:1px solid var(--border);border-radius:99px;padding:4px 11px;font-size:12px;color:var(--muted);background:#fff}.q{margin:0 0 30px}.hidden{display:none!important}</style>
+</head>
+<body class="sq">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="index.html">Ehahn Seok<span>Data & business analytics</span></a><nav aria-label="Main navigation"><a href="index.html#projects">Selected work</a><a href="index.html#experience">Experience</a><a href="index.html#contact">Contact</a></nav></header>
+<main id="main">
+<section class="intro">
+<p class="eyebrow">SQL · Banking · FDIC call reports</p>
+<h1>Bank analysis in SQL</h1>
+<p class="lead">The peer comparison, warning screens and failure back-test from the bank health monitor, written as SQL. Each query below ran against the same FDIC data that feeds the dashboard, and the tables under each query are its actual output.</p>
+<div class="skills"><span>CTEs</span><span>Window functions: ROW_NUMBER, LAG, COUNT OVER</span><span>Conditional aggregation</span><span>Joins and parameter tables</span><span>Median without a MEDIAN function</span></div>
+<p class="fine" id="asof" style="margin-top:14px">Loading results…</p><div id="status" role="status" class="fine"></div>
+</section>
+<section><h2>Data model</h2><p class="sub">Four tables are loaded into SQLite: <b>banks</b> (one row per institution and its group), <b>quarters</b> (call-report figures by bank and quarter), <b>cutoffs</b> (one row of screen cutoffs, chosen by the back-test) and <b>obs</b> (screen inputs for banks that failed and banks that survived). A small <b>grid</b> table lists the alternative cutoffs tested.</p></section>
+<div id="queries"></div>
+<section><h2>Method</h2><p class="sub">The queries are in <code>sql/bank_analysis.sql</code> and are executed by <code>scripts/run_sql.py</code> after each weekly data refresh. The medians, flag shares and back-test rates here match the figures on the <a href="bank-monitor.html">bank health monitor</a>, which computes them separately in JavaScript, so each result is checked two ways.</p></section>
+</main>
+<footer><span>Ehahn Seok · Michigan State University</span><span><a href="bank-monitor.html">Bank health monitor</a> · <a href="index.html">Back to portfolio</a></span></footer>
+<script>
+(function(){
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function fmt(v){return v==null?'—':(typeof v==='number'?(Math.abs(v)>=1000?v.toLocaleString('en-US'):String(v)):esc(v))}
+fetch('data/sql_results.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+ document.getElementById('asof').textContent='Results generated '+d.generated_utc+' UTC · SQLite '+d.sqlite+' · cutoffs in use: ROA below '+d.cutoffs.roa+'%, margin drop '+d.cutoffs.dnim+' pts, equity below '+d.cutoffs.eq+'%, loans above '+d.cutoffs.ld+'% of deposits, deposit drop '+d.cutoffs.ddep+'%, noncurrent above '+d.cutoffs.nc+'%.';
+ document.getElementById('queries').innerHTML=d.queries.map(function(q,i){
+  var tbl=q.rows.length?'<div class="tw"><table class="data"><thead><tr>'+q.columns.map(function(c){return '<th>'+esc(c.replace(/_/g,' '))+'</th>'}).join('')+'</tr></thead><tbody>'+q.rows.map(function(r){return '<tr>'+r.map(function(v){return '<td'+(typeof v==='number'?' class="n"':'')+'>'+fmt(v)+'</td>'}).join('')+'</tr>'}).join('')+'</tbody></table></div>':'<p class="fine">No rows yet. This query uses back-test data that appears after the next data refresh.</p>';
+  return '<section class="q"><h2>'+(i+1)+'. '+esc(q.title)+'</h2><p class="sub">'+esc(q.description)+'</p><pre><code>'+esc(q.sql)+'</code></pre>'+tbl+'</section>'}).join('')
+}).catch(function(){document.getElementById('asof').textContent='';document.getElementById('status').textContent='The SQL results file has not been generated yet. Run the "Update data" workflow in GitHub Actions and refresh this page.'});
+})();
+</script>
+</body></html>

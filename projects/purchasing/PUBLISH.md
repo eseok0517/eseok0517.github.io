@@ -2,7 +2,7 @@
 
 The supplied ZIP mirrors the repository layout. It replaces `index.html` with the same existing portfolio plus the new purchasing-project card, preserves `style.css`, and adds `projects/purchasing/`.
 
-From a local checkout of `eseok0517/eseok0517.github.io`:
+From a local checkout of `eseok0517/Portfolio`:
 
 1. Copy the ZIP's `index.html` and `projects/` folder into the checkout root.
 2. Review `git diff` and `git status`.

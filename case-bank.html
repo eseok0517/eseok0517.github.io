@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arizona Bank Health Monitor | Ehahn Seok</title>
+<meta name="description" content="Case study: a quarterly scorecard for Arizona banks, compared with similar-sized peers, with warning screens back-tested on real bank failures and written in SQL.">
+<link rel="stylesheet" href="style.css?v=pf10"><link rel="stylesheet" href="case.css?v=3">
+<link rel="icon" href="favicon.ico?v=g9c7u4w3" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=g9c7u4w3">
+<meta name="theme-color" content="#ce142d">
+
+</head>
+<body class="cs" data-case="bank">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="index.html">Ehahn Seok<span>Data & business analytics</span></a><nav aria-label="Main navigation"><a href="index.html#projects">Selected work</a><a href="index.html#experience">Experience</a><a href="index.html#contact">Contact</a></nav></header>
+<main id="main">
+<section class="intro"><p class="crumb"><a href="index.html#projects">← All projects</a></p><p class="eyebrow">Case study · Independent project · Banking</p><h1>A quarterly health scorecard for Arizona banks, back-tested on real bank failures</h1><p class="lead" id="cs-lead">Pulled FDIC call-report data for Arizona-headquartered banks, compared them with similar-sized banks and the ten largest, and tested six warning screens against real bank failures.</p><div class="kpis" id="cs-tiles"><div class="kpi"><div class="l">Arizona banks</div><div class="v">12</div><div class="s">FDIC call reports, quarterly</div></div><div class="kpi"><div class="l">Peer banks</div><div class="v">40</div><div class="s">similar size, other states</div></div><div class="kpi"><div class="l">Failures tested</div><div class="v">150+</div><div class="s">2009-2012 and 2023-2026</div></div><div class="kpi"><div class="l">Written in</div><div class="v">SQL</div><div class="s">and Python and JavaScript</div></div></div></section>
+<section class="grid2"><div class="panel"><p class="num">01</p><h2>The problem</h2><p>Arizona has a few very large banks and many small ones. The questions were how healthy the state’s banks are, whether their results are unusual for banks of the same size, and whether simple warning screens can point an analyst to the banks worth a closer look.</p></div><div class="panel"><p class="num">02</p><h2>The data</h2><p>Quarterly call reports from the FDIC for the 12 Arizona-headquartered banks, 40 banks of similar size from other states, and the ten largest U.S. banks. For the back-test, the FDIC list of failed banks and their call reports from before failure, plus a sample of banks that survived. Everything refreshes weekly.</p></div></section>
+<section><div class="panel"><p class="num">03</p><h2>What I built</h2><ol class="steps"><li><b>Choose fair comparisons.</b> Arizona community banks are compared with similar-sized peers, and the two Arizona giants with the ten largest banks, because size changes a bank’s business model.</li><li><b>Screen on six measures.</b> Low return on assets, margin squeeze, thin equity, high loans to deposits, deposit outflow and bad loans. One screen is a watch; two or more is an alert.</li><li><b>Back-test and retune.</b> Apply the screens to banks a year before they failed and to survivors, search for better cutoffs on the 2009-2012 failures only, then check them unchanged on the 2023-2026 failures.</li><li><b>Reproduce it in SQL.</b> The peer medians, screens and back-test are also written as SQL with window functions and CTEs, and the results match the dashboard.</li></ol></div></section>
+<section><div class="panel"><p class="num">04</p><h2>What I found</h2><div id="cs-found"><p>Loading findings…</p></div></div></section>
+<section class="grid2"><div class="panel"><p class="num">05</p><h2>What I would do next</h2><p>Add each bank’s age, since young banks usually earn less while they build their loan books, and widen the Arizona set to banks headquartered elsewhere that operate heavily in the state. Track the screens over time to see how long before failure they fire.</p></div><div class="panel tryit"><p class="num">06</p><h2>Try it</h2><div class="btns"><a class="primary" href="bank-monitor.html">Open the monitor</a><a class="" href="sql-analysis.html">See the SQL analysis</a><a class="" href="https://github.com/eseok0517/Portfolio">Code on GitHub</a></div></div></section>
+<section><div class="nextp"><a href="case-equity.html">← Equity risk and regimes</a><a href="index.html#projects">Back to all projects →</a></div></section>
+</main>
+<footer><span>Ehahn Seok · Michigan State University</span><span><a href="index.html">Back to portfolio</a></span></footer>
+<script src="findings.js?v=16"></script>
+<script src="case.js?v=1"></script>
+</body></html>

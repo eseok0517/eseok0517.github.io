@@ -18,8 +18,24 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch public data and rebuild results
+      - name: Fetch public data and rebuild macro results
         run: python scripts/fetch_macro.py --out data
+
+      - name: Fetch stock and ETF prices
+        continue-on-error: true
+        run: python scripts/fetch_equities.py --out data
+
+      - name: Fetch FDIC bank call-report data
+        continue-on-error: true
+        run: python scripts/fetch_banks.py --out data
+
+      - name: Back-test the bank warning screens against FDIC failures
+        continue-on-error: true
+        run: python scripts/fetch_backtest.py --out data
+
+      - name: Run the SQL analysis
+        continue-on-error: true
+        run: python scripts/run_sql.py --data data --sql sql/bank_analysis.sql
 
       - name: Commit changes
         run: |

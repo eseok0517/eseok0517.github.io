@@ -1,14 +1,14 @@
 # Ehahn Seok — Finance & Operations Analytics
 
-Portfolio: https://eseok0517.github.io/
+Portfolio: hosted on Netlify (connect this repo; no build command, publish directory is the repo root).
 
 ## Review the work
 
 | Project | Business question | Evidence |
 |---|---|---|
-| [Industrial Purchasing & Transaction Controls](https://eseok0517.github.io/projects/purchasing/) | Which purchasing records need review? | Real California PO records, SQL checks, Python pipeline, exception CSVs; separate synthetic policy scenario |
-| [Asset Register Review](https://eseok0517.github.io/projects/asset-analysis/) | Which assets or records need follow-up? | Real Seattle equipment register, browser tool, source mapping, exception exports |
-| [Market Regimes](https://eseok0517.github.io/projects/macro-regimes/) | How do forward returns differ across economic regimes? | FRED downloads, monthly results, pipeline, sample counts and limitations |
+| [Industrial Purchasing & Transaction Controls](projects/purchasing/) | Which purchasing records need review? | Real California PO records, SQL checks, Python pipeline, exception CSVs; separate synthetic policy scenario |
+| [Asset Register Review](projects/asset-analysis/) | Which assets or records need follow-up? | Real Seattle equipment register, browser tool, source mapping, exception exports |
+| [Market Regimes](projects/macro-regimes/) | How do forward returns differ across economic regimes? | FRED downloads, monthly results, pipeline, sample counts and limitations |
 
 Company records from the LG internship are confidential. The main purchasing case uses real California public purchase orders; the original synthetic policy model is retained separately at `projects/purchasing/scenario.html`. The asset case uses real Seattle public equipment records, with a separately labeled synthetic demo. Neither public dataset contains company data. Market research uses public FRED records and is descriptive, not a trading backtest.
 
