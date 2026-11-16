@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-13 05:16",
+ "generated_utc": "2026-11-16 14:48",
  "synthetic": false,
  "refresh_mode": "fresh FRED download",
  "sample": {
@@ -18,14 +18,14 @@
   "SP500": {
    "description": "S&P 500 index",
    "first": "2016-11-14",
-   "last": "2026-11-11",
-   "observations": 2512
+   "last": "2026-11-13",
+   "observations": 2514
   },
   "T10Y2Y": {
    "description": "10Y minus 2Y Treasury spread (pct. points)",
    "first": "2000-01-03",
-   "last": "2026-11-12",
-   "observations": 6719
+   "last": "2026-11-13",
+   "observations": 6720
   },
   "CPIAUCSL": {
    "description": "Consumer Price Index (all urban consumers)",
@@ -35,8 +35,8 @@
   },
   "BAMLH0A0HYM2": {
    "description": "High-yield credit spread (pct.)",
-   "first": "2023-11-13",
-   "last": "2026-11-11",
+   "first": "2023-11-14",
+   "last": "2026-11-12",
    "observations": 785
   }
  },
